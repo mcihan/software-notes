@@ -1,5 +1,4 @@
-
-# Context
+ # CONTENT OF NOTES
 
 - [Development](./development)
   - [Dependency Management Tools](./development/dependency-management.md)
