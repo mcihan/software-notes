@@ -217,7 +217,7 @@
 - Can add @Retry annotation, so it will try to get success response.
 
 **Hystrix Dashboard :**  
-![img.png](doc/hystrix.png)
+![img.png](doc/microservices/hystrix.png)
 
 ### 3.4.6. Logging / Tracing
 
@@ -235,7 +235,7 @@
 - **spanId** :  Unique id for trace for each step of process
 
 **Zipkin Dashboard :**  
-![img.png](doc/zipkin.png)
+![img.png](doc/microservices/zipkin.png)
 
 ### 3.4.7. Config Service
 

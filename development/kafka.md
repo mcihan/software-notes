@@ -284,7 +284,7 @@ Bu 3 asama tamamlaninda senkronasyon tamamlanir.
 
 ## 5.1. Split Brain
 
-![](doc/sprit-brain.png)
+![](doc/kafka/sprit-brain.png)
 
 1. Iki brokerdan olusan bir sistemde iki arasindaki baglanti koptugunda ikiside islemleri yapmaya devam ediyor,
 2. Ikisi arasindaki baglanti tekrar kuruldugunda hangisinin datasini temel almak gerekiyor.
@@ -300,7 +300,7 @@ Bu 3 asama tamamlaninda senkronasyon tamamlanir.
 Eger TR de 3, US de 2 brokerimiz varsa, eger data-center'lar arasi baglanti koparsa data-center sayisi iki oldugu icin
 yine split brain problemi ortaya cikar.
 
-![](doc/sprit-brain.png)
+![](doc/kafka/sprit-brain.png)
 
 **Optimum Quorum sayisini belirleme:**
 ```n/2 + 1```
