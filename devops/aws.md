@@ -1,7 +1,7 @@
 # On-Premises, IAAS, PAAS, SAAS
 
 
-![image info](./img/iaas-paas-saas-comparison.jpg)
+![image info](doc/cloud/iaas-paas-saas-comparison.jpg)
 
 ## On-Premises
 

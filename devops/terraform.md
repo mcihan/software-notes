@@ -67,7 +67,7 @@ Data source performs a read-only operation. It allows data to be fetched or comp
 
 ## Configuration Files
 
-![images](./img/terraform-config-files.png)
+![images](doc/cloud/terraform-config-files.png)
 
 ### 1- Configuration file (*.tf files)
 
