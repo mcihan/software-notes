@@ -1,4 +1,6 @@
-  # CONTENT OF DEVOPS NOTES
+# CONTENT OF DEVOPS NOTES
 
-  - [AWS](./aws.md)
-  - [Terraform](./terraform.md)
+- [AWS](./aws.md)
+- [Docker](./docker.md)
+- [Terraform](./terraform.md)
+- [Kubernates](./kubernates.md)
