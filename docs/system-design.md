@@ -153,7 +153,7 @@
 
 ## 1.1. CAP Theorem
 
-![](doc/systemdesign/component/cap2.png)
+![](images/systemdesign/component/cap2.png)
 
 Bu teorem dağıtık bir sistemde Consistency, Availability ve Partition Tolerance özelliklerinin hepsinin aynı anda sağlanamayacağını teorik olarak ispatlamaya çalışır.
 
@@ -174,7 +174,7 @@ hayatına devam edebilmesidir.
 
 ### 1.1.4. **AP** ( Availability & Partition Tolerance )
 
-![](doc/systemdesign/component/cap3.png)
+![](images/systemdesign/component/cap3.png)
 
 1. Her iki serverda da v0 versiyonlu bir kayit bulunmaktadir.
 2. Client bu kayit uzerinde degisiklik yapip G1 servisine istek atar.
@@ -204,14 +204,14 @@ RDBMS teknolojilerinde sadece okumaya yönelik de olsa hizmet devam edebilmekted
 
 **Example :** RDBMS (Oracle, MySql vs)
 
-![](doc/systemdesign/component/cap4.png)
+![](images/systemdesign/component/cap4.png)
 
 ### 1.1.7. OTHERS
 
 - NoSQL veritabanlarının doğuşunun bir nedeni de **Single Point of Failure** sorununun üstesinden kolayca gelebilmektir.
 - Veri merkezinin tek bir network alt yapısı içerisinde bulunması da aslında bir çeşit single point of failure durumu yaratır.
 
-![](doc/systemdesign/component/cap.png)
+![](images/systemdesign/component/cap.png)
 
 ### 1.1.8. Links
 
@@ -332,13 +332,13 @@ RDBMS teknolojilerinde sadece okumaya yönelik de olsa hizmet devam edebilmekted
 - **Soft-state :** The state of the system could change over time (even during times without input), because there may be changes going on due to "eventual consistency".
 - **Eventual consistency :** The data might not be consistent immediately but eventually, it becomes consistent.
 
-![](doc/systemdesign/databases/acid.png)
+![](images/systemdesign/databases/acid.png)
 
 <br/> 
 
 ### 1.4.3. Comparing
 
-![](doc/systemdesign/databases/acid-vs-base.jpg)
+![](images/systemdesign/databases/acid-vs-base.jpg)
 
 **Table 1:**
 
@@ -454,7 +454,7 @@ Transaction - document sent to printer;
 - Verilerin butun halinde degilde parcalara ayrilip, bu parcalari mapleyip daha sonra paralel olarak islenirler. Biten parcalar tekrar birlestirilir,
 - Paralel islendigi icin hizlidir.
 
-![img.png](doc/systemdesign/databases/map-reduce.png)
+![img.png](images/systemdesign/databases/map-reduce.png)
 
 ### 1.7.1. Links
 
@@ -483,15 +483,15 @@ Normalization is the process of reorganizing data in a database so that it meets
 - AWS s3 glacier : archive data.
 - If you want to private data storage you can use **Hadoop (HDFS)**, it is open-source.
 
-![img.png](doc/systemdesign/component/distributed-storage.png)
+![img.png](images/systemdesign/component/distributed-storage.png)
 
 ### 1.9.1. **Hadoop :**
 
-![img.png](doc/systemdesign/component/hadoop.png)
+![img.png](images/systemdesign/component/hadoop.png)
 
 The **name node** coordinates how files are broken into blocks, and where those blocks are stored. In high availability settings, multiple name nodes may be present for failover.
 
-![img.png](doc/systemdesign/component/hadoop2.png)
+![img.png](images/systemdesign/component/hadoop2.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -521,13 +521,13 @@ The **name node** coordinates how files are broken into blocks, and where those 
 
 - **http vs http2 :**
 
-![img.png](doc/systemdesign/component/http-http2.png)
+![img.png](images/systemdesign/component/http-http2.png)
 
 <br/> 
 
 - **http vs http2 vs http3 :**
 
-![img.png](doc/systemdesign/component/http1-2-3.png)
+![img.png](images/systemdesign/component/http1-2-3.png)
 
 ### 2.1.2. http vs websockets
 
@@ -570,7 +570,7 @@ Temel iletisim protokoludur. Internete bagli cihazlarin iletisim kurmasini sagla
 
 ### 2.2.2. TCP vs OSI
 
-![](doc/systemdesign/component/tcp-vs-osi.png)
+![](images/systemdesign/component/tcp-vs-osi.png)
 
 ## 2.3. Security Protocols
 
@@ -582,17 +582,17 @@ Internet üzerinden hassas bilgi göndermek ve almak için modern bir şifreleme
 
 Bilgisayarların ve kullanıcıların kimlik doğrulamaları asimetrik şifreler ile yapılmaktadır. Kullanıcılar karşılıklı bir biçimde kullandıkları simetrik anahtarlarla anlaşırlar.
 
-![](doc/systemdesign/component/ssl-https.png)
+![](images/systemdesign/component/ssl-https.png)
 
 ### 2.3.2. How Does Work Https and TLS
 
-![img.png](doc/systemdesign/component/https-tls.png)
+![img.png](images/systemdesign/component/https-tls.png)
 
 ### 2.3.3. SSH
 
 SH, şifreleme tekniğini kullanarak uzaktaki sunucuya giden & uzaktaki sunucudan gelen tüm iletişimlerin şifrelendiğinden emin olur.
 
-![](doc/systemdesign/component/ssh.png)
+![](images/systemdesign/component/ssh.png)
 
 #### 2.3.3.1. How does SSH work
 
@@ -614,9 +614,9 @@ getirmektir. Otomasyonu sağlanmış SSH ile dosya aktarımları ve uygulamalar 
 |  Broadcasting  |  Does not support Broadcasting  |  Does support Broadcasting  |
 |  Optimal use  |  Used by HTTPS, HTTP, SMTP, POP, FTP, etc  |  Video conferencing, streaming, DNS, VoIP, etc  |   
 
-![img.png](doc/systemdesign/component/tcp-udp.png)
+![img.png](images/systemdesign/component/tcp-udp.png)
 
-![img.png](doc/systemdesign/component/cp-udp2.png)
+![img.png](images/systemdesign/component/cp-udp2.png)
 
 ## 2.5. DNS lookup
 
@@ -690,7 +690,7 @@ server (whether locally or at an ISP), which returns the corresponding IP addres
 
 # 3. CLOUD COMPUTING
 
-![img.png](doc/systemdesign/component/cloud-computing.png)
+![img.png](images/systemdesign/component/cloud-computing.png)
 
 ## 3.1. CDN
 
@@ -721,9 +721,9 @@ is delivered to that user.
 
 Html, css, js ve media içeriklerini statik olarak bünyesinde barındırır, optimize eder ve ziyaretçiye cografi olarak en yakin yerden en hızlı sürede ulaştırılmasını sağlar.
 
-![](doc/systemdesign/component/cdn.png)  
-![](doc/systemdesign/component/cdn2.png)  
-![](doc/systemdesign/component/cdn3.png)
+![](images/systemdesign/component/cdn.png)  
+![](images/systemdesign/component/cdn2.png)  
+![](images/systemdesign/component/cdn3.png)
 
 ### 3.1.5. Links
 
@@ -737,7 +737,7 @@ Html, css, js ve media içeriklerini statik olarak bünyesinde barındırır, op
 
 **Forward Proxy:** Acting on behalf of a requestor (or service consumer)
 
-![](doc/systemdesign/component/forward-proxy.png)
+![](images/systemdesign/component/forward-proxy.png)
 
 #### 3.2.1.1. Types of forward proxies
 
@@ -754,7 +754,7 @@ Html, css, js ve media içeriklerini statik olarak bünyesinde barındırır, op
 
 **Reverse Proxy:** Acting on behalf of service/content producer.
 
-![](doc/systemdesign/component/reverse-proxy.png)
+![](images/systemdesign/component/reverse-proxy.png)
 
 #### 3.2.2.1. Types of reverse proxies
 
@@ -815,7 +815,7 @@ Decide when you call cache miss.
 - FIFO (First In Fist Out)
 
 **LRU :**    
-![img.png](doc/systemdesign/component/eviction_LRU.png)
+![img.png](images/systemdesign/component/eviction_LRU.png)
 
 - Get data from Head, evict data from tail
 
@@ -912,7 +912,7 @@ A cache is a temporary storage area that stores the result of expensive response
 
 **Read-through cache model :**
 
-![](doc/systemdesign/component/cache.png)
+![](images/systemdesign/component/cache.png)
 
 #### 4.1.4.2. Considerations for using cache
 
@@ -943,23 +943,23 @@ Load balances, replaceted db'lerde, data storage'larda (memcache, redis), shardi
 ## 4.3. Design A Key Value Store
 
 - Conflict resolution = ayni anda redise ayni key ile farkli daha yazildiginda hangi datayi esas kabul edecegiz.
-  ![](doc/systemdesign/component/conflict-resolution.png)
+  ![](images/systemdesign/component/conflict-resolution.png)
 - Conflict resolution algoritmalari: "Latest write wins", "Vector Clock"
 - CRDT algorithm : google doc'ta ayni anda iki kisinin dosyayi editlemesini sagliyor
 - Serializibility: Serverlara gelen eventleri zamana gore siraya yerlestirmek.
 - **Gossip Protokol** (check **Heartbeat**) : Diger servisler(node'lar) down olmusmu anlamak icin hepsina sormak.
-  ![](doc/systemdesign/component/heartbeat.png)
-  ![](doc/systemdesign/component/heartbeat2.png)
+  ![](images/systemdesign/component/heartbeat.png)
+  ![](images/systemdesign/component/heartbeat2.png)
 - Merkle Tree : Datayi partition'lara bolup, butun datayi hashliyoruz, sonra o hash diger serverlardaki hash ile aynimi o kontrol ediliyor. Ayni olmayan bucket'ler icin senkronizasyon yapilir
-  ![](doc/systemdesign/component/markletree.png)
-  ![](doc/systemdesign/component/markletree2.png)
+  ![](images/systemdesign/component/markletree.png)
+  ![](images/systemdesign/component/markletree2.png)
 - Merkle Tree file system de de kullanilir. Once klasorler'in hashlerine bakilir ayni degilse icindeki klasorlere yada file'lara bakilir.
 - **Bloom Filter** : Partion'in icererisinde o key var mi yok mu onu doner, genelde %95 ihtimalle dogru doner. Chrome zararli site kucuk bir partition/db tutar ve bunu bloom filter ile kontrol ederek bize zararli olduguyla ilgili uyari
   doner.
 
 ### 4.3.1. Summary
 
-![](doc/systemdesign/component/design-key-value-store.png)
+![](images/systemdesign/component/design-key-value-store.png)
 
 ## 4.4. News Feed (Time Line)
 
@@ -1001,7 +1001,7 @@ Selecting the correct storage system that supports all of our use cases is cruci
 ## 5.1. INTERVIEW NOTE
 
 - Monitoring kullan- hata oldugunu gormek icin, hotspotu gormek icin, retry mekanizmasi surekli hata veriyor mu gormek icin, hangi layer/servis/db ye cok yogun trafik akisi var buna gore servis ekleme yada cikarma.
-  ![](doc/systemdesign/component/queue-messaging-monitoring.png)
+  ![](images/systemdesign/component/queue-messaging-monitoring.png)
 - Monitoring is also important in understanding customer behavior
 
 ## 5.2. Sentence Samples

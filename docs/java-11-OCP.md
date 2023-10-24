@@ -1,3 +1,5 @@
+# JAVA 11 - OCP (ORACLE CERTIFIED PROFESSIONAL) Notes
+
 - [1. General](#1-general)
 - [2. Java Building Blocks](#2-java-building-blocks)
 - [3. Operators](#3-operators)
@@ -1630,7 +1632,7 @@ public void walk4(int... start, int... nums) {} // DOES NOT COMPILE
 
 ## 7.2. Applying Access Modifiers
 
-![image info](doc/java/u7_access_modifier.png)
+![image info](images/java/u7_access_modifier.png)
 
 ## 7.3. Applying the static Keyword
 
@@ -2861,7 +2863,7 @@ abstract class Cinema {
 # 10. Exceptions
 
 
-![image info](doc/java/exception.png)
+![image info](images/java/exception.png)
 
 Error means something went so horribly wrong that your program should not attempt to recover from it. For example, the disk drive “disappeared” or the program ran out of memory. These are abnormal conditions that you aren’t likely to encounter and cannot recover from.
 
@@ -3160,13 +3162,13 @@ are closed in the reverse order from which they were created.
 Semicolons are used to separate the declarations.
 
 **The syntax of a basic try-with-resources**
-![image info](doc/java/try-with-resource.png)
+![image info](images/java/try-with-resource.png)
 
 <br/> 
 
 **The syntax of try-with-resources including catch / finally**
 
-![image info](doc/java/try-with-resource2.png)
+![image info](images/java/try-with-resource2.png)
 
 <br/> 
 
@@ -3459,7 +3461,7 @@ javac -p mods -d feeding feeding/zoo/animal/feeding/*.java feeding/*.java
 
 ## 11.4. Running Module
 
-![image info](doc/java/running-module.png)
+![image info](images/java/running-module.png)
 
 
 
@@ -3913,19 +3915,19 @@ The only restriction is that the variable type must be a functional interface.
 
 **1- Modifiers in nested classes**
 
-![image info](doc/java/nestedClass1.png)
+![image info](images/java/nestedClass1.png)
 
 <br/> 
 
 **2- Members in nested classes**
 
-![image info](doc/java/nestedClass2.png)
+![image info](images/java/nestedClass2.png)
 
 <br/> 
 
 **3- Nested class access rules**
 
-![image info](doc/java/nestedClass3.png)
+![image info](images/java/nestedClass3.png)
 
 ## 12.4. Understanding Interface Members
 
@@ -4061,7 +4063,7 @@ public interface Swim {
 ### 12.4.5. **REVIEWING INTERFACE MEMBERS**
 
 
-![image info](doc/java/interface-member-access.png)
+![image info](images/java/interface-member-access.png)
 
 <br/> 
 
@@ -4179,13 +4181,13 @@ Lambda expressions rely on the notion of deferred execution. Deferred execution 
 
 **Lambda definetion 1**
 
-![image info](doc/java/lambda-definetion.png)
+![image info](images/java/lambda-definetion.png)
 
 <br/> 
 
 **Lambda definetion 2**
 
-![image info](doc/java/lambda-definetion2.png)
+![image info](images/java/lambda-definetion2.png)
 
 * As a fun fact, **s ‐> {}** is a valid lambda. If the return type of the functional interface method is void, then you don't need the semicolon or return statement.
 
@@ -4442,12 +4444,12 @@ public @interface WaterSource {
 ### 13.1.6. **REVIEWING ANNOTATION RULES**
 
 **1- Annotation declaration :**  
-![image info](doc/java/annotation-rules.png)
+![image info](images/java/annotation-rules.png)
 
 ..
 
 **2- Using an annotation :**  
-![image info](doc/java/annotation-applying.png)
+![image info](images/java/annotation-applying.png)
 
 ..  
 ..
@@ -5187,7 +5189,7 @@ There are four main interfaces in the *Java Collections Framework*:
 
 **Collection and Map interfaces**
 
-![images.info](doc/java/collections.png)
+![images.info](images/java/collections.png)
 
 
 ..
@@ -8477,7 +8479,7 @@ An assertion allows for detecting defects in the code.
 
 *The syntax of assert statements :*
 
-![images.info](doc/java/assert.png)
+![images.info](images/java/assert.png)
 
 When assertions are enabled and the boolean expression evaluates to false, then an AssertionError will be thrown at runtime.
 
@@ -8777,7 +8779,7 @@ DateTimeFormatter.ofPattern("'Time is: hh:mm: ");  // Exception thrown
 
 *Locale formats*
 
-![image.info](doc/java/locale.png)
+![image.info](images/java/locale.png)
 
 <br/>
 
@@ -11606,7 +11608,7 @@ public PrintWriter(String fileName) throws FileNotFoundException
 ### 19.4.9. **Review Of Stream Classes**
 </center>
 
-![images.info](doc/java/stream-classes.png)
+![images.info](images/java/stream-classes.png)
 
 
 

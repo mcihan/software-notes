@@ -36,9 +36,9 @@
 - User story'ler ornek verilebilir. Ornegin; login sayfasinin yapilmasi, user-password yanlis girerese hata
   gosterilmesi, sepete ekle modulunun yapilmasi gibi.
 
-![img.png](doc/test/functional-test.png)
+![img.png](images/test/functional-test.png)
 
-![img_1.png](doc/test/functional-test2.png)
+![img_1.png](images/test/functional-test2.png)
 
 1. Unit Testing
 2. Integration Testing
@@ -139,7 +139,7 @@ Kodun yapısı(structure), tasarımı(design) ve uygulanışı(implementation) i
 5. Upgrade & Installation Tests
 6. Recovery Tests
 
-![img.png](doc/test/non-functional-test.png)
+![img.png](images/test/non-functional-test.png)
 
 # 4. Test Strategies
 

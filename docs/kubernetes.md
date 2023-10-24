@@ -137,11 +137,11 @@
 
 # 2. Components
 
-![img.png](doc/docker/components0.png)
+![img.png](images/docker/components0.png)
 
-![img.png](doc/docker/components.png)
+![img.png](images/docker/components.png)
 
-![img.png](doc/kubernetes/componenets2.png)
+![img.png](images/kubernetes/componenets2.png)
 
 ## 2.1. Control Plane
 
@@ -152,7 +152,7 @@
 - Diger tum komponent ve node bilesenlerinin direkt iletisim kurabildigi tek komponenttir.
 - Authentication ve Autherization burda yapilir
 
-![img.png](doc/docker/api-server.png)
+![img.png](images/docker/api-server.png)
 
 ### 2.1.2. etcd
 
@@ -174,7 +174,7 @@
     + Service Account & Token Controller
     + Endpoint Controller
 
-![img.png](doc/kubernetes/kubernetes-cluster.png)
+![img.png](images/kubernetes/kubernetes-cluster.png)
 
 ## 2.2. Worker Nodes
 
@@ -186,7 +186,7 @@
 
 - Ag kurallarini yonetir.
 
-![img.png](doc/kubernetes/worker-nodes.png)
+![img.png](images/kubernetes/worker-nodes.png)
 
 # 3. kubectl
 
@@ -201,7 +201,7 @@
 
 - ``` kubectl config``` komutu ile kullanilabilen sub-komutlar:
 
-![img.png](doc/kubernetes/config1.png)
+![img.png](images/kubernetes/config1.png)
 
 - ```kubectl config get-contexts  ``` ile contextleri aliriz. Current context'in onunde * isareti bulunur.
 - ```kubectl config current-context  ``` Current context'in dondurur.
@@ -222,11 +222,11 @@
 - **-o json** json olarak cikti verir . ```kubectl get pods -o json | jq -r ".item[].spec.containers[].name" ``` vb
   gibi **jq** kullanarak istedigimiz gibi bir sonuc donebiliriz.
 
-![img.png](doc/kubernetes/kubectl-o-json.png)
+![img.png](images/kubernetes/kubectl-o-json.png)
 
 - **-o yaml** yaml olarak cikti verir.
 
-![img.png](doc/kubernetes/kubectl-help.png)
+![img.png](images/kubernetes/kubectl-help.png)
 
 ## 3.4. explain
 
@@ -241,7 +241,7 @@ Context & Cluster & User
 
 Kubernetes tarafindan yonetilen node'lar birligidir. En az bir master ve bir worker olmalidir.
 
-![img.png](doc/kubernetes/cluster.png)
+![img.png](images/kubernetes/cluster.png)
 
 Bir projede asagidaki gibi Cluster'larimiz olabilir. Bu Cluster'dan biri minikube'deyken digeri AWS EKS' de olabilir.
 
@@ -263,7 +263,7 @@ Cluster'daki sanal yada gercek makinelerdir. Master yada worker olabilir.
 User - cluster map'ini certifikalariyla beraber tutan bir yapidir. Cluster'lara login olmayi ve cluster'lar arasi kolay
 gecisi saglar.
 
-![img.png](doc/kubernetes/context.png)
+![img.png](images/kubernetes/context.png)
 
 ```yaml
 contexts:
@@ -285,7 +285,7 @@ contexts:
 
 # 5. Objects
 
-![img.png](doc/kubernetes/objects.png)
+![img.png](images/kubernetes/objects.png)
 
 ## 5.1. Log
 
@@ -331,7 +331,7 @@ kubectl delete pod podName
 
 - Kubernetes'te en kucuk objedir. Icerisinde container'lar calisir.
 
-![img.png](doc/kubernetes/pods.png)
+![img.png](images/kubernetes/pods.png)
 
 ### 5.4.1. Pod Life Cycle
 
@@ -591,7 +591,7 @@ topology.kubernetes.io/zone=northeurope-1
 kubectl get pods -l "app" --show-labels
 ```
 
-![img.png](doc/kubernetes/label.png)
+![img.png](images/kubernetes/label.png)
 
 **'app' degeri 'firstapp' olan pod'lari listeleme :**
 
@@ -786,7 +786,7 @@ obje cikaritilmistir.
   deployment yapabiliriz.
 - Tek bir pod bile yaratacak olsak, bunu deployment ile yaratmak daha faydali olacaktir!
 
-![img.png](doc/kubernetes/deployment.png)
+![img.png](images/kubernetes/deployment.png)
 
 ### 5.11.1. Create
 
@@ -876,7 +876,7 @@ kubectl get replicaset
 
 1. Var olan replicaSet'e baktik. `firstdeployment-5864dcbff4` isimli replicanin icinde 3 pod calisiyor.
 
-![img.png](doc/kubernetes/get-replicaset.png)
+![img.png](images/kubernetes/get-replicaset.png)
 
 3. Deployment'taki Image'i degistirdik
 
@@ -896,7 +896,7 @@ kubectl rollout undo deployment firstdeployment
 
 5. Deployment bir onceki durumuna gecmis oldu.
 
-![img.png](doc/kubernetes/roll-out.png)
+![img.png](images/kubernetes/roll-out.png)
 
 ### 5.12.3. Create
 
@@ -1012,7 +1012,7 @@ kubectl set image deployment/firstdeployment nginx=httpd --record
 kubectl rollout history deployment firstdeployment
 ```
 
-![img.png](doc/kubernetes/rolling-history.png)
+![img.png](images/kubernetes/rolling-history.png)
 
 - **Rollout :** Bir onceki versiona donme
 
@@ -1108,7 +1108,7 @@ spec:
 kubectl get service
 ```
 
-![img.png](doc/kubernetes/service1.png)
+![img.png](images/kubernetes/service1.png)
 
 - Bir pod icerisine girip **backend** icin `nslookup` yapiyoruz. Address yukarda tanimladigimiz ClusterIP'nin IP si ile
   ayni. ClusterIP **backend** icin gelen trafigi aldi.
@@ -1116,11 +1116,11 @@ kubectl get service
 - Ayni namespace'de calisan podlar birbirlerini kisa isimleriyle cozebilirler fakar farkli namespace'ler icin **name**
   gereklidir.
 
-![img.png](doc/kubernetes/service2.png)
+![img.png](images/kubernetes/service2.png)
 
 - Curl ile ustuste `backend` e erismeye calistigimizda, load balancer ile bu istekleri podlara dagittigini goruyoruz.
 
-![img.png](doc/kubernetes/service3.png)
+![img.png](images/kubernetes/service3.png)
 
 <br>
 
@@ -1175,24 +1175,24 @@ spec:
 - Service yaratilirken arkada endpoints objesi yaratir.
 - Endpoints objesi podlar silindiginde yada yenileri yaratildiginda dinamik olarak onlarin endpoint'lerini yonetir.
 
-![img.png](doc/kubernetes/endpoint1.png)
+![img.png](images/kubernetes/endpoint1.png)
 
 - frontend icin olan podlarin Addresses kisminda arka arkaya koyuldugu gorulmektedir.
 
-![img.png](doc/kubernetes/endpoint2.png)
+![img.png](images/kubernetes/endpoint2.png)
 
 - Eger bir podu silersek bu kisimlar degisecektir.
 - Podlari listeliyorum ve 10.1.0.91 IP li pod'u siliyorum.
 
-![img.png](doc/kubernetes/endpoint3.png)
+![img.png](images/kubernetes/endpoint3.png)
 
 - Silinen pod yerine 10.1.0.04 IP'li yeni bir pod yaratildi.
 
-![img.png](doc/kubernetes/endpoint4.png)
+![img.png](images/kubernetes/endpoint4.png)
 
 - Endpoint objesini kontrol ettigimizde, yeni pod'un endpoint'ini address kismina ekledigini goruyoruz.
 
-![img.png](doc/kubernetes/endpoint5.png)
+![img.png](images/kubernetes/endpoint5.png)
 
 - Ya da scale ile var olan 3 pod'u 5 pod'a cikaralim. Yeni gelen podlarinda adress kismina eklendigini goruyoruz.
 
@@ -1200,7 +1200,7 @@ spec:
 kubectl scale deployment frontend --replicas=5
 ```
 
-![img.png](doc/kubernetes/endpoint6.png)
+![img.png](images/kubernetes/endpoint6.png)
 
 - Bu sekilde Kubernetes ip yonetimini yapmaktadir.
 
@@ -1324,7 +1324,7 @@ spec:
 
 - pod'u yaratip environment'lari listeledigimizde yaml dosyasinda ekledigimiz env'lari gormus oluyoruz.
 
-![img.png](doc/kubernetes/environment.png)
+![img.png](images/kubernetes/environment.png)
 
 ## 5.19. Post-forward
 
@@ -1528,7 +1528,7 @@ spec:
 kubectl get secrets
 ```
 
-![img.png](doc/kubernetes/secret1.png)
+![img.png](images/kubernetes/secret1.png)
 
 <br>
 
@@ -1538,7 +1538,7 @@ Detayli bakmak icin;
 kubectl describe secret mysecret
 ```
 
-![img.png](doc/kubernetes/secret2.png)
+![img.png](images/kubernetes/secret2.png)
 
 ## 6.4. ConfigMap
 
@@ -1548,7 +1548,7 @@ kubectl describe secret mysecret
   bir ortama taşımak için sadece configmap ayarını değiştirmeniz yeterli olacaktir. Her bir değişkeni ayrı ayrı yeniden
   değiştirmenize gerek kalmaz.
 
-![img.png](doc/kubernetes/config-map.gif)
+![img.png](images/kubernetes/config-map.gif)
 
 **Tanimi :**
 
@@ -1603,7 +1603,7 @@ spec:
 
 **Detayli Listeleme :**
 
-![img.png](doc/kubernetes/configmap.png)
+![img.png](images/kubernetes/configmap.png)
 
 ## 6.5. Node Affinity
 
@@ -1674,7 +1674,7 @@ spec:
 - Ornegin, asagidaki sekildeki gibi db ve frontend uygulamalarinin ayni zone'da calismasini istiyoruz, bu durumda **pod
   affinity** sayesinde, db pod'u nerde olustuysa frontend uygulama pod'unu da orda olustur gibi bir ayar yapabiliriz.
 
-![img.png](doc/kubernetes/pod-affinity.png)
+![img.png](images/kubernetes/pod-affinity.png)
 
 - **topologyKey** field'ini **kubernetes.io/hostname** olarak secersek, pod ayni worker node uzerinde calisacak.
 - **topologyKey** field'ini **topology.kubernetes.io/zone** olarak secersek, pod ayni worker node uzerinde calismak

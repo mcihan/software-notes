@@ -55,7 +55,7 @@ bir projedir. Apache Kafka, büyük verileri düşük gecikmelerle (latency) ger
     + **Boyut Bazli**. Ornegin veriler 1GB'i gecerse eskilerden baslanarak silinir. (onerilmez cunku ongorulemiyor,
       trafige bagli boyut artip azalirsa, kota belki bir gunde dolar beldi 1 ayda)
 
-![img.png](doc/kafka/topic.png)
+![img.png](images/kafka/topic.png)
 
 ## 2.2. Partition
 
@@ -64,7 +64,7 @@ bir projedir. Apache Kafka, büyük verileri düşük gecikmelerle (latency) ger
 - Veriler partition'a gonderilme sirasiyla yazilir(FIFO).
 - Yazilan veri bir daha degistirilmez.
 
-![img.png](doc/kafka/partition1.png)
+![img.png](images/kafka/partition1.png)
 
 ### 2.2.1. Offset
 
@@ -87,7 +87,7 @@ bir projedir. Apache Kafka, büyük verileri düşük gecikmelerle (latency) ger
 - Diger bir deyisle; Kafka dağıttık yapıda olduğu için tek bir broker topic’in tüm partition’larını barındırmaz. Her
   broker farklı partition’ı alır.
 
-![img.png](doc/kafka/broker.png)
+![img.png](images/kafka/broker.png)
 
 ## 2.4. Producer
 
@@ -109,16 +109,16 @@ bir projedir. Apache Kafka, büyük verileri düşük gecikmelerle (latency) ger
 - Bir partition’ı bir consumer group içerisinde sadece bir consumer okuyabilir.
 - Partition'lar consumer'lara esit olarak dagitilir.
 
-![img.png](doc/kafka/consumer-group.png)
+![img.png](images/kafka/consumer-group.png)
 
 - Eger consumer sayisi partition'dan fazla ise, fazla olan consumer pasif olarak beklemeye gecer. Cunku **bir
   partition'i ayni isme sahip bir consumer okuyabilir**. Diger consumer'larda bir sorun olursa onun yerine aktif olur.
 
-![img.png](doc/kafka/consumer-group-2.png)
+![img.png](images/kafka/consumer-group-2.png)
 
 - Yeni consumer grubu eklendiginde, isimler farkli oldugu icin partition okurken bir karisiklik olmaz.
 
-![img.png](doc/kafka/consumer-group-3.png)
+![img.png](images/kafka/consumer-group-3.png)
 
 # 3. Write Data
 
@@ -132,31 +132,31 @@ bir projedir. Apache Kafka, büyük verileri düşük gecikmelerle (latency) ger
 
 - Veriler sirasiyla 1-2-3 seklinde partitionlara dagitilir. Default yontemdir.
 
-![img.png](doc/kafka/partition2.png)
+![img.png](images/kafka/partition2.png)
 
 ### 3.1.2. Aggregation
 
 - Key degerinde catagory degeri verilir. Veriler partition'lara katagorisine gore yazilir. Yani mesagge'lar katagorilere
   gore toplanir.
 
-![img.png](doc/kafka/partition3.png)
+![img.png](images/kafka/partition3.png)
 
 ### 3.1.3. Sorting & Event Sourcing
 
 - Key olarak userId kullandigimizi varsaylim. Message'leri user'in yaptigi event'lere gore topladigimiz anlamina
   geliyor. User'in her haraketini sirasiyla toplayabiliriz.
 
-  ![img.png](doc/kafka/partition4.png)
+  ![img.png](images/kafka/partition4.png)
 
 ## 3.2. Replication
 
-![img.png](doc/kafka/replication1.png)
+![img.png](images/kafka/replication1.png)
 
 - 3'er replica yaptigimizda asagidaki gibi olur.
 - Bir de kafka **Leader Partition**'i secer ve veri ilk lider partition'a yazilir ordan diger partition'lara dagitilir.
   Eger **Leader Partition** down olursa kafka yeni **Leader Partition** secer. **(Reelection)**
 
-![img.png](doc/kafka/replication2.png)
+![img.png](images/kafka/replication2.png)
 
 <br/> 
 
@@ -200,7 +200,7 @@ Bu 3 asama tamamlaninda senkronasyon tamamlanir.
   icerisinde kaydedilir.
 - Consume edilirken hata olustursa, offset pozisyonu tutuldugu icin, sonraki consumer kalan yerden devam eder.
 
-![img.png](doc/kafka/read-data.png)
+![img.png](images/kafka/read-data.png)
 
 ## 4.1. Reading Types(Message Delivery Semantics)
 
@@ -211,7 +211,7 @@ Bu 3 asama tamamlaninda senkronasyon tamamlanir.
 - Fakat okuduktan sonra veriyi islerken hata alirsa o veri kaybolur, bir sonraki veriden devam edilir.
 - Message'in kaybolma riski buyuktur.
 
-![img.png](doc/kafka/read-data2.png)
+![img.png](images/kafka/read-data2.png)
 
 ### 4.1.2. At Least One
 
@@ -222,7 +222,7 @@ Bu 3 asama tamamlaninda senkronasyon tamamlanir.
   durumlarında sistemimiz etkilenmemelidir
 - En cok kullanilan yontemdir.
 
-![img.png](doc/kafka/kafka-read3.png)
+![img.png](images/kafka/kafka-read3.png)
 
 ### 4.1.3. Exactly One (Transactional)
 
@@ -239,7 +239,7 @@ Bu 3 asama tamamlaninda senkronasyon tamamlanir.
 - Yeni veya cokmus brokerlarin kesfedilmesi,
 - Yeni eklenen topic'lerin kesfedilmesi saglar.
 
-![img.png](doc/kafka/zookeeper.png)
+![img.png](images/kafka/zookeeper.png)
 
 - Distributed Coordination Service.
 - Synchronization, Serialization, Coordination
@@ -284,7 +284,7 @@ Bu 3 asama tamamlaninda senkronasyon tamamlanir.
 
 ## 5.1. Split Brain
 
-![](doc/kafka/sprit-brain.png)
+![](images/kafka/sprit-brain.png)
 
 1. Iki brokerdan olusan bir sistemde iki arasindaki baglanti koptugunda ikiside islemleri yapmaya devam ediyor,
 2. Ikisi arasindaki baglanti tekrar kuruldugunda hangisinin datasini temel almak gerekiyor.
@@ -300,7 +300,7 @@ Bu 3 asama tamamlaninda senkronasyon tamamlanir.
 Eger TR de 3, US de 2 brokerimiz varsa, eger data-center'lar arasi baglanti koparsa data-center sayisi iki oldugu icin
 yine split brain problemi ortaya cikar.
 
-![](doc/kafka/sprit-brain.png)
+![](images/kafka/sprit-brain.png)
 
 **Optimum Quorum sayisini belirleme:**
 ```n/2 + 1```

@@ -31,7 +31,7 @@ Gradle Wrapper allows you to execute the Gradle builds on machines, where Gradle
 - **Ease of migration**
 - **Deep API** : By using this API, you can monitor and customise its configuration and execution behavior to the core.
 
-![image.info](doc/gradle/gradle-features.png)
+![image.info](images/gradle/gradle-features.png)
 
 
 ## Objects

@@ -1,12 +1,12 @@
 # 1. Docker Engine
 
-![](doc/docker/engine.png)
+![](images/docker/engine.png)
 
 # 2. Docker CLI
 
 - Docker cli windows ve mac te isletim sistemine kurulur fakat deamon linux'a kurulur.
 
-![img.png](doc/docker/docker-cli.png)
+![img.png](images/docker/docker-cli.png)
 
 ## 2.1. Commands
 
@@ -62,7 +62,7 @@ docker cp myContainer:/usr/src/testFile .
   System'i saglamaktadir.
 - Union File System ek olarak; hiz ve disk memory alani kazandirmaktadir.
 
-![img.png](doc/docker/container.png)
+![img.png](images/docker/container.png)
 
 ## 3.2. Docker Volume
 
@@ -120,16 +120,16 @@ docker container run -v myFirstTestVolume:/testFolder:ro alpine
 docker container run -it -v myFirstTestVolume:/testFolder alpine sh
 ```
 
-![img.png](doc/docker/volume.png)
+![img.png](images/docker/volume.png)
 
 - Enter folder and create a text file than write something inside.
 
-![img.png](doc/docker/volume2.png)
+![img.png](images/docker/volume2.png)
 
 - Remove container and create new container with same volume. Even first container removed we can see same file and
   context same in the **new Container**.
 
-![img.png](doc/docker/volume3.png)
+![img.png](images/docker/volume3.png)
 
 ### 3.2.4. Bind Mounts
 
@@ -175,7 +175,7 @@ docker network create myNetwork1
 docker network create --driver=bridge --subnet=10.10.0.0/16 --ip-range=10.10.10.0/24 --gateway=10.10.10.10 myNetwork2 
 ```
 
-![img.png](doc/docker/my-network.png)
+![img.png](images/docker/my-network.png)
 
 ### 3.3.1. Port publishing
 
@@ -214,7 +214,7 @@ docker network connect myNetwork myContainer
 - NGINX uygulama loglarini ```var/log/nginx``` altinda access.log ve error.log olarak tutar. Nginx bu loglari nasil
   STDOUT ve STDERR'e basiyor:
 
-![img.png](doc/docker/log.png)
+![img.png](images/docker/log.png)
 
 - Container in loglarini gorme:
 
@@ -258,7 +258,7 @@ docker logs -f myContainer
 - Docker'in logging driver pluginlerini kullanarak, containerlarin loglarina tektek bakmaktansa bunlari merkezi bir log
   yapisinda tutabiliriz
 
-![img.png](doc/docker/log-2.png)
+![img.png](images/docker/log-2.png)
 
 - Log driver'ini degistirmek istersek:(splunk olani yaptik)
 
@@ -333,7 +333,7 @@ printenv
 docker container run --env MY_ENV=test1 -e MY_ENV2=test2 ubuntu
 ```
 
-![img.png](doc/docker/env.png)
+![img.png](images/docker/env.png)
 
 - Isletim sistemindeki environmenti gecme(exp: JAVA_HOME)
 
@@ -368,11 +368,11 @@ docker.iu/ubuntu>:18.04
 
 - Ayni image'i ikinci defa calistirdiginda;
 
-![img.png](doc/docker/images1.png)
+![img.png](images/docker/images1.png)
 
 - server.js in icerigini degistirigimizde; o stepi ve sonrasini bastan build edecek.
 
-![img.png](doc/docker/images2.png)
+![img.png](images/docker/images2.png)
 
 ## 4.3. Commands
 
@@ -665,7 +665,7 @@ version: '3.7'
 
 services:
   myService:
-    build: .
+    build: ../devops
 ```
 
 - Image degistirilmezse, tekrar docker-compose up denildiginde var olan image tekrar olusturmaz, olani kullnir.
