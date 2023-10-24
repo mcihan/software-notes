@@ -1,424 +1,491 @@
-- [1. UNIT 1](#1-unit-1)
-    - [1.1. Identifying Benefits of Java](#11-identifying-benefits-of-java)
-        - [1.1.1. Benefits of Java (summary)](#111-benefits-of-java-summary)
-    - [1.2. Classes vs. Files](#12-classes-vs-files)
-    - [1.3. main() Method](#13-main-method)
-    - [1.4. Package Declaration And Import](#14-package-declaration-and-import)
-    - [1.5. JDK](#15-jdk)
-    - [1.6. java & javac Commands](#16-java--javac-commands)
-    - [1.7. Creating a JAR File](#17-creating-a-jar-file)
-- [2. UNIT 2 - Java Building Blocks](#2-unit-2---java-building-blocks)
-    - [2.1. Understanding Data Types](#21-understanding-data-types)
-    - [2.2. Writing Literals](#22-writing-literals)
-        - [2.2.1. Using Undercore](#221-using-undercore)
-    - [2.3. Declaring Variables](#23-declaring-variables)
-        - [2.3.1. Local Variables](#231-local-variables)
-        - [2.3.2. Passing Constructor and Method Parameters](#232-passing-constructor-and-method-parameters)
-            - [2.3.2.1. Type Inference of var](#2321-type-inference-of-var)
-        - [2.3.3. Review of var Rules](#233-review-of-var-rules)
-    - [2.4. Variable Scope](#24-variable-scope)
-- [3. Unit 3 - Operators](#3-unit-3---operators)
-    - [3.1. Understanding Java Operators](#31-understanding-java-operators)
-        - [3.1.1. Types of Operators](#311-types-of-operators)
-        - [3.1.2. Operator Precedence](#312-operator-precedence)
-    - [3.2. Applying Unary Operators](#32-applying-unary-operators)
-        - [3.2.1. Numeric Promotion](#321-numeric-promotion)
-            - [3.2.1.1. Numeric Promotion Rules](#3211-numeric-promotion-rules)
-        - [3.2.2. Casting](#322-casting)
-        - [3.2.3. Casting Hierarchy](#323-casting-hierarchy)
-    - [3.3. Assignment Operator Return Value](#33-assignment-operator-return-value)
-    - [3.4. Comparing Values](#34-comparing-values)
-        - [3.4.1. instanceof Operator](#341-instanceof-operator)
-    - [3.5. Logical Operators](#35-logical-operators)
-- [4. UNIT-4 Making Decisions](#4-unit-4-making-decisions)
-    - [4.1. Switch Data Types](#41-switch-data-types)
-    - [4.2. Acceptable Case Values](#42-acceptable-case-values)
-        - [4.2.1. For Loop](#421-for-loop)
-            - [4.2.1.1. Creating an Infinite Loop](#4211-creating-an-infinite-loop)
-            - [4.2.1.2. Adding Multiple Terms to the for Statement](#4212-adding-multiple-terms-to-the-for-statement)
-            - [4.2.1.3. Using Incompatible Data Types in the Initialization Block](#4213-using-incompatible-data-types-in-the-initialization-block)
-        - [4.2.2. Adding Optional Labels](#422-adding-optional-labels)
-- [5. Unit-5 Core Java APIs](#5-unit-5-core-java-apis)
-    - [5.1. Creating and Manipulating Strings](#51-creating-and-manipulating-strings)
-        - [5.1.1. Concatenation](#511-concatenation)
-        - [5.1.2. Immutability](#512-immutability)
-        - [5.1.3. Important String Methods](#513-important-string-methods)
-            - [5.1.3.1. indexOf()](#5131-indexof)
-            - [5.1.3.2. substring()](#5132-substring)
-            - [5.1.3.3. equals() and equalsIgnoreCase()](#5133-equals-and-equalsignorecase)
-            - [5.1.3.4. replace()](#5134-replace)
-            - [5.1.3.5. contains()](#5135-contains)
-            - [5.1.3.6. trim(), strip(), stripLeading(), and stripTrailing()](#5136-trim-strip-stripleading-and-striptrailing)
-            - [5.1.3.7. intern()](#5137-intern)
-        - [5.1.4. StringBuilder](#514-stringbuilder)
-            - [5.1.4.1. insert()](#5141-insert)
-        - [5.1.5. delete() and deleteChartAt()](#515-delete-and-deletechartat)
-            - [5.1.5.1. replace()](#5151-replace)
-        - [5.1.6. Comparing](#516-comparing)
-    - [5.2. The String Pool](#52-the-string-pool)
-    - [5.3. Java Arrays](#53-java-arrays)
-        - [5.3.1. Sorting](#531-sorting)
-        - [5.3.2. Searching](#532-searching)
-        - [5.3.3. Comparing](#533-comparing)
-            - [5.3.3.1. compare()](#5331-compare)
-            - [5.3.3.2. mismatch()](#5332-mismatch)
-    - [5.4. Wrapper classes](#54-wrapper-classes)
-    - [5.5. Autoboxing and Unboxing](#55-autoboxing-and-unboxing)
-        - [5.5.1. Converting Between array and List](#551-converting-between-array-and-list)
-            - [5.5.1.1. Arrays.asList()](#5511-arraysaslist)
-            - [5.5.1.2. Arrays.asList()](#5512-arraysaslist)
-    - [5.6. Creating Sets and Maps](#56-creating-sets-and-maps)
-        - [5.6.1. Sets](#561-sets)
-        - [5.6.2. Maps](#562-maps)
-    - [5.7. Math APIs](#57-math-apis)
-        - [5.7.1. round()](#571-round)
-        - [5.7.2. random()](#572-random)
-- [6. Unit 6 - Lambda And Functional Interfaces](#6-unit-6---lambda-and-functional-interfaces)
-    - [6.1. Lambda](#61-lambda)
-    - [6.2. Functional Interfaces](#62-functional-interfaces)
-        - [6.2.1. @FunctionalInterface annotation](#621-functionalinterface-annotation)
-        - [6.2.2. Predicate](#622-predicate)
-        - [6.2.3. Consumer](#623-consumer)
-        - [6.2.4. Supplier](#624-supplier)
-        - [6.2.5. Comparator](#625-comparator)
-    - [6.3. Working with Variables in Lambdas](#63-working-with-variables-in-lambdas)
-        - [6.3.1. var](#631-var)
-        - [6.3.2. Local Variables inside the Lambda Body](#632-local-variables-inside-the-lambda-body)
-        - [6.3.3. Variables Referenced from the Lambda Body](#633-variables-referenced-from-the-lambda-body)
-            - [6.3.3.1. Access variable rule](#6331-access-variable-rule)
-    - [6.4. Calling APIs with Lambdas](#64-calling-apis-with-lambdas)
-        - [6.4.1. removeIf()](#641-removeif)
-        - [6.4.2. sort()](#642-sort)
-        - [6.4.3. forEach()](#643-foreach)
-- [7. Unit 7 -  Methods and Encapsulation](#7-unit-7----methods-and-encapsulation)
-    - [7.1. Methods](#71-methods)
-        - [7.1.1. Method Name](#711-method-name)
-        - [7.1.2. Varargs](#712-varargs)
-    - [7.2. Applying Access Modifiers](#72-applying-access-modifiers)
-    - [7.3. Applying the static Keyword](#73-applying-the-static-keyword)
-        - [7.3.1. Static Initialization](#731-static-initialization)
-        - [7.3.2. Static Imports](#732-static-imports)
-    - [7.4. Overloading Methods](#74-overloading-methods)
-        - [7.4.1. Varargs](#741-varargs)
-        - [7.4.2. Autoboxing](#742-autoboxing)
-        - [7.4.3. Reference Types](#743-reference-types)
-        - [7.4.4. Generics](#744-generics)
-        - [7.4.5. Putting It All Together](#745-putting-it-all-together)
-- [8. Unit 8 - Class Design](#8-unit-8---class-design)
-    - [8.1. Missing a Default No-Argument Constructor](#81-missing-a-default-no-argument-constructor)
-    - [8.2. Constructors and final Fields](#82-constructors-and-final-fields)
-    - [8.3. Overloaded Constructors](#83-overloaded-constructors)
-    - [8.4. Order of Initialization](#84-order-of-initialization)
-        - [8.4.1. Class Initialization](#841-class-initialization)
-            - [8.4.1.1. Initialize Class X](#8411-initialize-class-x)
-            - [8.4.1.2. Instance Initialization](#8412-instance-initialization)
-    - [8.5. Inheriting Members](#85-inheriting-members)
-        - [8.5.1. Inheriting Methods](#851-inheriting-methods)
-            - [8.5.1.1. Overriding a Method](#8511-overriding-a-method)
-    - [8.6. Overriding a Generic Method](#86-overriding-a-generic-method)
-        - [8.6.1. Generic Return Types](#861-generic-return-types)
-        - [8.6.2. Redeclaring private Methods](#862-redeclaring-private-methods)
-    - [8.7. Hiding Static Methods](#87-hiding-static-methods)
-    - [8.8. Creating final Methods](#88-creating-final-methods)
-    - [8.9. Understanding Polymorphism](#89-understanding-polymorphism)
-- [9. Unit-9 Advanced Class Design](#9-unit-9-advanced-class-design)
-    - [9.1. Abstract Classes](#91-abstract-classes)
-        - [9.1.1. Constructor Classes](#911-constructor-classes)
-        - [9.1.2. Declarations](#912-declarations)
-        - [9.1.3. Creating a Concrete Class](#913-creating-a-concrete-class)
-        - [9.1.4. Abstract Class Definition Rules](#914-abstract-class-definition-rules)
-        - [9.1.5. Abstract Method Definition Rules](#915-abstract-method-definition-rules)
-    - [9.2. Interfaces](#92-interfaces)
-        - [9.2.1. Inserting Implicit Modifiers](#921-inserting-implicit-modifiers)
-        - [9.2.2. Conflicting Modifiers](#922-conflicting-modifiers)
-        - [9.2.3. Differences between Interfaces and Abstract Classes](#923-differences-between-interfaces-and-abstract-classes)
-        - [9.2.4. Inheriting an Interface](#924-inheriting-an-interface)
-        - [9.2.5. Mixing Class and Interface Keywords](#925-mixing-class-and-interface-keywords)
-        - [9.2.6. Duplicate Interface Method Declarations](#926-duplicate-interface-method-declarations)
-    - [9.3. Polymorphism and Interfaces](#93-polymorphism-and-interfaces)
-        - [9.3.1. Interfaces and the instanceof Operator](#931-interfaces-and-the-instanceof-operator)
-    - [9.4. Interface Definition Rules](#94-interface-definition-rules)
-    - [9.5. Abstract Interface Method Rules](#95-abstract-interface-method-rules)
-    - [9.6. Interface Variables Rules](#96-interface-variables-rules)
-    - [9.7. Inner Class](#97-inner-class)
-- [10. Unit-10 Exceptions](#10-unit-10-exceptions)
-    - [10.1. Checked Exceptions](#101-checked-exceptions)
-    - [10.2. Unchecked Exceptions](#102-unchecked-exceptions)
-    - [10.3. throw & throws](#103-throw--throws)
-    - [10.4. Recognizing Exception Classes](#104-recognizing-exception-classes)
-        - [10.4.1. RuntimeException Classes](#1041-runtimeexception-classes)
-        - [10.4.2. Checked Exception Classes](#1042-checked-exception-classes)
-        - [10.4.3. Error Classes](#1043-error-classes)
-            - [10.4.3.1. ExceptionInInitializerError](#10431-exceptionininitializererror)
-            - [10.4.3.2. StackOverflowError](#10432-stackoverflowerror)
-            - [10.4.3.3. NoClassDefFoundError](#10433-noclassdeffounderror)
-    - [10.5. Handling Exceptions](#105-handling-exceptions)
-        - [10.5.1. **Chaining catch Blocks**](#1051-chaining-catch-blocks)
-        - [10.5.2. **Applying a Multi-catch Block**](#1052-applying-a-multi-catch-block)
-        - [10.5.3. **finally Block**](#1053-finally-block)
-        - [10.5.4. **Finally Closing Resources**](#1054-finally-closing-resources)
-        - [10.5.5. **Basics of Try-with-Resources**](#1055-basics-of-try-with-resources)
-        - [10.5.6. **AutoCloseable**](#1056-autocloseable)
-        - [10.5.7. **Declaring Resources**](#1057-declaring-resources)
-        - [10.5.8. **Scope of Try-with-Resources**](#1058-scope-of-try-with-resources)
-        - [10.5.9. **Following Order of Operation**](#1059-following-order-of-operation)
-        - [10.5.10. **Try-with-Resources Guarantees**](#10510-try-with-resources-guarantees)
-        - [10.5.11. **Throwing Additional Exceptions**](#10511-throwing-additional-exceptions)
-        - [10.5.12. **Calling Methods That Throw Exceptions**](#10512-calling-methods-that-throw-exceptions)
-        - [10.5.13. **Declaring and Overriding Methods with Exceptions**](#10513-declaring-and-overriding-methods-with-exceptions)
-- [11. Unit-11 Modules](#11-unit-11-modules)
-    - [11.1. Custom Java Builds](#111-custom-java-builds)
-    - [11.2. Unique Package Enforcement](#112-unique-package-enforcement)
-    - [11.3. Creating and Running a Modular Program](#113-creating-and-running-a-modular-program)
-        - [11.3.1. Creating the Files](#1131-creating-the-files)
-        - [11.3.2. Compiling Our First Module](#1132-compiling-our-first-module)
-    - [11.4. Running Module](#114-running-module)
-- [12. Unit-12 Java Fundamentals](#12-unit-12-java-fundamentals)
-    - [12.1. Applying the final Modifier](#121-applying-the-final-modifier)
-        - [12.1.1. Writing Final Methods](#1211-writing-final-methods)
-        - [12.1.2. Marking Classes Final](#1212-marking-classes-final)
-    - [12.2. ENUMS](#122-enums)
-    - [12.3. Nested Classes](#123-nested-classes)
-        - [12.3.1. **INNER CLASS**](#1231-inner-class)
-        - [12.3.2. **STATIC NESTED CLASS**](#1232-static-nested-class)
-        - [12.3.3. **LOCAL CLASS**](#1233-local-class)
-        - [12.3.4. **ANONYMOUS CLASS**](#1234-anonymous-class)
-            - [12.3.4.1. **ANONYMOUS CLASSES AND LAMBDA EXPRESSIONS**](#12341-anonymous-classes-and-lambda-expressions)
-        - [12.3.5. **REVIEWING NESTED CLASSES**](#1235-reviewing-nested-classes)
-    - [12.4. Understanding Interface Members](#124-understanding-interface-members)
-        - [12.4.1. **DEFAULT INTERFACE METHOD**](#1241-default-interface-method)
-            - [12.4.1.1. **Inheriting Duplicate default Methods**](#12411-inheriting-duplicate-default-methods)
-            - [12.4.1.2. **Calling a Hidden default Method**](#12412-calling-a-hidden-default-method)
-        - [12.4.2. **STATIC INTERFACE METHODS**](#1242-static-interface-methods)
-        - [12.4.3. **PRIVATE INTERFACE METHODS**](#1243-private-interface-methods)
-        - [12.4.4. **PRIVATE STATIC INTERFACE METHODS**](#1244-private-static-interface-methods)
-        - [12.4.5. **REVIEWING INTERFACE MEMBERS**](#1245-reviewing-interface-members)
-    - [12.5. Introducing Functional Programming](#125-introducing-functional-programming)
-        - [12.5.1. **DEFINING A FUNCTIONAL INTERFACE**](#1251-defining-a-functional-interface)
-        - [12.5.2. FUNCTIONAL INTERFACE WITH OBJECT METHODS](#1252-functional-interface-with-object-methods)
-        - [12.5.3. **IMPLEMENTING FUNCTIONAL INTERFACES WITH LAMBDAS**](#1253-implementing-functional-interfaces-with-lambdas)
-            - [12.5.3.1. **Parameter List**](#12531-parameter-list)
-            - [12.5.3.2. **Restrictions on Using *var* in the Parameter List**](#12532-restrictions-on-using-var-in-the-parameter-list)
-            - [12.5.3.3. **Variables Referenced from the Lambda Body**](#12533-variables-referenced-from-the-lambda-body)
-- [13. Unit 13 - Annotations](#13-unit-13---annotations)
-    - [13.1. Creating Custom Annotations](#131-creating-custom-annotations)
-        - [13.1.1. **PROVIDING AN OPTIONAL ELEMENT**](#1311-providing-an-optional-element)
-        - [13.1.2. **DEFINING A DEFAULT ELEMENT VALUE**](#1312-defining-a-default-element-value)
-        - [13.1.3. **SELECTING AN ELEMENT TYPE**](#1313-selecting-an-element-type)
-        - [13.1.4. **APPLYING ELEMENT MODIFIERS**](#1314-applying-element-modifiers)
-        - [13.1.5. **ADDING A CONSTANT VARIABLE**](#1315-adding-a-constant-variable)
-        - [13.1.6. **REVIEWING ANNOTATION RULES**](#1316-reviewing-annotation-rules)
-    - [13.2. Applying Annotations](#132-applying-annotations)
-        - [13.2.1. **USING ANNOTATIONS IN DECLARATIONS**](#1321-using-annotations-in-declarations)
-        - [13.2.2. **MIXING REQUIRED AND OPTIONAL ELEMENTS**](#1322-mixing-required-and-optional-elements)
-        - [13.2.3. **CREATING A *VALUE()* ELEMENT**](#1323-creating-a-value-element)
-        - [13.2.4. **PASSING AN ARRAY OF VALUES**](#1324-passing-an-array-of-values)
-            - [13.2.4.1. **COMBINING SHORTHAND NOTATIONS**](#13241-combining-shorthand-notations)
-    - [13.3. Declaring Annotation‐Specific Annotations](#133-declaring-annotationspecific-annotations)
-        - [13.3.1. **@Target**](#1331-target)
-        - [13.3.2. **@Retention**](#1332-retention)
-        - [13.3.3. **@Documented**](#1333-documented)
-        - [13.3.4. **@INHERITED**](#1334-inherited)
-        - [13.3.5. **@REPEATABLE**](#1335-repeatable)
-        - [13.3.6. **REVIEWING ANNOTATION‐SPECIFIC ANNOTATIONS**](#1336-reviewing-annotationspecific-annotations)
-    - [13.4. Using Common Annotations](#134-using-common-annotations)
-        - [13.4.1. **@OVERRIDE**](#1341-override)
-        - [13.4.2. **@FUNCTIONALINTERFACE**](#1342-functionalinterface)
-        - [13.4.3. **@DEPRECATED**](#1343-deprecated)
-        - [13.4.4. **@SUPPRESSWARNINGS**](#1344-suppresswarnings)
-        - [13.4.5. **@SAFEVARARGS**](#1345-safevarargs)
-        - [13.4.6. **REVIEWING COMMON ANNOTATIONS**](#1346-reviewing-common-annotations)
-- [14. Unit 14 - Generics And Collections](#14-unit-14---generics-and-collections)
+- [1. General](#1-general)
+  - [1.1. Identifying Benefits of Java](#11-identifying-benefits-of-java)
+    - [1.1.1. Benefits of Java (summary)](#111-benefits-of-java-summary)
+  - [1.2. Classes vs. Files](#12-classes-vs-files)
+  - [1.3. main() Method](#13-main-method)
+  - [1.4. Package Declaration And Import](#14-package-declaration-and-import)
+  - [1.5. JDK](#15-jdk)
+  - [1.6. java \& javac Commands](#16-java--javac-commands)
+  - [1.7. Creating a JAR File](#17-creating-a-jar-file)
+- [2. Java Building Blocks](#2-java-building-blocks)
+  - [2.1. Understanding Data Types](#21-understanding-data-types)
+  - [2.2. Writing Literals](#22-writing-literals)
+    - [2.2.1. Using Undercore](#221-using-undercore)
+  - [2.3. Declaring Variables](#23-declaring-variables)
+    - [2.3.1. Local Variables](#231-local-variables)
+    - [2.3.2. Passing Constructor and Method Parameters](#232-passing-constructor-and-method-parameters)
+    - [2.3.3. Defining Instance and Class Variables](#233-defining-instance-and-class-variables)
+    - [2.3.4. Introducing var](#234-introducing-var)
+      - [2.3.4.1. Type Inference of var](#2341-type-inference-of-var)
+    - [2.3.5. Review of var Rules](#235-review-of-var-rules)
+  - [2.4. Variable Scope](#24-variable-scope)
+- [3. Operators](#3-operators)
+  - [3.1. Understanding Java Operators](#31-understanding-java-operators)
+    - [3.1.1. Types of Operators](#311-types-of-operators)
+    - [3.1.2. Operator Precedence](#312-operator-precedence)
+  - [3.2. Applying Unary Operators](#32-applying-unary-operators)
+    - [3.2.1. Numeric Promotion](#321-numeric-promotion)
+      - [3.2.1.1. Numeric Promotion Rules](#3211-numeric-promotion-rules)
+    - [3.2.2. Casting](#322-casting)
+    - [3.2.3. Casting Hierarchy](#323-casting-hierarchy)
+  - [3.3. Assignment Operator Return Value](#33-assignment-operator-return-value)
+  - [3.4. Comparing Values](#34-comparing-values)
+    - [3.4.1. instanceof Operator](#341-instanceof-operator)
+  - [3.5. Logical Operators](#35-logical-operators)
+- [4. Making Decisions](#4-making-decisions)
+  - [4.1. Switch Data Types](#41-switch-data-types)
+  - [4.2. Acceptable Case Values](#42-acceptable-case-values)
+    - [4.2.1. For Loop](#421-for-loop)
+      - [4.2.1.1. Creating an Infinite Loop](#4211-creating-an-infinite-loop)
+      - [4.2.1.2. Adding Multiple Terms to the for Statement](#4212-adding-multiple-terms-to-the-for-statement)
+      - [4.2.1.3. Using Incompatible Data Types in the Initialization Block](#4213-using-incompatible-data-types-in-the-initialization-block)
+    - [4.2.2. Adding Optional Labels](#422-adding-optional-labels)
+- [5. Core Java APIs](#5-core-java-apis)
+  - [5.1. Creating and Manipulating Strings](#51-creating-and-manipulating-strings)
+    - [5.1.1. Concatenation](#511-concatenation)
+    - [5.1.2. Immutability](#512-immutability)
+    - [5.1.3. Important String Methods](#513-important-string-methods)
+      - [5.1.3.1. indexOf()](#5131-indexof)
+      - [5.1.3.2. substring()](#5132-substring)
+      - [5.1.3.3. equals() and equalsIgnoreCase()](#5133-equals-and-equalsignorecase)
+      - [5.1.3.4. replace()](#5134-replace)
+      - [5.1.3.5. contains()](#5135-contains)
+      - [5.1.3.6. trim(), strip(), stripLeading(), and stripTrailing()](#5136-trim-strip-stripleading-and-striptrailing)
+      - [5.1.3.7. intern()](#5137-intern)
+    - [5.1.4. StringBuilder](#514-stringbuilder)
+      - [5.1.4.1. insert()](#5141-insert)
+    - [5.1.5. delete() and deleteChartAt()](#515-delete-and-deletechartat)
+      - [5.1.5.1. replace()](#5151-replace)
+    - [5.1.6. Comparing](#516-comparing)
+  - [5.2. The String Pool](#52-the-string-pool)
+  - [5.3. Java Arrays](#53-java-arrays)
+    - [5.3.1. Sorting](#531-sorting)
+    - [5.3.2. Searching](#532-searching)
+    - [5.3.3. Comparing](#533-comparing)
+      - [5.3.3.1. compare()](#5331-compare)
+      - [5.3.3.2. mismatch()](#5332-mismatch)
+  - [5.4. Wrapper classes](#54-wrapper-classes)
+  - [5.5. Autoboxing and Unboxing](#55-autoboxing-and-unboxing)
+    - [5.5.1. Converting Between array and List](#551-converting-between-array-and-list)
+      - [5.5.1.1. Arrays.asList()](#5511-arraysaslist)
+      - [5.5.1.2. Arrays.asList()](#5512-arraysaslist)
+  - [5.6. Creating Sets and Maps](#56-creating-sets-and-maps)
+    - [5.6.1. Sets](#561-sets)
+    - [5.6.2. Maps](#562-maps)
+  - [5.7. Math APIs](#57-math-apis)
+    - [5.7.1. round()](#571-round)
+    - [5.7.2. random()](#572-random)
+- [6. Lambda And Functional Interfaces](#6-lambda-and-functional-interfaces)
+  - [6.1. Lambda](#61-lambda)
+  - [6.2. Functional Interfaces](#62-functional-interfaces)
+    - [6.2.1. @FunctionalInterface annotation](#621-functionalinterface-annotation)
+    - [6.2.2. Predicate](#622-predicate)
+    - [6.2.3. Consumer](#623-consumer)
+    - [6.2.4. Supplier](#624-supplier)
+    - [6.2.5. Comparator](#625-comparator)
+  - [6.3. Working with Variables in Lambdas](#63-working-with-variables-in-lambdas)
+    - [6.3.1. var](#631-var)
+    - [6.3.2. Local Variables inside the Lambda Body](#632-local-variables-inside-the-lambda-body)
+    - [6.3.3. Variables Referenced from the Lambda Body](#633-variables-referenced-from-the-lambda-body)
+      - [6.3.3.1. Access variable rule](#6331-access-variable-rule)
+  - [6.4. Calling APIs with Lambdas](#64-calling-apis-with-lambdas)
+    - [6.4.1. removeIf()](#641-removeif)
+    - [6.4.2. sort()](#642-sort)
+    - [6.4.3. forEach()](#643-foreach)
+- [7. Methods and Encapsulation](#7-methods-and-encapsulation)
+  - [7.1. Methods](#71-methods)
+    - [7.1.1. Method Name](#711-method-name)
+    - [7.1.2. Varargs](#712-varargs)
+  - [7.2. Applying Access Modifiers](#72-applying-access-modifiers)
+  - [7.3. Applying the static Keyword](#73-applying-the-static-keyword)
+    - [7.3.1. Static Initialization](#731-static-initialization)
+    - [7.3.2. Static Imports](#732-static-imports)
+  - [7.4. Overloading Methods](#74-overloading-methods)
+    - [7.4.1. Varargs](#741-varargs)
+    - [7.4.2. Autoboxing](#742-autoboxing)
+    - [7.4.3. Reference Types](#743-reference-types)
+    - [7.4.4. Generics](#744-generics)
+    - [7.4.5. Putting It All Together](#745-putting-it-all-together)
+- [8. Class Design](#8-class-design)
+  - [8.1. Missing a Default No-Argument Constructor](#81-missing-a-default-no-argument-constructor)
+  - [8.2. Constructors and final Fields](#82-constructors-and-final-fields)
+  - [8.3. Overloaded Constructors](#83-overloaded-constructors)
+  - [8.4. Order of Initialization](#84-order-of-initialization)
+    - [8.4.1. Class Initialization](#841-class-initialization)
+      - [8.4.1.1. Initialize Class X](#8411-initialize-class-x)
+      - [8.4.1.2. Instance Initialization](#8412-instance-initialization)
+  - [8.5. Inheriting Members](#85-inheriting-members)
+    - [8.5.1. Inheriting Methods](#851-inheriting-methods)
+      - [8.5.1.1. Overriding a Method](#8511-overriding-a-method)
+  - [8.6. Overriding a Generic Method](#86-overriding-a-generic-method)
+    - [8.6.1. Generic Return Types](#861-generic-return-types)
+    - [8.6.2. Redeclaring private Methods](#862-redeclaring-private-methods)
+  - [8.7. Hiding Static Methods](#87-hiding-static-methods)
+  - [8.8. Creating final Methods](#88-creating-final-methods)
+  - [8.9. Understanding Polymorphism](#89-understanding-polymorphism)
+- [9. Advanced Class Design](#9-advanced-class-design)
+  - [9.1. Abstract Classes](#91-abstract-classes)
+    - [9.1.1. Constructor Classes](#911-constructor-classes)
+    - [9.1.2. Declarations](#912-declarations)
+    - [9.1.3. Creating a Concrete Class](#913-creating-a-concrete-class)
+    - [9.1.4. Abstract Class Definition Rules](#914-abstract-class-definition-rules)
+    - [9.1.5. Abstract Method Definition Rules](#915-abstract-method-definition-rules)
+  - [9.2. Interfaces](#92-interfaces)
+    - [9.2.1. Inserting Implicit Modifiers](#921-inserting-implicit-modifiers)
+    - [9.2.2. Conflicting Modifiers](#922-conflicting-modifiers)
+    - [9.2.3. Differences between Interfaces and Abstract Classes](#923-differences-between-interfaces-and-abstract-classes)
+    - [9.2.4. Inheriting an Interface](#924-inheriting-an-interface)
+    - [9.2.5. Mixing Class and Interface Keywords](#925-mixing-class-and-interface-keywords)
+    - [9.2.6. Duplicate Interface Method Declarations](#926-duplicate-interface-method-declarations)
+  - [9.3. Polymorphism and Interfaces](#93-polymorphism-and-interfaces)
+    - [9.3.1. Interfaces and the instanceof Operator](#931-interfaces-and-the-instanceof-operator)
+  - [9.4. Interface Definition Rules](#94-interface-definition-rules)
+  - [9.5. Abstract Interface Method Rules](#95-abstract-interface-method-rules)
+  - [9.6. Interface Variables Rules](#96-interface-variables-rules)
+  - [9.7. Inner Class](#97-inner-class)
+- [10. Exceptions](#10-exceptions)
+  - [10.1. Checked Exceptions](#101-checked-exceptions)
+  - [10.2. Unchecked Exceptions](#102-unchecked-exceptions)
+  - [10.3. throw \& throws](#103-throw--throws)
+  - [10.4. Recognizing Exception Classes](#104-recognizing-exception-classes)
+    - [10.4.1. RuntimeException Classes](#1041-runtimeexception-classes)
+    - [10.4.2. Checked Exception Classes](#1042-checked-exception-classes)
+    - [10.4.3. Error Classes](#1043-error-classes)
+      - [10.4.3.1. ExceptionInInitializerError](#10431-exceptionininitializererror)
+      - [10.4.3.2. StackOverflowError](#10432-stackoverflowerror)
+      - [10.4.3.3. NoClassDefFoundError](#10433-noclassdeffounderror)
+  - [10.5. Handling Exceptions](#105-handling-exceptions)
+    - [10.5.1. **Chaining catch Blocks**](#1051-chaining-catch-blocks)
+    - [10.5.2. **Applying a Multi-catch Block**](#1052-applying-a-multi-catch-block)
+    - [10.5.3. **finally Block**](#1053-finally-block)
+    - [10.5.4. **Finally Closing Resources**](#1054-finally-closing-resources)
+    - [10.5.5. **Basics of Try-with-Resources**](#1055-basics-of-try-with-resources)
+    - [10.5.6. **AutoCloseable**](#1056-autocloseable)
+    - [10.5.7. **Declaring Resources**](#1057-declaring-resources)
+    - [10.5.8. **Scope of Try-with-Resources**](#1058-scope-of-try-with-resources)
+    - [10.5.9. **Following Order of Operation**](#1059-following-order-of-operation)
+    - [10.5.10. **Try-with-Resources Guarantees**](#10510-try-with-resources-guarantees)
+    - [10.5.11. **Throwing Additional Exceptions**](#10511-throwing-additional-exceptions)
+    - [10.5.12. **Calling Methods That Throw Exceptions**](#10512-calling-methods-that-throw-exceptions)
+    - [10.5.13. **Declaring and Overriding Methods with Exceptions**](#10513-declaring-and-overriding-methods-with-exceptions)
+- [11. Modules](#11-modules)
+  - [11.1. Custom Java Builds](#111-custom-java-builds)
+  - [11.2. Unique Package Enforcement](#112-unique-package-enforcement)
+  - [11.3. Creating and Running a Modular Program](#113-creating-and-running-a-modular-program)
+    - [11.3.1. Creating the Files](#1131-creating-the-files)
+    - [11.3.2. Compiling Our First Module](#1132-compiling-our-first-module)
+  - [11.4. Running Module](#114-running-module)
+- [12. Java Fundamentals](#12-java-fundamentals)
+  - [12.1. Applying the final Modifier](#121-applying-the-final-modifier)
+    - [12.1.1. Writing Final Methods](#1211-writing-final-methods)
+    - [12.1.2. Marking Classes Final](#1212-marking-classes-final)
+  - [12.2. ENUMS](#122-enums)
+  - [12.3. Nested Classes](#123-nested-classes)
+    - [12.3.1. **INNER CLASS**](#1231-inner-class)
+    - [12.3.2. **STATIC NESTED CLASS**](#1232-static-nested-class)
+    - [12.3.3. **LOCAL CLASS**](#1233-local-class)
+    - [12.3.4. **ANONYMOUS CLASS**](#1234-anonymous-class)
+      - [12.3.4.1. **ANONYMOUS CLASSES AND LAMBDA EXPRESSIONS**](#12341-anonymous-classes-and-lambda-expressions)
+    - [12.3.5. **REVIEWING NESTED CLASSES**](#1235-reviewing-nested-classes)
+  - [12.4. Understanding Interface Members](#124-understanding-interface-members)
+    - [12.4.1. **DEFAULT INTERFACE METHOD**](#1241-default-interface-method)
+      - [12.4.1.1. **Inheriting Duplicate default Methods**](#12411-inheriting-duplicate-default-methods)
+      - [12.4.1.2. **Calling a Hidden default Method**](#12412-calling-a-hidden-default-method)
+    - [12.4.2. **STATIC INTERFACE METHODS**](#1242-static-interface-methods)
+    - [12.4.3. **PRIVATE INTERFACE METHODS**](#1243-private-interface-methods)
+    - [12.4.4. **PRIVATE STATIC INTERFACE METHODS**](#1244-private-static-interface-methods)
+    - [12.4.5. **REVIEWING INTERFACE MEMBERS**](#1245-reviewing-interface-members)
+  - [12.5. Introducing Functional Programming](#125-introducing-functional-programming)
+    - [12.5.1. **DEFINING A FUNCTIONAL INTERFACE**](#1251-defining-a-functional-interface)
+    - [12.5.2. FUNCTIONAL INTERFACE WITH OBJECT METHODS](#1252-functional-interface-with-object-methods)
+    - [12.5.3. **IMPLEMENTING FUNCTIONAL INTERFACES WITH LAMBDAS**](#1253-implementing-functional-interfaces-with-lambdas)
+      - [12.5.3.1. **Parameter List**](#12531-parameter-list)
+      - [12.5.3.2. **Restrictions on Using *var* in the Parameter List**](#12532-restrictions-on-using-var-in-the-parameter-list)
+      - [12.5.3.3. **Variables Referenced from the Lambda Body**](#12533-variables-referenced-from-the-lambda-body)
+- [13. Annotations](#13-annotations)
+  - [13.1. Creating Custom Annotations](#131-creating-custom-annotations)
+    - [13.1.1. **PROVIDING AN OPTIONAL ELEMENT**](#1311-providing-an-optional-element)
+    - [13.1.2. **DEFINING A DEFAULT ELEMENT VALUE**](#1312-defining-a-default-element-value)
+    - [13.1.3. **SELECTING AN ELEMENT TYPE**](#1313-selecting-an-element-type)
+    - [13.1.4. **APPLYING ELEMENT MODIFIERS**](#1314-applying-element-modifiers)
+    - [13.1.5. **ADDING A CONSTANT VARIABLE**](#1315-adding-a-constant-variable)
+    - [13.1.6. **REVIEWING ANNOTATION RULES**](#1316-reviewing-annotation-rules)
+  - [13.2. Applying Annotations](#132-applying-annotations)
+    - [13.2.1. **USING ANNOTATIONS IN DECLARATIONS**](#1321-using-annotations-in-declarations)
+    - [13.2.2. **MIXING REQUIRED AND OPTIONAL ELEMENTS**](#1322-mixing-required-and-optional-elements)
+    - [13.2.3. **CREATING A *VALUE()* ELEMENT**](#1323-creating-a-value-element)
+    - [13.2.4. **PASSING AN ARRAY OF VALUES**](#1324-passing-an-array-of-values)
+      - [13.2.4.1. **COMBINING SHORTHAND NOTATIONS**](#13241-combining-shorthand-notations)
+  - [13.3. Declaring Annotation‐Specific Annotations](#133-declaring-annotationspecific-annotations)
+    - [13.3.1. **@Target**](#1331-target)
+    - [13.3.2. **@Retention**](#1332-retention)
+    - [13.3.3. **@Documented**](#1333-documented)
+    - [13.3.4. **@INHERITED**](#1334-inherited)
+    - [13.3.5. **@REPEATABLE**](#1335-repeatable)
+    - [13.3.6. **REVIEWING ANNOTATION‐SPECIFIC ANNOTATIONS**](#1336-reviewing-annotationspecific-annotations)
+  - [13.4. Using Common Annotations](#134-using-common-annotations)
+    - [13.4.1. **@OVERRIDE**](#1341-override)
+    - [13.4.2. **@FUNCTIONALINTERFACE**](#1342-functionalinterface)
+    - [13.4.3. **@DEPRECATED**](#1343-deprecated)
+    - [13.4.4. **@SUPPRESSWARNINGS**](#1344-suppresswarnings)
+    - [13.4.5. **@SAFEVARARGS**](#1345-safevarargs)
+    - [13.4.6. **REVIEWING COMMON ANNOTATIONS**](#1346-reviewing-common-annotations)
+- [14. Generics And Collections](#14-generics-and-collections)
     - [14.0.1. Using Method References](#1401-using-method-references)
     - [14.0.2. CALLING STATIC METHODS](#1402-calling-static-methods)
     - [14.0.3. CALLING INSTANCE METHODS ON A PARTICULAR OBJECT](#1403-calling-instance-methods-on-a-particular-object)
     - [14.0.4. CALLING INSTANCE METHODS ON A PARAMETER](#1404-calling-instance-methods-on-a-parameter)
     - [14.0.5. CALLING CONSTRUCTORS](#1405-calling-constructors)
     - [14.0.6. REVIEWING METHOD REFERENCES](#1406-reviewing-method-references)
-        - [14.0.6.1. NUMBER OF PARAMETERS IN A METHOD REFERENCE](#14061-number-of-parameters-in-a-method-reference)
-    - [14.1. Using Wrapper Classes](#141-using-wrapper-classes)
-    - [14.2. Using the Diamond Operator](#142-using-the-diamond-operator)
-    - [14.3. Using Lists, Sets, Maps, and Queues](#143-using-lists-sets-maps-and-queues)
-        - [14.3.1. **COMMON COLLECTIONS METHODS**](#1431-common-collections-methods)
-            - [14.3.1.1. **add()**](#14311-add)
-            - [14.3.1.2. **remove()**](#14312-remove)
-            - [14.3.1.3. **isEmpty() and size()**](#14313-isempty-and-size)
-            - [14.3.1.4. **clear()**](#14314-clear)
-            - [14.3.1.5. **contains()****](#14315-contains)
-            - [14.3.1.6. **removeIf()**](#14316-removeif)
-            - [14.3.1.7. **forEach()**](#14317-foreach)
-        - [14.3.2. **USING THE LIST INTERFACE**](#1432-using-the-list-interface)
-            - [14.3.2.1. **Comparing List Implementations**](#14321-comparing-list-implementations)
-            - [14.3.2.2. **Creating a List with a Factory**](#14322-creating-a-list-with-a-factory)
-            - [14.3.2.3. **Working with List Methods**](#14323-working-with-list-methods)
-        - [14.3.3. **USING THE SET INTERFACE**](#1433-using-the-set-interface)
-            - [14.3.3.1. **Comparing Set Implementations**](#14331-comparing-set-implementations)
-        - [14.3.4. **USING THE QUEUE INTERFACE**](#1434-using-the-queue-interface)
-            - [14.3.4.1. **Comparing Queue Implementations**](#14341-comparing-queue-implementations)
-            - [14.3.4.2. **Working with Queue Methods**](#14342-working-with-queue-methods)
-        - [14.3.5. **USING THE MAP INTERFACE**](#1435-using-the-map-interface)
-            - [14.3.5.1. **Comparing Map Implementations**](#14351-comparing-map-implementations)
-            - [14.3.5.2. **Working with Map Methods**](#14352-working-with-map-methods)
-            - [14.3.5.3. **forEach() and entrySet()**](#14353-foreach-and-entryset)
-            - [14.3.5.4. **replace() and replaceAll()**](#14354-replace-and-replaceall)
-            - [14.3.5.5. **putIfAbsent()**](#14355-putifabsent)
-            - [14.3.5.6. **merge()**  ????](#14356-merge--)
-        - [14.3.6. **COMPARING COLLECTION TYPES**](#1436-comparing-collection-types)
-    - [14.4. Sorting Data](#144-sorting-data)
-        - [14.4.1. **COMPARABLE CLASS**](#1441-comparable-class)
-        - [14.4.2. **COMPARATOR**](#1442-comparator)
-        - [14.4.3. **COMPARING COMPARABLE AND COMPARATOR**](#1443-comparing-comparable-and-comparator)
-        - [14.4.4. **COMPARING MULTIPLE FIELDS**](#1444-comparing-multiple-fields)
-        - [14.4.5. **SORTING AND SEARCHING**](#1445-sorting-and-searching)
-    - [14.5. Working with Generics](#145-working-with-generics)
-        - [14.5.1. GENERIC CLASSES](#1451-generic-classes)
-        - [14.5.2. **GENERIC INTERFACES**](#1452-generic-interfaces)
-        - [14.5.3. **RAW TYPES**](#1453-raw-types)
-            - [14.5.3.1. **WHAT YOU CAN'T DO WITH GENERIC TYPES**](#14531-what-you-cant-do-with-generic-types)
-        - [14.5.4. **GENERIC METHODS**](#1454-generic-methods)
-        - [14.5.5. **BOUNDING GENERIC TYPES**](#1455-bounding-generic-types)
-            - [14.5.5.1. **Unbounded Wildcards**](#14551-unbounded-wildcards)
-            - [14.5.5.2. **Upper‐Bounded Wildcards**](#14552-upperbounded-wildcards)
-        - [14.5.6. **Lower‐Bounded Wildcards**](#1456-lowerbounded-wildcards)
-        - [14.5.7. **PUTTING IT ALL TOGETHER**](#1457-putting-it-all-together)
-            - [14.5.7.1. **Combining Generic Declarations**](#14571-combining-generic-declarations)
-            - [14.5.7.2. **Passing Generic Arguments**](#14572-passing-generic-arguments)
-    - [14.6. **SUMMARY**](#146-summary)
-- [15. Unit 15 - Functional Programming](#15-unit-15---functional-programming)
-    - [15.1. Working with Built‐in Functional Interfaces](#151-working-with-builtin-functional-interfaces)
-        - [15.1.1. **SUPPLIER**](#1511-supplier)
-        - [15.1.2. **CONSUMER AND BICONSUMER**](#1512-consumer-and-biconsumer)
-        - [15.1.3. **PREDICATE AND BIPREDICATE**](#1513-predicate-and-bipredicate)
-        - [15.1.4. **FUNCTION AND BIFUNCTION**](#1514-function-and-bifunction)
-        - [15.1.5. **UNARYOPERATOR AND BINARYOPERATOR**](#1515-unaryoperator-and-binaryoperator)
-        - [15.1.6. **CONVENIENCE METHODS ON FUNCTIONAL INTERFACES**](#1516-convenience-methods-on-functional-interfaces)
-    - [15.2. Returning an Optional](#152-returning-an-optional)
-        - [15.2.1. **DEALING WITH AN EMPTY OPTIONAL**](#1521-dealing-with-an-empty-optional)
-        - [15.2.2. **IS OPTIONAL THE SAME AS NULL?**](#1522-is-optional-the-same-as-null)
-    - [15.3. **Using Streams**](#153-using-streams)
-        - [15.3.1. **UNDERSTANDING THE PIPELINE FLOW**](#1531-understanding-the-pipeline-flow)
-        - [15.3.2. **CREATING STREAM SOURCES**](#1532-creating-stream-sources)
-            - [15.3.2.1. **Creating Finite Streams**](#15321-creating-finite-streams)
-            - [15.3.2.2. **Creating Infinite Streams**](#15322-creating-infinite-streams)
-            - [15.3.2.3. **Reviewing Stream Creation Methods**](#15323-reviewing-stream-creation-methods)
-        - [15.3.3. **USING COMMON TERMINAL OPERATIONS**](#1533-using-common-terminal-operations)
-            - [15.3.3.1. **count()**](#15331-count)
-            - [15.3.3.2. **min() and max()**](#15332-min-and-max)
-            - [15.3.3.3. **findAny() and findFirst()**](#15333-findany-and-findfirst)
-            - [15.3.3.4. **allMatch(), anyMatch(), and noneMatch()**](#15334-allmatch-anymatch-and-nonematch)
-            - [15.3.3.5. **forEach()**](#15335-foreach)
-            - [15.3.3.6. **reduce()**](#15336-reduce)
-            - [15.3.3.7. **collect()**](#15337-collect)
-        - [15.3.4. **USING COMMON INTERMEDIATE OPERATIONS**](#1534-using-common-intermediate-operations)
-            - [15.3.4.1. **filter()**](#15341-filter)
-            - [15.3.4.2. **distinct()**](#15342-distinct)
-            - [15.3.4.3. **limit() and skip()**](#15343-limit-and-skip)
-            - [15.3.4.4. **map()**](#15344-map)
-            - [15.3.4.5. **flatMap()**](#15345-flatmap)
-            - [15.3.4.6. **sorted()**](#15346-sorted)
-            - [15.3.4.7. **peek()**](#15347-peek)
-                - [15.3.4.7.1. **DANGER: CHANGING STATE WITH PEEK()**](#153471-danger-changing-state-with-peek)
-    - [15.4. **Working with Primitive Streams**](#154-working-with-primitive-streams)
-        - [15.4.1. **MAPPING STREAMS**](#1541-mapping-streams)
-        - [15.4.2. **Using Optional with Primitive Streams**](#1542-using-optional-with-primitive-streams)
-        - [15.4.3. **LEARNING THE FUNCTIONAL INTERFACES FOR PRIMITIVES**](#1543-learning-the-functional-interfaces-for-primitives)
-            - [15.4.3.1. **Functional Interfaces for boolean**](#15431-functional-interfaces-for-boolean)
-            - [15.4.3.2. **Functional Interfaces for double, int, and long**](#15432-functional-interfaces-for-double-int-and-long)
-    - [15.5. **Working with Advanced Stream Pipeline Concepts**](#155-working-with-advanced-stream-pipeline-concepts)
-        - [15.5.1. **COLLECTING RESULTS**](#1551-collecting-results)
-        - [15.5.2. **Collecting Using Basic Collectors**](#1552-collecting-using-basic-collectors)
-        - [15.5.3. **Collecting into Maps**](#1553-collecting-into-maps)
-        - [15.5.4. **Collecting Using Grouping, Partitioning, and Mapping**](#1554-collecting-using-grouping-partitioning-and-mapping)
-            - [15.5.4.1. **Partitioning**](#15541-partitioning)
-    - [15.6. SUMMARY](#156-summary)
-- [16. Unit - 16 Exceptions, Assertions, and Localization](#16-unit---16-exceptions-assertions-and-localization)
-    - [16.1. Automating Resource Management](#161-automating-resource-management)
-        - [16.1.1. **UNDERSTANDING SUPPRESSED EXCEPTIONS**](#1611-understanding-suppressed-exceptions)
-    - [16.2. Declaring Assertions](#162-declaring-assertions)
-        - [16.2.1. **ENABLING ASSERTIONS**](#1621-enabling-assertions)
-        - [16.2.2. **DISABLING ASSERTIONS**](#1622-disabling-assertions)
-    - [16.3. Working with Dates and Times](#163-working-with-dates-and-times)
-        - [16.3.1. **FORMATTING DATES AND TIMES**](#1631-formatting-dates-and-times)
-            - [16.3.1.1. **DateTimeFormatter**](#16311-datetimeformatter)
-            - [16.3.1.2. **What about the number of symbols?**](#16312-what-about-the-number-of-symbols)
-            - [16.3.1.3. **THE DATE AND SIMPLEDATEFORMAT CLASSES**](#16313-the-date-and-simpledateformat-classes)
-            - [16.3.1.4. **Selecting a format() Method**](#16314-selecting-a-format-method)
-            - [16.3.1.5. **Adding Custom Text Values**](#16315-adding-custom-text-values)
-    - [16.4. Supporting Internationalization and Localization](#164-supporting-internationalization-and-localization)
-        - [16.4.1. **PICKING A LOCALE**](#1641-picking-a-locale)
-        - [16.4.2. LOCALIZING NUMBERS](#1642-localizing-numbers)
-        - [16.4.3. **Parsing Numbers**](#1643-parsing-numbers)
-        - [16.4.4. **Writing a Custom Number Formatter**](#1644-writing-a-custom-number-formatter)
-        - [16.4.5. **LOCALIZING DATES**](#1645-localizing-dates)
-        - [16.4.6. **SPECIFYING A LOCALE CATEGORY**](#1646-specifying-a-locale-category)
-    - [16.5. **Loading Properties with Resource Bundles**](#165-loading-properties-with-resource-bundles)
-        - [16.5.1. **CREATING A RESOURCE BUNDLE**](#1651-creating-a-resource-bundle)
-        - [16.5.2. **SELECTING RESOURCE BUNDLE VALUES**](#1652-selecting-resource-bundle-values)
-        - [16.5.3. **FORMATTING MESSAGES**](#1653-formatting-messages)
-        - [16.5.4. **USING THE PROPERTIES CLASS**](#1654-using-the-properties-class)
-- [17. Unit 19 -  I/O](#17-unit-19----io)
-    - [17.1. Files and Directories](#171-files-and-directories)
-        - [17.1.1. **FILE CLASS**](#1711-file-class)
-    - [17.2. I/O Streams](#172-io-streams)
-        - [17.2.1. **Byte Streams vs. Character Streams**](#1721-byte-streams-vs-character-streams)
-        - [17.2.2. **Input vs. Output Streams**](#1722-input-vs-output-streams)
-        - [17.2.3. **Low‐Level vs. High‐Level Streams**](#1723-lowlevel-vs-highlevel-streams)
-        - [17.2.4. **Stream Base Classes**](#1724-stream-base-classes)
-        - [17.2.5. **Decoding I/O Class Names**](#1725-decoding-io-class-names)
-            - [17.2.5.1. **Review of java.io Class Name Properties :**](#17251-review-of-javaio-class-name-properties-)
-    - [17.3. Common I/O Stream Operations](#173-common-io-stream-operations)
-        - [17.3.1. **READING AND WRITING DATA**](#1731-reading-and-writing-data)
-        - [17.3.2. **CLOSING THE STREAM**](#1732-closing-the-stream)
-        - [17.3.3. **MANIPULATING INPUT STREAMS**](#1733-manipulating-input-streams)
-            - [17.3.3.1. **mark() and reset()**](#17331-mark-and-reset)
-            - [17.3.3.2. **skip()**](#17332-skip)
-        - [17.3.4. **FLUSHING OUTPUT STREAMS**](#1734-flushing-output-streams)
-    - [17.4. Working with I/O Stream Classes](#174-working-with-io-stream-classes)
-        - [17.4.1. **READING AND WRITING BINARY DATA**](#1741-reading-and-writing-binary-data)
-        - [17.4.2. **BUFFERING BINARY DATA**](#1742-buffering-binary-data)
-        - [17.4.3. **READING AND WRITING CHARACTER DATA**](#1743-reading-and-writing-character-data)
-        - [17.4.4. **BUFFERING CHARACTER DATA**](#1744-buffering-character-data)
-        - [17.4.5. **SERIALIZING**](#1745-serializing)
-        - [17.4.6. **Storing Data with ObjectOutputStream and ObjectInputStream**](#1746-storing-data-with-objectoutputstream-and-objectinputstream)
-        - [17.4.7. **Deserialization Creation Process**](#1747-deserialization-creation-process)
-        - [17.4.8. **PRINTING DATA**](#1748-printing-data)
-        - [17.4.9. **Review Of Stream Classes**](#1749-review-of-stream-classes)
-    - [17.5. SYSTEM STREAMS](#175-system-streams)
-    - [17.6. CONSOLE](#176-console)
-- [18. EXTRA](#18-extra)
-    - [18.1. Variables](#181-variables)
-    - [18.2. Search](#182-search)
-    - [18.3. **Work List**](#183-work-list)
-        - [18.3.1. **I/O**](#1831-io)
-    - [18.4. Streams](#184-streams)
-
+      - [14.0.6.1. NUMBER OF PARAMETERS IN A METHOD REFERENCE](#14061-number-of-parameters-in-a-method-reference)
+  - [14.1. Using Wrapper Classes](#141-using-wrapper-classes)
+  - [14.2. Using the Diamond Operator](#142-using-the-diamond-operator)
+  - [14.3. Using Lists, Sets, Maps, and Queues](#143-using-lists-sets-maps-and-queues)
+    - [14.3.1. **COMMON COLLECTIONS METHODS**](#1431-common-collections-methods)
+      - [14.3.1.1. **add()**](#14311-add)
+      - [14.3.1.2. **remove()**](#14312-remove)
+      - [14.3.1.3. **isEmpty() and size()**](#14313-isempty-and-size)
+      - [14.3.1.4. **clear()**](#14314-clear)
+      - [14.3.1.5. **contains()**\*\*](#14315-contains)
+      - [14.3.1.6. **removeIf()**](#14316-removeif)
+      - [14.3.1.7. **forEach()**](#14317-foreach)
+    - [14.3.2. **USING THE LIST INTERFACE**](#1432-using-the-list-interface)
+      - [14.3.2.1. **Comparing List Implementations**](#14321-comparing-list-implementations)
+      - [14.3.2.2. **Creating a List with a Factory**](#14322-creating-a-list-with-a-factory)
+      - [14.3.2.3. **Working with List Methods**](#14323-working-with-list-methods)
+    - [14.3.3. **USING THE SET INTERFACE**](#1433-using-the-set-interface)
+      - [14.3.3.1. **Comparing Set Implementations**](#14331-comparing-set-implementations)
+    - [14.3.4. **USING THE QUEUE INTERFACE**](#1434-using-the-queue-interface)
+      - [14.3.4.1. **Comparing Queue Implementations**](#14341-comparing-queue-implementations)
+      - [14.3.4.2. **Working with Queue Methods**](#14342-working-with-queue-methods)
+    - [14.3.5. **USING THE MAP INTERFACE**](#1435-using-the-map-interface)
+      - [14.3.5.1. **Comparing Map Implementations**](#14351-comparing-map-implementations)
+      - [14.3.5.2. **Working with Map Methods**](#14352-working-with-map-methods)
+      - [14.3.5.3. **forEach() and entrySet()**](#14353-foreach-and-entryset)
+      - [14.3.5.4. **replace() and replaceAll()**](#14354-replace-and-replaceall)
+      - [14.3.5.5. **putIfAbsent()**](#14355-putifabsent)
+      - [14.3.5.6. **merge()**  ????](#14356-merge--)
+    - [14.3.6. **COMPARING COLLECTION TYPES**](#1436-comparing-collection-types)
+  - [14.4. Sorting Data](#144-sorting-data)
+    - [14.4.1. **COMPARABLE CLASS**](#1441-comparable-class)
+    - [14.4.2. **COMPARATOR**](#1442-comparator)
+    - [14.4.3. **COMPARING COMPARABLE AND COMPARATOR**](#1443-comparing-comparable-and-comparator)
+    - [14.4.4. **COMPARING MULTIPLE FIELDS**](#1444-comparing-multiple-fields)
+    - [14.4.5. **SORTING AND SEARCHING**](#1445-sorting-and-searching)
+  - [14.5. Working with Generics](#145-working-with-generics)
+    - [14.5.1. GENERIC CLASSES](#1451-generic-classes)
+    - [14.5.2. **GENERIC INTERFACES**](#1452-generic-interfaces)
+    - [14.5.3. **RAW TYPES**](#1453-raw-types)
+      - [14.5.3.1. **WHAT YOU CAN'T DO WITH GENERIC TYPES**](#14531-what-you-cant-do-with-generic-types)
+    - [14.5.4. **GENERIC METHODS**](#1454-generic-methods)
+    - [14.5.5. **BOUNDING GENERIC TYPES**](#1455-bounding-generic-types)
+      - [14.5.5.1. **Unbounded Wildcards**](#14551-unbounded-wildcards)
+      - [14.5.5.2. **Upper‐Bounded Wildcards**](#14552-upperbounded-wildcards)
+    - [14.5.6. **Lower‐Bounded Wildcards**](#1456-lowerbounded-wildcards)
+    - [14.5.7. **PUTTING IT ALL TOGETHER**](#1457-putting-it-all-together)
+      - [14.5.7.1. **Combining Generic Declarations**](#14571-combining-generic-declarations)
+      - [14.5.7.2. **Passing Generic Arguments**](#14572-passing-generic-arguments)
+  - [14.6. **SUMMARY**](#146-summary)
+- [15. Functional Programming](#15-functional-programming)
+  - [15.1. Working with Built‐in Functional Interfaces](#151-working-with-builtin-functional-interfaces)
+    - [15.1.1. **SUPPLIER**](#1511-supplier)
+    - [15.1.2. **CONSUMER AND BICONSUMER**](#1512-consumer-and-biconsumer)
+    - [15.1.3. **PREDICATE AND BIPREDICATE**](#1513-predicate-and-bipredicate)
+    - [15.1.4. **FUNCTION AND BIFUNCTION**](#1514-function-and-bifunction)
+    - [15.1.5. **UNARYOPERATOR AND BINARYOPERATOR**](#1515-unaryoperator-and-binaryoperator)
+    - [15.1.6. **CONVENIENCE METHODS ON FUNCTIONAL INTERFACES**](#1516-convenience-methods-on-functional-interfaces)
+  - [15.2. Returning an Optional](#152-returning-an-optional)
+    - [15.2.1. **DEALING WITH AN EMPTY OPTIONAL**](#1521-dealing-with-an-empty-optional)
+    - [15.2.2. **IS OPTIONAL THE SAME AS NULL?**](#1522-is-optional-the-same-as-null)
+  - [15.3. **Using Streams**](#153-using-streams)
+    - [15.3.1. **UNDERSTANDING THE PIPELINE FLOW**](#1531-understanding-the-pipeline-flow)
+    - [15.3.2. **CREATING STREAM SOURCES**](#1532-creating-stream-sources)
+      - [15.3.2.1. **Creating Finite Streams**](#15321-creating-finite-streams)
+      - [15.3.2.2. **Creating Infinite Streams**](#15322-creating-infinite-streams)
+      - [15.3.2.3. **Reviewing Stream Creation Methods**](#15323-reviewing-stream-creation-methods)
+    - [15.3.3. **USING COMMON TERMINAL OPERATIONS**](#1533-using-common-terminal-operations)
+      - [15.3.3.1. **count()**](#15331-count)
+      - [15.3.3.2. **min() and max()**](#15332-min-and-max)
+      - [15.3.3.3. **findAny() and findFirst()**](#15333-findany-and-findfirst)
+      - [15.3.3.4. **allMatch(), anyMatch(), and noneMatch()**](#15334-allmatch-anymatch-and-nonematch)
+      - [15.3.3.5. **forEach()**](#15335-foreach)
+      - [15.3.3.6. **reduce()**](#15336-reduce)
+      - [15.3.3.7. **collect()**](#15337-collect)
+    - [15.3.4. **USING COMMON INTERMEDIATE OPERATIONS**](#1534-using-common-intermediate-operations)
+      - [15.3.4.1. **filter()**](#15341-filter)
+      - [15.3.4.2. **distinct()**](#15342-distinct)
+      - [15.3.4.3. **limit() and skip()**](#15343-limit-and-skip)
+      - [15.3.4.4. **map()**](#15344-map)
+      - [15.3.4.5. **flatMap()**](#15345-flatmap)
+      - [15.3.4.6. **sorted()**](#15346-sorted)
+      - [15.3.4.7. **peek()**](#15347-peek)
+        - [15.3.4.7.1. **DANGER: CHANGING STATE WITH PEEK()**](#153471-danger-changing-state-with-peek)
+  - [15.4. **Working with Primitive Streams**](#154-working-with-primitive-streams)
+    - [15.4.1. **MAPPING STREAMS**](#1541-mapping-streams)
+    - [15.4.2. **Using Optional with Primitive Streams**](#1542-using-optional-with-primitive-streams)
+    - [15.4.3. **LEARNING THE FUNCTIONAL INTERFACES FOR PRIMITIVES**](#1543-learning-the-functional-interfaces-for-primitives)
+      - [15.4.3.1. **Functional Interfaces for boolean**](#15431-functional-interfaces-for-boolean)
+      - [15.4.3.2. **Functional Interfaces for double, int, and long**](#15432-functional-interfaces-for-double-int-and-long)
+  - [15.5. **Working with Advanced Stream Pipeline Concepts**](#155-working-with-advanced-stream-pipeline-concepts)
+    - [15.5.1. **COLLECTING RESULTS**](#1551-collecting-results)
+    - [15.5.2. **Collecting Using Basic Collectors**](#1552-collecting-using-basic-collectors)
+    - [15.5.3. **Collecting into Maps**](#1553-collecting-into-maps)
+    - [15.5.4. **Collecting Using Grouping, Partitioning, and Mapping**](#1554-collecting-using-grouping-partitioning-and-mapping)
+      - [15.5.4.1. **Partitioning**](#15541-partitioning)
+  - [15.6. SUMMARY](#156-summary)
+- [16. Exceptions, Assertions, and Localization](#16-exceptions-assertions-and-localization)
+  - [16.1. Automating Resource Management](#161-automating-resource-management)
+    - [16.1.1. **UNDERSTANDING SUPPRESSED EXCEPTIONS**](#1611-understanding-suppressed-exceptions)
+  - [16.2. Declaring Assertions](#162-declaring-assertions)
+    - [16.2.1. **ENABLING ASSERTIONS**](#1621-enabling-assertions)
+    - [16.2.2. **DISABLING ASSERTIONS**](#1622-disabling-assertions)
+  - [16.3. Working with Dates and Times](#163-working-with-dates-and-times)
+    - [16.3.1. **FORMATTING DATES AND TIMES**](#1631-formatting-dates-and-times)
+      - [16.3.1.1. **DateTimeFormatter**](#16311-datetimeformatter)
+      - [16.3.1.2. **What about the number of symbols?**](#16312-what-about-the-number-of-symbols)
+      - [16.3.1.3. **THE DATE AND SIMPLEDATEFORMAT CLASSES**](#16313-the-date-and-simpledateformat-classes)
+      - [16.3.1.4. **Selecting a format() Method**](#16314-selecting-a-format-method)
+      - [16.3.1.5. **Adding Custom Text Values**](#16315-adding-custom-text-values)
+  - [16.4. Supporting Internationalization and Localization](#164-supporting-internationalization-and-localization)
+    - [16.4.1. **PICKING A LOCALE**](#1641-picking-a-locale)
+    - [16.4.2. LOCALIZING NUMBERS](#1642-localizing-numbers)
+    - [16.4.3. **Parsing Numbers**](#1643-parsing-numbers)
+    - [16.4.4. **Writing a Custom Number Formatter**](#1644-writing-a-custom-number-formatter)
+    - [16.4.5. **LOCALIZING DATES**](#1645-localizing-dates)
+    - [16.4.6. **SPECIFYING A LOCALE CATEGORY**](#1646-specifying-a-locale-category)
+  - [16.5. **Loading Properties with Resource Bundles**](#165-loading-properties-with-resource-bundles)
+    - [16.5.1. **CREATING A RESOURCE BUNDLE**](#1651-creating-a-resource-bundle)
+    - [16.5.2. **SELECTING RESOURCE BUNDLE VALUES**](#1652-selecting-resource-bundle-values)
+    - [16.5.3. **FORMATTING MESSAGES**](#1653-formatting-messages)
+    - [16.5.4. **USING THE PROPERTIES CLASS**](#1654-using-the-properties-class)
+- [17. Module Advance](#17-module-advance)
+  - [17.1. COMPILING MODULE](#171-compiling-module)
+  - [17.2. EXPORT](#172-export)
+  - [17.3. REQUIRES TRANSITIVE](#173-requires-transitive)
+    - [17.3.1. Duplicate requires Statements](#1731-duplicate-requires-statements)
+  - [17.4. PROVIDES, USES, AND OPENS](#174-provides-uses-and-opens)
+    - [17.4.1. Provide](#1741-provide)
+    - [17.4.2. Uses](#1742-uses)
+    - [17.4.3. Opens](#1743-opens)
+  - [17.5. THE JAVA COMMAND](#175-the-java-command)
+    - [17.5.1. Describing a Module](#1751-describing-a-module)
+    - [17.5.2. Listing Available Modules](#1752-listing-available-modules)
+    - [17.5.3. Showing Module Resolution](#1753-showing-module-resolution)
+  - [17.6. THE JAR COMMAND](#176-the-jar-command)
+  - [17.7. THE JDEPS COMMAND](#177-the-jdeps-command)
+    - [17.7.1. summary](#1771-summary)
+  - [17.8. THE JMOD COMMAND](#178-the-jmod-command)
+  - [17.9. Command-Line Options](#179-command-line-options)
+    - [17.9.1. **javac options**](#1791-javac-options)
+    - [17.9.2. **java options**](#1792-java-options)
+    - [17.9.3. **jdeps options**](#1793-jdeps-options)
+  - [17.10. Examples](#1710-examples)
+  - [17.11. Descripe Module](#1711-descripe-module)
+    - [17.11.1. Descripe Module Alternative 1](#17111-descripe-module-alternative-1)
+    - [17.11.2. Descripe Module-Alternative 2](#17112-descripe-module-alternative-2)
+  - [17.12. jdeps](#1712-jdeps)
+  - [17.13. Modular Applications](#1713-modular-applications)
+  - [17.14. Types of Modules](#1714-types-of-modules)
+    - [17.14.1. NAMED MODULES](#17141-named-modules)
+    - [17.14.2. AUTOMATIC MODULES](#17142-automatic-modules)
+    - [17.14.3. UNNAMED MODULES](#17143-unnamed-modules)
+- [18. Concurrency](#18-concurrency)
+  - [18.1. Introduction](#181-introduction)
+    - [18.1.1. **RUNNABLE**](#1811-runnable)
+    - [18.1.2. **THREAD**](#1812-thread)
+      - [18.1.2.1. **CALLING RUN() INSTEAD OF START()**](#18121-calling-run-instead-of-start)
+  - [18.2. Concurrency API](#182-concurrency-api)
+    - [18.2.1. **WAITING FOR RESULTS**](#1821-waiting-for-results)
+    - [18.2.2. **Callable**](#1822-callable)
+    - [18.2.3. **Runnable Vs Callable :**](#1823-runnable-vs-callable-)
+    - [18.2.4. **Waiting for All Tasks to Finish**](#1824-waiting-for-all-tasks-to-finish)
+    - [18.2.5. **SUBMITTING TASK COLLECTIONS**](#1825-submitting-task-collections)
+    - [18.2.6. **SCHEDULING TASKS**](#1826-scheduling-tasks)
+    - [18.2.7. **INCREASING CONCURRENCY WITH POOLS**](#1827-increasing-concurrency-with-pools)
+  - [18.3. Writing Thread‐Safe Code](#183-writing-threadsafe-code)
+    - [18.3.1. **ATOMIC CLASSES**](#1831-atomic-classes)
+    - [18.3.2. **SYNCHRONIZED**](#1832-synchronized)
+    - [18.3.3. **LOCK FRAMEWORK**](#1833-lock-framework)
+      - [18.3.3.1. **ReentrantLock Interface**](#18331-reentrantlock-interface)
+      - [18.3.3.2. **Duplicate Lock Requests**](#18332-duplicate-lock-requests)
+    - [18.3.4. **CYCLICBARRIER**](#1834-cyclicbarrier)
+      - [18.3.4.1. **THREAD POOL SIZE AND CYCLIC BARRIER LIMIT**](#18341-thread-pool-size-and-cyclic-barrier-limit)
+      - [18.3.4.2. **REUSING CYCLICBARRIER**](#18342-reusing-cyclicbarrier)
+  - [18.4. Using Concurrent Collections](#184-using-concurrent-collections)
+    - [18.4.1. MEMORY CONSISTENCY ERRORS](#1841-memory-consistency-errors)
+    - [18.4.2. **CONCURRENT CLASSES**](#1842-concurrent-classes)
+    - [18.4.3. **SkipList Collections**](#1843-skiplist-collections)
+    - [18.4.4. **CopyOnWrite Collections**](#1844-copyonwrite-collections)
+    - [18.4.5. **Blocking Queues**](#1845-blocking-queues)
+    - [18.4.6. **SYNCHRONIZED COLLECTIONS**](#1846-synchronized-collections)
+  - [18.5. Threading Problems](#185-threading-problems)
+    - [18.5.1. **LIVENESS**](#1851-liveness)
+      - [18.5.1.1. **Deadlock**](#18511-deadlock)
+      - [18.5.1.2. **Starvation**](#18512-starvation)
+      - [18.5.1.3. **Livelock**](#18513-livelock)
+  - [18.6. Parallel Streams](#186-parallel-streams)
+    - [18.6.1. **CREATING PARALLEL STREAMS**](#1861-creating-parallel-streams)
+      - [18.6.1.1. **forEachOrdered()**](#18611-foreachordered)
+    - [18.6.2. **PARALLEL REDUCTIONS**](#1862-parallel-reductions)
+    - [18.6.3. **Combining Results with reduce()**](#1863-combining-results-with-reduce)
+    - [18.6.4. **Combining Results with collect()**](#1864-combining-results-with-collect)
+    - [18.6.5. ***Performing a Parallel Reduction on a Collector***](#1865-performing-a-parallel-reduction-on-a-collector)
+    - [18.6.6. **AVOIDING STATEFUL OPERATIONS**](#1866-avoiding-stateful-operations)
+- [19. I/O](#19-io)
+  - [19.1. Files and Directories](#191-files-and-directories)
+    - [19.1.1. **FILE CLASS**](#1911-file-class)
+  - [19.2. I/O Streams](#192-io-streams)
+    - [19.2.1. **Byte Streams vs. Character Streams**](#1921-byte-streams-vs-character-streams)
+    - [19.2.2. **Input vs. Output Streams**](#1922-input-vs-output-streams)
+    - [19.2.3. **Low‐Level vs. High‐Level Streams**](#1923-lowlevel-vs-highlevel-streams)
+    - [19.2.4. **Stream Base Classes**](#1924-stream-base-classes)
+    - [19.2.5. **Decoding I/O Class Names**](#1925-decoding-io-class-names)
+      - [19.2.5.1. **Review of java.io Class Name Properties :**](#19251-review-of-javaio-class-name-properties-)
+  - [19.3. Common I/O Stream Operations](#193-common-io-stream-operations)
+    - [19.3.1. **READING AND WRITING DATA**](#1931-reading-and-writing-data)
+    - [19.3.2. **CLOSING THE STREAM**](#1932-closing-the-stream)
+    - [19.3.3. **MANIPULATING INPUT STREAMS**](#1933-manipulating-input-streams)
+      - [19.3.3.1. **mark() and reset()**](#19331-mark-and-reset)
+      - [19.3.3.2. **skip()**](#19332-skip)
+    - [19.3.4. **FLUSHING OUTPUT STREAMS**](#1934-flushing-output-streams)
+  - [19.4. Working with I/O Stream Classes](#194-working-with-io-stream-classes)
+    - [19.4.1. **READING AND WRITING BINARY DATA**](#1941-reading-and-writing-binary-data)
+    - [19.4.2. **BUFFERING BINARY DATA**](#1942-buffering-binary-data)
+    - [19.4.3. **READING AND WRITING CHARACTER DATA**](#1943-reading-and-writing-character-data)
+    - [19.4.4. **BUFFERING CHARACTER DATA**](#1944-buffering-character-data)
+    - [19.4.5. **SERIALIZING**](#1945-serializing)
+    - [19.4.6. **Storing Data with ObjectOutputStream and ObjectInputStream**](#1946-storing-data-with-objectoutputstream-and-objectinputstream)
+    - [19.4.7. **Deserialization Creation Process**](#1947-deserialization-creation-process)
+    - [19.4.8. **PRINTING DATA**](#1948-printing-data)
+    - [19.4.9. **Review Of Stream Classes**](#1949-review-of-stream-classes)
+  - [19.5. SYSTEM STREAMS](#195-system-streams)
+  - [19.6. CONSOLE](#196-console)
+- [20. NIO](#20-nio)
+  - [20.1. Path Create](#201-path-create)
+  - [20.2. ABSOLUTE VS. RELATIVE PATHS](#202-absolute-vs-relative-paths)
+  - [20.3. FILES.READALLLINES() VS. FILES.LINES()](#203-filesreadalllines-vs-fileslines)
+  - [20.4. **Streams**](#204-streams)
+    - [20.4.1. **walk()**](#2041-walk)
+    - [20.4.2. **find()**](#2042-find)
+  - [20.5. **RandomAccessFile**](#205-randomaccessfile)
+  - [20.6. BufferWriter](#206-bufferwriter)
+  - [20.7. **Exceptions**](#207-exceptions)
+  - [20.8. **Files**](#208-files)
+    - [20.8.1. **move()**](#2081-move)
+    - [20.8.2. **copy()**](#2082-copy)
+- [21. JDBC](#21-jdbc)
+- [22. EXTRA](#22-extra)
+  - [22.1. Variables](#221-variables)
+  - [22.2. Search](#222-search)
+  - [22.3. **Work List**](#223-work-list)
+    - [22.3.1. **I/O**](#2231-io)
+  - [22.4. Streams](#224-streams)
 
 
 
 <br/> 
 
------------------- 
-
-**Ocp 1Z0-819 exam notes**
-
-**Attendion Notes!**
-
-- Watch out for function or constructor
-- var only used as local variables, it cannot used as instance variable or class variable.
-- letters are a reference variable and not a primitive.
-- Be aware when compare String which start with upper, lower or digit.
-
-- Stream has already been operated upon or closed.
-
-
------------------- 
-
-
-<br/> 
-
-<br/> 
-
-# 1. UNIT 1
+# 1. General
 
 ## 1.1. Identifying Benefits of Java
 
@@ -501,7 +568,7 @@ String... options;
 <br/> <br/>   
 
 
-# 2. UNIT 2 - Java Building Blocks
+# 2. Java Building Blocks
 
 ## 2.1. Understanding Data Types
 
@@ -632,7 +699,7 @@ public void checkAnswer() {
 }
 ````
 
-### Defining Instance and Class Variables
+### 2.3.3. Defining Instance and Class Variables
 
 *Default initialization values by type*
 |Variable type | Default value|
@@ -646,7 +713,7 @@ public void checkAnswer() {
 <br/> 
 
 
-### Introducing var
+### 2.3.4. Introducing var
 
 - Starting in Java 10, it is a option of using the keyword var instead of the type for local variables.
 
@@ -666,7 +733,7 @@ public class MyClass() {
 }
 ```
 
-#### 2.3.2.1. Type Inference of var
+#### 2.3.4.1. Type Inference of var
 *reassignment :*
 ```java
 public void reassignmentMethod() {
@@ -761,7 +828,7 @@ public class Var {
 ```
 <br/> 
 
-### 2.3.3. Review of var Rules
+### 2.3.5. Review of var Rules
 
 - A var is used as a local variable in a constructor, method, or initializer block.
 - A var cannot be used in constructor parameters, method parameters, instance vari- ables, or class variables.
@@ -793,7 +860,7 @@ public class MyClass {
 ```
 <br/> <br/>  
 
-# 3. Unit 3 - Operators
+# 3. Operators
 ## 3.1. Understanding Java Operators
 
 ### 3.1.1. Types of Operators
@@ -1026,7 +1093,7 @@ System.out.print(null instanceof null); // DOES NOT COMPILE
 <br/> 
 
 
-# 4. UNIT-4 Making Decisions
+# 4. Making Decisions
 
 ## 4.1. Switch Data Types
 
@@ -1263,7 +1330,7 @@ i=4 j=2
 
 
 
-# 5. Unit-5 Core Java APIs
+# 5. Core Java APIs
 
 ## 5.1. Creating and Manipulating Strings
 
@@ -1669,7 +1736,7 @@ double num = Math.random();
 ```  
 
 
-# 6. Unit 6 - Lambda And Functional Interfaces
+# 6. Lambda And Functional Interfaces
 
 ## 6.1. Lambda
 Invalid Lambda definetion
@@ -1904,7 +1971,7 @@ bunnies.forEach(System.out::println);
 ```  
 
 
-# 7. Unit 7 -  Methods and Encapsulation
+# 7. Methods and Encapsulation
 
 ## 7.1. Methods
 ### 7.1.1. Method Name
@@ -1938,7 +2005,7 @@ public void walk4(int... start, int... nums) {} // DOES NOT COMPILE
 
 ## 7.2. Applying Access Modifiers
 
-![image info](./images/u7_access_modifier.png)
+![image info](doc/java/u7_access_modifier.png)
 
 ## 7.3. Applying the static Keyword
 
@@ -2140,7 +2207,7 @@ public void run() {
 ```
 
 
-# 8. Unit 8 - Class Design
+# 8. Class Design
 
 *Example: define and extend many classes within the same Java file*   
 Groundhog.java
@@ -2677,7 +2744,7 @@ public class Panda extends Bear {
 
 
 
-# 9. Unit-9 Advanced Class Design
+# 9. Advanced Class Design
 ## 9.1. Abstract Classes
 
 
@@ -3166,10 +3233,10 @@ abstract class Cinema {
 ```  
 <br/> -
 
-# 10. Unit-10 Exceptions
+# 10. Exceptions
 
 
-![image info](./images/exception.png)
+![image info](doc/java/exception.png)
 
 Error means something went so horribly wrong that your program should not attempt to recover from it. For example, the disk drive “disappeared” or the program ran out of memory. These are abnormal conditions that you aren’t likely to encounter and cannot recover from.
 
@@ -3468,13 +3535,13 @@ are closed in the reverse order from which they were created.
 Semicolons are used to separate the declarations.
 
 **The syntax of a basic try-with-resources**
-![image info](./images/try-with-resource.png)
+![image info](doc/java/try-with-resource.png)
 
 <br/> 
 
 **The syntax of try-with-resources including catch / finally**
 
-![image info](./images/try-with-resource2.png)
+![image info](doc/java/try-with-resource2.png)
 
 <br/> 
 
@@ -3720,7 +3787,7 @@ class Bunny extends Hopper {
 *The reason that it’s okay to declare new unchecked exceptions in a subclass method is that the declaration is redundant.*
 
 
-# 11. Unit-11 Modules
+# 11. Modules
 ## 11.1. Custom Java Builds
 
 A tool called jlink is used to create this runtime image.
@@ -3767,7 +3834,7 @@ javac -p mods -d feeding feeding/zoo/animal/feeding/*.java feeding/*.java
 
 ## 11.4. Running Module
 
-![image info](./images/running-module.png)
+![image info](doc/java/running-module.png)
 
 
 
@@ -3798,7 +3865,7 @@ java -p feeding -m zoo.animal.feeding/zoo.animal.feeding.Task
 
 
 
-# 12. Unit-12 Java Fundamentals
+# 12. Java Fundamentals
 
 ## 12.1. Applying the final Modifier
 
@@ -4221,19 +4288,19 @@ The only restriction is that the variable type must be a functional interface.
 
 **1- Modifiers in nested classes**
 
-![image info](./images/nestedClass1.png)
+![image info](doc/java/nestedClass1.png)
 
 <br/> 
 
 **2- Members in nested classes**
 
-![image info](./images/nestedClass2.png)
+![image info](doc/java/nestedClass2.png)
 
 <br/> 
 
 **3- Nested class access rules**
 
-![image info](./images/nestedClass3.png)
+![image info](doc/java/nestedClass3.png)
 
 ## 12.4. Understanding Interface Members
 
@@ -4369,7 +4436,7 @@ public interface Swim {
 ### 12.4.5. **REVIEWING INTERFACE MEMBERS**
 
 
-![image info](./images/interface-member-access.png)
+![image info](doc/java/interface-member-access.png)
 
 <br/> 
 
@@ -4487,13 +4554,13 @@ Lambda expressions rely on the notion of deferred execution. Deferred execution 
 
 **Lambda definetion 1**
 
-![image info](./images/lambda-definetion.png)
+![image info](doc/java/lambda-definetion.png)
 
 <br/> 
 
 **Lambda definetion 2**
 
-![image info](./images/lambda-definetion2.png)
+![image info](doc/java/lambda-definetion2.png)
 
 * As a fun fact, **s ‐> {}** is a valid lambda. If the return type of the functional interface method is void, then you don't need the semicolon or return statement.
 
@@ -4599,7 +4666,7 @@ annotations establish relationships that make it easier to manage data about our
 <br/> <br/>  
 
 
-# 13. Unit 13 - Annotations
+# 13. Annotations
 
 *A **marker annotation** is one that does not contain any elements.*
 
@@ -4750,12 +4817,12 @@ public @interface WaterSource {
 ### 13.1.6. **REVIEWING ANNOTATION RULES**
 
 **1- Annotation declaration :**  
-![image info](./images/annotation-rules.png)
+![image info](doc/java/annotation-rules.png)
 
 ..
 
 **2- Using an annotation :**  
-![image info](./images/annotation-applying.png)
+![image info](doc/java/annotation-applying.png)
 
 ..  
 ..
@@ -5238,7 +5305,7 @@ The eat() method is missing a varargs parameter, while the drink() and chew() me
 |@SuppressWarnings	|Most Java declarations|—
 |@SafeVarargs	|Methods, constructors |Method or constructor does not contain a varargs parameter or is applied to a method not marked *private, static, or final*
 
-# 14. Unit 14 - Generics And Collections
+# 14. Generics And Collections
 
 **Some Functional interfaces :**
 
@@ -5495,7 +5562,7 @@ There are four main interfaces in the *Java Collections Framework*:
 
 **Collection and Map interfaces**
 
-![images.info](./images/collections.png)
+![images.info](doc/java/collections.png)
 
 
 ..
@@ -6835,7 +6902,7 @@ This last method, fifth(), does not compile because it tries to mix a method‐s
 <br/> 
 
 
-# 15. Unit 15 - Functional Programming
+# 15. Functional Programming
 
 
 ## 15.1. Working with Built‐in Functional Interfaces
@@ -8501,7 +8568,7 @@ There are three optional types for primitives: OptionalDouble, OptionalInt, and 
 
 
 
-# 16. Unit - 16 Exceptions, Assertions, and Localization
+# 16. Exceptions, Assertions, and Localization
 
 
 
@@ -8785,7 +8852,7 @@ An assertion allows for detecting defects in the code.
 
 *The syntax of assert statements :*
 
-![images.info](./images/assert.png)
+![images.info](doc/java/assert.png)
 
 When assertions are enabled and the boolean expression evaluates to false, then an AssertionError will be thrown at runtime.
 
@@ -9085,7 +9152,7 @@ DateTimeFormatter.ofPattern("'Time is: hh:mm: ");  // Exception thrown
 
 *Locale formats*
 
-![image.info](./images/locale.png)
+![image.info](doc/java/locale.png)
 
 <br/>
 
@@ -9415,11 +9482,1747 @@ props.get("open", "The zoo will be open soon");  // DOES NOT COMPILE
 <br/>
 <br/>
 
-# 17. Unit 19 -  I/O
-##  17.1. Files and Directories
+
+# 17. Module Advance
+
+## 17.1. COMPILING MODULE
 <br/>
 
-### 17.1.1. **FILE CLASS**
+🔴 **Note :** order matters when compiling a module. Suppose we list the module-info file first when trying to compile:
+
+```java
+ module zoo.animal.care {
+    exports zoo.animal.care.medical;
+    requires zoo.animal.feeding;
+}
+```
+```java
+javac -p mods
+   -d care
+   care/module-info.java
+   care/zoo/animal/care/details/*.java
+   care/zoo/animal/care/medical/*.java
+```
+
+The compiler complains that it doesn’t know anything about the package zoo.animal.care.medical.
+
+
+<br/>
+
+## 17.2. EXPORT
+
+<br/>
+
+🔴 You are free to name your variable *exports*. 
+
+
+```java
+module zoo.animal.talks {
+   exports zoo.animal.talks.content to zoo.staff;
+   exports zoo.animal.talks.media;
+   exports zoo.animal.talks.schedule;
+ 
+   requires zoo.animal.feeding;
+   requires zoo.animal.care;
+}
+
+```
+
+<br/>
+
+## 17.3. REQUIRES TRANSITIVE
+
+
+ *requires transitive moduleName*, means that any module that requires this module will also depend on *moduleName*.
+
+
+<br/>
+
+### 17.3.1. Duplicate requires Statements
+
+
+<br/>
+
+**Example :** Does not compile !
+```java
+module bad.module {
+   requires zoo.animal.talks;
+   requires transitive zoo.animal.talks;
+}
+```
+
+<br/>
+
+## 17.4. PROVIDES, USES, AND OPENS
+
+<br/>
+
+### 17.4.1. Provide 
+
+The **provides** keyword specifies that a class provides an implementation of a service.
+
+```java
+provides zoo.staff.ZooApi with zoo.staff.ZooImpl
+```
+
+<br/>
+
+### 17.4.2. Uses 
+
+The *uses* keyword specifies that a module is relying on a service. 
+
+```java
+uses zoo.staff.ZooApi
+```
+
+<br/>
+
+### 17.4.3. Opens
+
+Opens keyword allows to reflections.
+
+```java
+opens zoo.animal.talks.schedule;
+opens zoo.animal.talks.media to zoo.staff;
+```
+
+<br/>
+
+<br/>
+
+## 17.5. THE JAVA COMMAND
+
+### 17.5.1. Describing a Module
+
+```java
+module zoo.animal.feeding {
+   exports zoo.animal.feeding;
+}
+```
+
+```
+java -p mods -d zoo.animal.feeding
+ 
+java -p mods --describe-module zoo.animal.feeding
+```
+
+**Print**
+```console
+zoo.animal.feeding file:///absolutePath/mods/zoo.animal.feeding.jar
+exports zoo.animal.feeding
+requires java.base mandated
+```
+
+<br/>
+
+<br/>
+
+**Example 2:**
+```java
+module zoo.animal.care {
+   exports zoo.animal.care.medical to zoo.staff;
+   requires transitive zoo.animal.feeding;
+}
+```
+
+
+```
+java -p mods -d zoo.animal.care
+```
+**Print :**
+```  
+zoo.animal.care file:///absolutePath/mods/zoo.animal.care.jar
+requires zoo.animal.feeding transitive
+requires java.base mandated
+qualified exports zoo.animal.care.medical to zoo.staff
+contains zoo.animal.care.details
+```
+
+<br/>
+
+### 17.5.2. Listing Available Modules
+
+<br/>
+
+```
+ java -p mods --list-modules
+```
+**Print :**
+```
+zoo.animal.care file:///absolutePath/mods/zoo.animal.care.jar
+zoo.animal.feeding file:///absolutePath/mods/zoo.animal.feeding.jar
+zoo.animal.talks file:///absolutePath/mods/zoo.animal.talks.jar
+zoo.staff file:///absolutePath/mods/zoo.staff.jar
+```
+
+<br/>
+
+### 17.5.3. Showing Module Resolution
+
+```java
+ java --show-module-resolution
+   -p feeding
+   -m zoo.animal.feeding/zoo.animal.feeding.Task
+```
+**Print :**
+```
+root zoo.animal.feeding file:///absolutePath/feeding/
+java.base binds java.desktop jrt:/java.desktop
+java.base binds jdk.jartool jrt:/jdk.jartool
+...
+jdk.security.auth requires java.naming jrt:/java.naming
+jdk.security.auth requires java.security.jgss jrt:/java.security.jgss
+...
+All fed!
+```
+
+
+## 17.6. THE JAR COMMAND
+
+Like the java command, the jar command can describe a module. Both of these commands are equivalent:
+
+```
+jar -f mods/zoo.animal.feeding.jar -d
+jar --file mods/zoo.animal.feeding.jar --describe-module
+```
+**Print :**
+```
+zoo.animal.feeding jar:file:///absolutePath/mods/zoo.animal.feeding.jar /!module-info.class
+exports zoo.animal.feeding
+requires java.base mandated
+```
+
+## 17.7. THE JDEPS COMMAND
+
+### 17.7.1. summary 
+<br/>
+
+**For Jar**
+``` 
+jdeps -s mods/zoo.animal.feeding.jar
+
+jdeps -summary mods/zoo.animal.feeding.jar
+``` 
+**Print :**
+``` 
+zoo.animal.feeding -> java.base
+``` 
+<br/>
+
+**For Module**
+``` 
+jdeps -s --module-path mods  mods/zoo.animal.care.jar
+
+jdeps -summary --module-path mods  mods/zoo.animal.care.jar
+``` 
+
+<br/>
+
+
+## 17.8. THE JMOD COMMAND
+
+ JMOD files are recommended only when you have native libraries or something that can’t go inside a JAR file
+
+<br/>
+
+|Operation|Description|
+|--- |--- |
+|create|Creates a JMOD file.|
+|extract|Extracts all files from the JMOD. Works like unzipping.|
+|describe|Prints the module details such as requires.|
+|list|Lists all files in the JMOD file.|
+|hash|Shows a long string that goes with the file|
+
+
+<br/>
+
+## 17.9. Command-Line Options
+
+<br/>
+
+<table border="1">
+<thead>
+<tr>
+<td><b>Description</b></td>
+<td><b>Syntax</b></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span>Compile nonmodular code</span></td>
+<td><p><b>javac -cp</b> <i>classpath</i> -d <i>directory classesToCompile</i></p> 
+<p><b>javac --class-path</b> <i>classpath</i> -d <i>directory classesToCompile</i></p> 
+<p><b>javac -classpath</b> <i>classpath</i> -d <i>directory classesToCompile</i></p></td>
+</tr>
+<tr>
+<td><span>Run nonmodular code</span></td>
+<td><p><b>java -cp</b> <i>classpath package</i>.<i>className</i></p> 
+<p><b>java -classpath</b> <i>classpath package</i>.<i>className</i></p> 
+<p><b>java --class-path</b> <i>classpath package</i>.<i>className</i></p></td>
+</tr>
+<tr>
+<td><span>Compile a module</span></td>
+<td><p><b>javac -p</b> <i>moduleFolderName</i> -d <i>directory classesToCompileIncludingModuleInfo</i></p> 
+<p><b>javac --module-path</b> <i>moduleFolderName</i> -d directory <i>classesToCompileIncludingModuleInfo</i></p></td>
+</tr>
+<tr>
+<td><span>Run a module</span></td>
+<td><p><b>java -p</b> <i>moduleFolderName</i> <b>-m</b> <i>moduleName/package.className</i></p> 
+<p><b>java --module-path</b> <i>moduleFolderName</i> <b>--module</b> <i> moduleName/package.className</i></p></td>
+</tr>
+<tr>
+<td><span>Describe a module</span></td>
+<td><p><b>java -p</b> <i>moduleFolderName</i> -<b>d</b> <i>moduleName</i></p> 
+<p><b>java --module-path</b> <i>moduleFolderName</i> <b>--describe-module</b> <i>moduleName</i></p> 
+<p><b>jar</b> --file <i>jarName</i> <b>--describe-module</b></p> 
+<p><b>jar</b> -f <i>jarName</i> <b>-d</b></p></td>
+</tr>
+<tr>
+<td><span>List available modules</span></td>
+<td><p><b>java --module-path</b> <i>moduleFolderName</i> <b>--list-modules</b></p> 
+<p><b>java -p</b> <i>moduleFolderName</i> <b>--list-modules</b></p> 
+<p><b>java --list-modules</b></p></td>
+</tr>
+<tr>
+<td><span>View dependencies</span></td>
+<td><p><b>jdeps -summary --module-path</b> <i>moduleFolderName jarName</i></p> 
+<p><b>jdeps -s --module-path</b> <i>moduleFolderName jarName</i></p></td>
+</tr>
+<tr>
+<td><span>Show module resolution</span></td>
+<td><p><b>java --show-module-resolution -p</b> <i>moduleFolderName</i> -<b>m</b> <i>moduleName</i></p> 
+<p><b>java --show-module-resolution --module-path</b> <i>moduleFolderName</i> <b>--module</b> <i>moduleName</i></p></td>
+</tr>
+</tbody>
+</table>
+
+
+<br/>
+<br/>
+
+### 17.9.1. **javac options**
+
+<table border="1">
+<thead>
+<tr>
+<td><span >Option</span></td>
+<td><span >Description</span></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p><span class="codeLabel">-cp &lt;classpath&gt;</span></p> 
+<p><span class="codeLabel">-classpath &lt;classpath&gt;</span></p> 
+<p><span class="codeLabel">--class-path &lt;classpath&gt;</span></p></td>
+<td><span >Location of JARs in a nonmodular program</span></td>
+</tr>
+<tr>
+<td><span ><span class="codeLabel">-d &lt;dir&gt;</span></span></td>
+<td><span >Directory to place generated class files</span></td>
+</tr>
+<tr>
+<td><p><span class="codeLabel">-p &lt;path&gt;</span></p> 
+<p><span class="codeLabel">--module-path &lt;path&gt;</span></p></td>
+<td><span >Location of JARs in a modular program</span></td>
+</tr>
+</tbody>
+</table>
+
+
+<br/>
+<br/>
+
+### 17.9.2. **java options**
+
+<table border="1">
+<thead>
+<tr>
+<td><span >Option</span></td>
+<td><span >Description</span></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p><span class="codeLabel">-c</span></p> 
+<p><span class="codeLabel">--create</span></p></td>
+<td><span >Create a new JAR file</span></td>
+</tr>
+<tr>
+<td><p><span class="codeLabel">-v</span></p> 
+<p><span class="codeLabel">--verbose</span></p>
+<p></p></td>
+<td><span >Prints details when working with JAR files</span></td>
+</tr>
+<tr>
+<td><p><span class="codeLabel">-f</span></p> 
+<p><span class="codeLabel">--file</span></p></td>
+<td><span >JAR filename</span></td>
+</tr>
+<tr>
+<td><span ><span class="codeLabel">-C</span></span></td>
+<td><span >Directory containing files to be used to create the JAR</span></td>
+</tr>
+<tr>
+<td><p><span class="codeLabel">-d</span></p> 
+<p><span class="codeLabel">--describe-module</span></p></td>
+<td><span >Describes the details of a module</span></td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
+
+### 17.9.3. **jdeps options**
+
+<table border="1">
+<thead>
+<tr>
+<td><span >Option</span></td>
+<td><span >Description</span></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span ><span class="codeLabel">--module-path &lt;path&gt;</span></span></td>
+<td><span >Location of JARs in a modular program</span></td>
+</tr>
+<tr>
+<td><p><span class="codeLabel">-s</span></p> 
+<p><span class="codeLabel">-summary</span></p></td>
+<td><span >Summarizes output</span></td>
+</tr>
+</tbody>
+</table>
+
+<br/>
+
+## 17.10. Examples
+Run Java Module
+```css
+java -p out\production -m FirstModuleInfo/com.cihan.HelloWorld
+```
+or 
+```css
+java -p . -m FirstModuleInfo
+```
+
+
+Create Runnable Jar From Module
+
+```css
+jar --create --file MyNewApp.jar --main-class com.cihan.HelloWorld
+-C out\production\FirstModule\ .
+```
+
+List Jar
+
+```css
+jar -f MyNewApp.jar --list
+```
+
+```
+META-INF/
+META-INF/MANIFEST.MF
+module-info.class
+com/
+com/cihan/
+com/cihan/HelloWorld.class
+
+```
+## 17.11. Descripe Module
+
+### 17.11.1. Descripe Module Alternative 1
+```
+jar -f MyNewApp.jar -d
+```
+
+```css
+FirstModuleInfo jar:file:///C:/Users/z0049ymw/Documents/ModuleTest/MyNewApp.jar/!module-info.class
+requires java.base mandated
+contains com.cihan
+main-class com.cihan.HelloWorld
+```
+
+### 17.11.2. Descripe Module-Alternative 2
+
+```css
+java --module-path . --describe-module FirstModuleInfo
+```
+Or
+```css
+java -p . -d FirstModuleInfo
+```
+```java
+FirstModuleInfo file:///C:/Users/z0049ymw/Documents/ModuleTest/./MyNewApp.jar
+requires java.base mandated
+contains com.cihan
+
+```
+
+## 17.12. jdeps
+
+```css
+jdeps MyNewApp.jar
+```
+
+```java
+FirstModuleInfo
+ [file:///C:/Users/z0049ymw/Documents/ModuleTest/MyNewApp.jar]
+   requires mandated java.base (@11.0.10)
+FirstModuleInfo -> java.base
+   com.cihan                                          -> java.io
+  java.base
+   com.cihan                                          -> java.lang
+  java.base
+```
+
+<br/>
+<br/>
+
+
+## 17.13. Modular Applications
+
+📺 **Common module directives**
+
+<table border="1">
+<thead>
+<tr>
+<td>Derivative</td>
+<td>Description</td> </tr> </thead>
+<tbody>
+<tr>
+<td>
+<code>exports</code> <i>
+<code>&lt;package&gt;</code></i></td>
+<td>Allows all modules to access the package</td> </tr>
+<tr>
+<td>
+<code>exports</code> <i>
+<code>&lt;package&gt;</code></i> <code>to</code> <i>
+<code>&lt;module&gt;</code></i></td>
+<td>Allows a specific module to access the package</td> </tr>
+<tr>
+<td>
+<code>requires</code> <i>
+<code>&lt;module&gt;</code></i></td>
+<td>Indicates module is dependent on another module</td> </tr>
+<tr>
+<td>
+<code>requires transitive</code> <i>
+<code>&lt;module&gt;</code></i></td>
+<td>Indicates the module and that all modules that use this module are dependent on another module</td> </tr>
+<tr>
+<td>
+<code>uses</code> <i>
+<code>&lt;interface&gt;</code></i></td>
+<td>Indicates that a module uses a service</td> </tr>
+<tr>
+<td>
+<code>provides</code> <i>
+<code>&lt;interface&gt;</code></i> <code>with</code> <i>
+<code>&lt;class&gt;</code></i></td>
+<td>Indicates that a module provides an implementation of a service</td> </tr> </tbody> </table>
+
+<br/>
+
+<br/>
+
+## 17.14. Types of Modules
+### 17.14.1. NAMED MODULES
+
+
+A **named module** is one containing a module‐info file.
+
+<br/>
+
+### 17.14.2. AUTOMATIC MODULES
+
+An **automatic module** appears on the module path but does not contain a module‐info file
+
+<br/>
+
+### 17.14.3. UNNAMED MODULES
+An **unnamed module** appears on the classpath. Like an automatic module, it is a regular JAR.
+
+<br/>
+
+📺 **Properties of modules types**
+
+|Property|Named|Automatic|Unnamed|
+|--- |--- |--- |--- |
+|A ______ module contains a module‐info file?|Yes|No|Ignored if present|
+|A ______ module exports which packages to other modules?|Those in the module‐info file|All packages|No packages|
+|A ______ module is readable by other modules on the module path?|Yes|Yes|No|
+|A ______ module is readable by other JARs on the classpath?|Yes|Yes|Yes|
+
+
+ 
+
+
+# 18. Concurrency
+
+## 18.1. Introduction
+<br/>
+
+### 18.1.1. **RUNNABLE**
+
+<br/>
+
+```java
+@FunctionalInterface public interface Runnable {
+   void run();
+}
+```
+
+<br/>
+
+**Example :**
+```java
+Runnable sloth = () -> System.out.println("Hello World");
+Runnable snake = () -> {int i=10; i++;};
+Runnable beaver = () -> {return;};
+Runnable coyote = () -> {};
+```
+
+<br/>
+
+**Example :** Runnable doesn't return value
+```java
+Runnable capybara = () -> "";                 // DOES NOT COMPILE
+Runnable Hippopotamus = () -> 5;              // DOES NOT COMPILE
+Runnable emu = () -> {return new Object();};  // DOES NOT COMPILE
+```
+
+<br/>
+
+**Another Way To Implement Runnable:**
+```java
+public class CalculateAverage implements Runnable {
+       public void run() {
+          // Define work here
+       }
+    }
+```
+
+
+<br/>
+
+### 18.1.2. **THREAD**
+
+package is : *java.lang.Thread*  
+
+Java does not provide any guarantees about the order in which a thread will be processed once it is started.
+
+<br/>
+
+
+Defining the task that a Thread instance will execute can be done two ways in Java:
+
+- Provide a *Runnable* object or lambda expression to the *Thread* constructor.
+- Create a class that extends *Thread* and overrides the *run()* method.
+
+```java
+public class PrintData implements Runnable {
+   @Override public void run() { // Overrides method in Runnable
+      for(int i = 0; i < 3; i++)
+         System.out.println("Printing record: "+i);
+   }
+   public static void main(String[] args) {
+      (new Thread(new PrintData())).start();
+   }
+}
+ 
+public class ReadInventoryThread extends Thread {
+   @Override public void run() { // Overrides method in Thread
+      System.out.println("Printing zoo inventory");
+   }
+   public static void main(String[] args) {
+      (new ReadInventoryThread()).start();
+   }
+}
+```
+
+<br/>
+
+**Example :**
+```java
+public static void main(String[] args) {
+    System.out.println("begin");
+    (new ReadInventoryThread()).start();
+    (new Thread(new PrintData())).start();
+    (new ReadInventoryThread()).start();
+    System.out.println("end");
+}
+```
+**Prints :** The answer is that it is unknown until runtime. The following is just one possible output:
+```
+begin
+Printing zoo inventory
+Printing record: 0
+end
+Printing zoo inventory
+Printing record: 1
+Printing record: 2
+```
+
+<br/>
+
+
+#### 18.1.2.1. **CALLING RUN() INSTEAD OF START()**
+
+**Example :**
+```java
+System.out.println("begin");
+(new ReadInventoryThread()).run();
+(new Thread(new PrintData())).run();
+(new ReadInventoryThread()).run();
+System.out.println("end");
+```
+Unlike the previous example, each line of this code will wait until the run() method is complete before moving on to the next line
+**Example :**
+```java
+
+```
+
+<br/>
+
+## 18.2. Concurrency API
+
+The *Concurrency API* includes the *ExecutorService* interface, which defines services that create and manage threads for you.
+
+
+**Example :**
+```java
+import java.util.concurrent.*;
+public class ZooInfo {
+   public static void main(String[] args) {
+      ExecutorService service = null;
+      Runnable task1 = () ->
+         System.out.println("Printing zoo inventory");
+      Runnable task2 = () -> {for(int i = 0; i < 3; i++)
+            System.out.println("Printing record: "+i);};
+      try {
+         service = Executors.newSingleThreadExecutor();
+         System.out.println("begin");
+         service.execute(task1);
+         service.execute(task2);
+         service.execute(task1);
+         System.out.println("end");
+      } finally {
+         if(service != null) service.shutdown();
+      }
+   }
+}
+```
+**One of possible output :**
+```
+begin
+Printing zoo inventory
+Printing record: 0
+Printing record: 1
+end
+Printing record: 2
+Printing zoo inventory
+```
+With a single‐thread executor, results are guaranteed to be executed sequentially. Why last output is not sequentially? This is because the *main()* method is still an independent thread from the *ExecutorService*.
+
+<br/>
+
+📺 **ExecutorService methods :**
+|Method name|Description|
+|--- |--- |
+|void execute(Runnable command)|Executes a Runnable task at some point in the future|
+|Future\<?> submit(Runnable task)|Executes a Runnable task at some point in the future and returns a Future representing the task|
+|\<T> Future\<T> submit(Callable\<T> task)|Executes a Callable task at some point in the future and returns a Future representing the pending results of the task|
+|\<T> List\<Future\<T>> invokeAll(Collection\<? extends Callable\<T>> tasks) throws InterruptedException|Executes the given tasks and waits for all tasks to complete. Returns a List of Future instances, in the same order they were in the original collection|
+|\<T> T invokeAny(Collection<? extends Callable\<T>> tasks) throws InterruptedException, ExecutionException|Executes the given tasks and waits for at least one to complete. Returns a Future instance for a complete task and cancels any unfinished tasks|
+
+
+<br/>
+<br/>
+
+
+### 18.2.1. **WAITING FOR RESULTS**
+
+```java
+Future<?> future = service.submit(() -> System.out.println("Hello"));
+```
+<br/>
+
+📺 **Future methods :**
+
+|Method name|Description|
+|--- |--- |
+|boolean isDone()|Returns true if the task was completed, threw an exception, or was cancelled|
+|boolean isCancelled()|Returns true if the task was cancelled before it completed normally|
+|boolean cancel(boolean mayInterruptIfRunning)|Attempts to cancel execution of the task and returns true if it was successfully cancelled or false if it could not be cancelled or is complete|
+|V get()|Retrieves the result of a task, waiting endlessly if it is not yet available|
+|V get(long timeout, TimeUnit unit)|Retrieves the result of a task, waiting the specified amount of time. If the result is not ready by the time the timeout is reached, a checked TimeoutException will be thrown.|
+<br/>
+<br/>
+
+### 18.2.2. **Callable**
+
+The *java.util.concurrent.Callable* functional interface is similar to *Runnable* except that its *call()* method returns a value and can throw a checked exception.
+
+```java
+@FunctionalInterface public interface Callable<V> {
+   V call() throws Exception;
+}
+```
+<br/>
+
+### 18.2.3. **Runnable Vs Callable :**
+```java
+ExecutorService service = null;
+try {
+    Runnable runnable = () -> System.out.println("");   // no return value
+    Callable callable = () -> 30*20;                    // Return <T>
+
+    service = Executors.newSingleThreadExecutor();
+
+    Future<?> submitRunnable = service.submit(runnable);
+    Future<Integer> submitCallable = service.submit(callable);
+
+    System.out.println(submitRunnable.get());   // always null
+    System.out.println(submitCallable.get());   //  600
+} finally {
+    if(service != null) service.shutdown();
+}
+```
+
+<br/>
+
+### 18.2.4. **Waiting for All Tasks to Finish**
+
+First, we shut down the thread executor using the *shutdown()* method. Next, we use the *awaitTermination()* method available for all thread executors.
+
+The method waits the specified time to complete all tasks, returning sooner if all tasks finish or an *InterruptedException* is detected.  
+
+```java
+ExecutorService service = null;
+try {
+   service = Executors.newSingleThreadExecutor();
+   // Add tasks to the thread executor
+   …
+} finally {
+   if(service != null) service.shutdown();
+}
+if(service != null) {
+   service.awaitTermination(1, TimeUnit.MINUTES);
+ 
+   // Check whether all tasks are finished
+   if(service.isTerminated()) System.out.println("Finished!");
+   else System.out.println("At least one task is still running");
+}
+```
+If *awaitTermination()* is called before *shutdown()* within the same thread, then that thread will wait the full timeout value sent with* awaitTermination()*.
+
+<br/>
+
+### 18.2.5. **SUBMITTING TASK COLLECTIONS**
+
+**invokeAll() , invokeAny()**: Execute synchronously and take a Collection of tasks. These methods will wait until the results are available before returning control to the enclosing program
+
+```java
+ExecutorService service = null;
+try {
+    Callable<String> call1 = () -> "Call 1";
+    Callable<String> call2 = () -> "Call 2";
+    Callable<String> call3 = () -> "Call 3";
+    List<Callable<String>> callList = List.of(call1, call2, call3);
+
+    System.out.println("begin");
+
+    service = Executors.newSingleThreadExecutor();
+    List<Future<String>> futureList = service.invokeAll(callList);
+
+    for (Future future : futureList) {
+        System.out.println("future.get() = " + future.get());
+    }
+
+    String any = service.invokeAny(callList);
+    System.out.println("any = " + any);
+
+    System.out.println("End");
+} finally {
+    if (service != null) service.shutdown();
+}
+```
+**Print :**
+```java
+begin
+future.get() = Call 1
+future.get() = Call 2
+future.get() = Call 3
+any = Call 1
+End
+```
+
+<br/>
+
+### 18.2.6. **SCHEDULING TASKS**
+<br/>
+
+ The *ScheduledExecutorService*, which is a subinterface of *ExecutorService*, can be used for just such a task.
+ We might even need to schedule the task to happen repeatedly, at some set interval.
+
+
+```java
+ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+```
+<br/>
+
+📺 **ScheduledExecutorService methods :**
+
+|Method Name|Description|
+|--- |--- |
+|schedule(Callable\<V> callable, long delay, TimeUnit unit)|Creates and executes a Callable task after the given delay|
+|schedule(Runnable command, long delay, TimeUnit unit)|Creates and executes a Runnable task after the given delay|
+|scheduleAtFixedRate(Runnable command, long initialDelay, long period, TimeUnit unit)|Creates and executes a Runnable task after the given initial delay, creating a new task every period value that passes|
+|scheduleWithFixedDelay(Runnable command, long initialDelay, long delay, TimeUnit unit)|Creates and executes a Runnable task after the given initial delay and subsequently with the given delay between the termination of one execution and the commencement of the next|
+
+<br/>
+
+<br/>
+
+**Example :**
+```java
+ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+Runnable task1 = () -> System.out.println("Hello Zoo");
+Callable<String> task2 = () -> "Monkey";
+ScheduledFuture<?> r1 = service.schedule(task1, 10, TimeUnit.SECONDS);
+ScheduledFuture<?> r2 = service.schedule(task2, 8,  TimeUnit.MINUTES);
+```
+The first task is scheduled 10 seconds in the future, whereas the second task is scheduled 8 minutes in the future.
+
+<br/>
+<br/>
+
+**Example 2:** *The scheduleAtFixedRate()* method creates a new task and submits it to the executor every period, regardless of whether the previous task finished
+
+```java
+service.scheduleAtFixedRate(command, 5, 1, TimeUnit.MINUTES);
+```
+The *scheduleAtFixedRate()* method is useful for tasks that need to be run at specific intervals, such as checking the health of the animals once a day.
+
+<br/>
+
+<br/>
+
+### 18.2.7. **INCREASING CONCURRENCY WITH POOLS**
+<br/>
+
+
+📺 **Executors factory methods :**
+|Method|Description|
+|--- |--- |
+|ExecutorService   newSingleThreadExecutor()|Creates a single‐threaded executor that uses a single worker thread operating off an unbounded queue. Results are processed sequentially in the order in which they are submitted.|
+|ScheduledExecutorService   newSingleThreadScheduledExecutor()|Creates a single‐threaded executor that can schedule commands to run after a given delay or to execute periodically|
+|ExecutorService   newCachedThreadPool()|Creates a thread pool that creates new threads as needed but will reuse previously constructed threads when they are available|
+|ExecutorService   newFixedThreadPool(int)|Creates a thread pool that reuses a fixed number of threads operating off a shared unbounded queue|
+|ScheduledExecutorService   newScheduledThreadPool(int)|Creates a thread pool that can schedule commands to run after a given delay or to execute periodically|
+
+<br/>
+<br/>
+
+ - While a *single‐thread* executor will wait for a thread to become available before running the next task, a *pooled‐thread* executor can execute the next task concurrently. 
+
+- Calling *newFixedThreadPool()* with a value of 1 is equivalent to calling *newSingleThreadExecutor()*. 
+
+- The *newCachedThreadPool()* method will create a thread pool of unbounded size, allocating a new thread anytime one is required or all existing threads are busy.
+
+- The *newScheduledThreadPool()* is identical to the *newFixedThreadPool()* method, except that it returns an instance of *ScheduledExecutorService* and is therefore compatible with scheduling tasks.
+<br/>
+<br/>
+
+## 18.3. Writing Thread‐Safe Code
+<br/>
+
+### 18.3.1. **ATOMIC CLASSES**
+
+<br/>
+
+📺 **Atomic classes :**
+|Class Name|Description|
+|--- |--- |
+|AtomicBoolean|A boolean value that may be updated atomically|
+|AtomicInteger|An int value that may be updated atomically|
+|AtomicLong|A long value that may be updated atomically|
+
+<br/>
+
+
+📺 **Common atomic methods :**
+
+|Method name|Description|
+|--- |--- |
+|get()|Retrieves the current value|
+|set()|Sets the given value, equivalent to the assignment = operator|
+|getAndSet()|Atomically sets the new value and returns the old value|
+|incrementAndGet()|For numeric classes, atomic pre‐increment operation equivalent to ++value|
+|getAndIncrement()|For numeric classes, atomic post‐increment operation equivalent to value++|
+|decrementAndGet()|For numeric classes, atomic pre‐decrement operation equivalent to ‐‐value|
+|getAndDecrement()|For numeric classes, atomic post‐decrement operation equivalent to value‐‐|
+
+<br/>
+
+<br/>
+
+### 18.3.2. **SYNCHRONIZED**
+<br/>
+
+**Example :**  Two method definitions are equivalent.
+```java
+private void incrementAndReport() {
+   synchronized(this) {
+      System.out.print((++sheepCount)+" ");
+   }
+}
+private synchronized void incrementAndReport() {
+   System.out.print((++sheepCount)+" ");
+}
+```
+
+<br/>
+
+### 18.3.3. **LOCK FRAMEWORK**
+<br/>
+
+#### 18.3.3.1. <u>**ReentrantLock Interface**</u>
+<br/>
+
+*ReentrantLock* class supports the same features as a synchronized block, while adding a number of improvements.
+
+- Ability to request a lock without blocking
+- Ability to request a lock while blocking for a specified amount of time
+- A lock can be created with a fairness property, in which the lock is granted to threads in the order it was requested.
+
+<br/>
+
+**Implementation #1 with a synchronized block :** 
+<br/>
+
+```java
+Object object = new Object();
+synchronized(object) {
+   
+// Protected code
+}
+```  
+<br/>
+
+**Implementation #2 with a Lock**
+```java
+Lock lock = new ReentrantLock();
+try {
+   lock.lock();
+   
+// Protected code
+} finally {
+   lock.unlock();
+}
+```
+<br/>
+
+📺 **Lock Methods**  
+|Method|Description|
+|--- |--- |
+|void lock()|Requests a lock and blocks until lock is acquired|
+|void unlock()|Releases a lock|
+|boolean tryLock()|Requests a lock and returns immediately. Returns a boolean indicating whether the lock was successfully acquired|
+|boolean tryLock(long,TimeUnit)|Requests a lock and blocks up to the specified time until lock is required. Returns a boolean indicating whether the lock was successfully acquired|
+
+<br/>
+<br/>
+
+#### 18.3.3.2. **Duplicate Lock Requests**
+
+```java
+Lock lock = new ReentrantLock();
+if(lock.tryLock()) {
+   try {
+      lock.lock();
+      System.out.println("Lock obtained, entering protected code");
+   } finally {
+      lock.unlock();
+   }
+}
+```
+The thread obtains the lock twice but releases it only once.
+
+
+
+### 18.3.4. **CYCLICBARRIER**
+
+CyclicBarrier class coordinate to the tasks.
+
+**Example 1:** Without CyclicBarrier
+```java
+public class LionPenManager {
+    private void removeLions() {
+        System.out.println("Removing lions");
+    }
+
+    private void cleanPen() {
+        System.out.println("Cleaning the pen");
+    }
+
+    private void addLions() {
+        System.out.println("Adding lions");
+    }
+
+    public void performTask() {
+        removeLions();
+        cleanPen();
+        addLions();
+    }
+
+    public static void main(String[] args) {
+        ExecutorService service = null;
+        try {
+            service = Executors.newFixedThreadPool(4);
+            var manager = new LionPenManager();
+            for (int i = 0; i < 4; i++)
+                service.submit(() -> manager.performTask());
+        } finally {
+            if (service != null) service.shutdown();
+        }
+    }
+}
+```
+**sample output :**
+```
+Removing lions
+Removing lions
+Cleaning the pen
+Removing lions
+Cleaning the pen
+Adding lions
+Removing lions
+Cleaning the pen
+Adding lions
+Adding lions
+Cleaning the pen
+Adding lions
+```
+<br/>
+
+**Example 2:** Uses *CyclicBarrier*
+```java
+public class LionPenManager {
+    private void removeLions() {
+        System.out.println("Removing lions");
+    }
+
+    private void cleanPen() {
+        System.out.println("Cleaning the pen");
+    }
+
+    private void addLions() {
+        System.out.println("Adding lions");
+    }
+
+    public void performTask(CyclicBarrier c1, CyclicBarrier c2) {
+        try {
+            removeLions();
+            c1.await();
+            cleanPen();
+            c2.await();
+            addLions();
+        } catch (InterruptedException | BrokenBarrierException e) {
+            // Handle checked exceptions here
+        }
+    }
+
+    public static void main(String[] args) {
+        ExecutorService service = null;
+        try {
+            service = Executors.newFixedThreadPool(4);
+            var manager = new LionPenManager();
+            var c1 = new CyclicBarrier(4);
+            var c2 = new CyclicBarrier(4,
+                    () -> System.out.println("*** Pen Cleaned!"));
+            for (int i = 0; i < 4; i++)
+                service.submit(() -> manager.performTask(c1, c2));
+        } finally {
+            if (service != null) service.shutdown();
+        }
+    }
+}
+```
+<br/>
+
+**Output :**
+```
+Removing lions
+Removing lions
+Removing lions
+Removing lions
+Cleaning the pen
+Cleaning the pen
+Cleaning the pen
+Cleaning the pen
+*** Pen Cleaned!
+Adding lions
+Adding lions
+Adding lions
+Adding lions
+```
+
+<br/>
+<br/>
+
+#### 18.3.4.1. **THREAD POOL SIZE AND CYCLIC BARRIER LIMIT**
+
+Number of available threads must to be at least as large as  CyclicBarrier limit value. If not, the code will hang indefinitely. The barrier would never be reached as the only threads available in the pool are stuck waiting for the barrier to be complete. This would result in a deadlock.
+
+```java
+ExecutorService service = Executors.newFixedThreadPool(2);
+var c1 = new CyclicBarrier(4);
+```
+
+<br/>
+
+#### 18.3.4.2. **REUSING CYCLICBARRIER** 
+
+If CyclicBarrier limit is 5 and have 15 threads that call await(), then the CyclicBarrier will be activated a total of three times.
+
+<br/>
+<br/>
+
+## 18.4. Using Concurrent Collections
+
+### 18.4.1. MEMORY CONSISTENCY ERRORS
+
+When two threads try to modify the same nonconcurrent collection, the JVM may throw a *ConcurrentModificationException* at runtime.
+
+Tt can happen with a single thread.
+
+```java
+var foodData = new HashMap<String, Integer>();
+foodData.put("penguin", 1);
+foodData.put("flamingo", 2);
+for(String key: foodData.keySet())
+   foodData.remove(key);
+```
+**Print :**
+```java
+Exception in thread "main" java.util.ConcurrentModificationException
+	at java.base/java.util.HashMap$HashIterator.nextNode(HashMap.java:1493)
+	at java.base/java.util.HashMap$KeyIterator.next(HashMap.java:1516)
+	at concurrency.collections.App1.main(App1.java:10)
+```
+
+It throw ConcurrentModificationException while second iteration of loop, since the iterator on keySet() is not properly updated after the first element is removed. 
+
+Changing the first line to use a ConcurrentHashMap will prevent the code from throwing an exception at runtime. 
+
+<br/>
+
+```java
+var foodData = new ConcurrentHashMap<String, Integer>();
+foodData.put("penguin", 1);
+foodData.put("flamingo", 2);
+for(String key: foodData.keySet())
+    foodData.remove(key);
+```
+
+*ConcurrentHashMap* is ordering read/write access such that all access to the class is consistent. The iterator created by *keySet()* is updated as soon as an object is removed from the *Map*. 
+
+<br/>
+<br/>
+
+### 18.4.2. **CONCURRENT CLASSES**
+<br/>
+
+🟡 **Note :** Immutable objects can be accessed by any number of threads and do not require synchronization. By definition, they do not change, so there is no chance of a memory consistency error.
+
+
+📺 **Concurrent collection classes**
+
+|Class name|Java Collections Framework interfaces|Elements ordered?|Sorted?|Blocking?|
+|--- |--- |--- |--- |--- |
+|ConcurrentHashMap|ConcurrentMap|No|No|No|
+|ConcurrentLinkedQueue|Queue|Yes|No|No|
+|ConcurrentSkipListMap|ConcurrentMap SortedMap NavigableMap|Yes|Yes|No|
+|ConcurrentSkipListSet|SortedSet NavigableSet|Yes|Yes|No|
+|CopyOnWriteArrayList|List|Yes|No|No|
+|CopyOnWriteArraySet|Set|No|No|No|
+|LinkedBlockingQueue|BlockingQueue|Yes|No|Yes|
+
+<br/>
+<br/>
+
+**Example :**
+```java
+Map<String,Integer> map = new ConcurrentHashMap<>();
+map.put("zebra", 52);
+map.put("elephant", 10);
+System.out.println(map.get("elephant"));  // 10
+ 
+Queue<Integer> queue = new ConcurrentLinkedQueue<>();
+queue.offer(31);
+System.out.println(queue.peek());  // 31
+System.out.println(queue.poll());  // 31
+```
+<br/>
+<br/>
+
+### 18.4.3. **SkipList Collections**
+<br/>
+
+The SkipList classes, ConcurrentSkipListSet and ConcurrentSkipListMap, are concurrent versions of their sorted counterparts, TreeSet and TreeMap, respectively.
+
+**Example 1:**
+```java
+Set<String> gardenAnimals = new ConcurrentSkipListSet<>();
+gardenAnimals.add("rabbit");
+gardenAnimals.add("cat");
+gardenAnimals.add("gopher");
+System.out.println(gardenAnimals.stream().collect(Collectors.joining(",")));
+```
+**Print :**
+```
+cat,gopher,rabbit
+```
+<br/>
+
+**Example 2:**
+```java
+Map<String, String> rainForestAnimalDiet = new ConcurrentSkipListMap<>();
+rainForestAnimalDiet.put("koala", "bamboo");
+rainForestAnimalDiet.put("cat", "kukoo");
+rainForestAnimalDiet.entrySet()
+        .stream()
+        .forEach((e) -> System.out.println(e.getKey() + "-" + e.getValue()));  
+```
+**Print :**
+```
+cat-kukoo
+koala-bamboo
+```
+
+🟡 When see *SkipList* or *SkipSet*, just think “sorted” concurrent collections, and the rest should follow naturally.
+<br/>
+<br/>
+
+
+### 18.4.4. **CopyOnWrite Collections**
+<br/>
+
+ - *CopyOnWriteArrayList*  
+ - *CopyOnWriteArraySet*
+
+
+<br/>
+
+**Example 1:**
+```java
+List<Integer> favNumbers = new CopyOnWriteArrayList<>(List.of(4,3,42));
+
+for(var n: favNumbers) {
+   System.out.print(n + " ");
+   favNumbers.add(9);
+}
+ 
+System.out.println("\nSize: " + favNumbers.size());
+```
+<br/>
+
+**Print :**
+```java
+4 3 42
+Size: 6
+```
+<br/>
+
+**Example 2:**
+```java
+Set<Character> favLetters = new CopyOnWriteArraySet<>(List.of('a','t'));
+
+for(char c: favLetters) {
+   System.out.print(c+" ");
+   favLetters.add('s');
+}
+
+System.out.println("\nSize: "+ favLetters.size());
+```
+<br/>
+
+**Print :**
+```java
+a t 
+Size: 3
+```
+<br/>
+
+### 18.4.5. **Blocking Queues**
+<br/>
+
+The *BlockingQueue* is just like a regular Queue, except that it includes methods that will wait a specific amount of time to complete an operation.
+
+|Method name|Description|
+|--- |--- |
+|offer(E e, long timeout, TimeUnit unit)|Adds an item to the queue, waiting the specified time and returning false if the time elapses before space is available|
+|poll(long timeout, TimeUnit unit)|Retrieves and removes an item from the queue, waiting the specified time and returning null if the time elapses before the item is available|
+
+<br/>
+<br/>
+
+**Example :**
+```java
+try {
+   var blockingQueue = new LinkedBlockingQueue<Integer>();
+   blockingQueue.offer(39);
+   blockingQueue.offer(3, 4, TimeUnit.SECONDS);
+   System.out.println(blockingQueue.poll());
+   System.out.println(blockingQueue.poll(10, TimeUnit.MILLISECONDS));
+} catch (InterruptedException e) {
+   // Handle interruption
+}
+```
+<br/>
+
+**Print :**
+```
+39
+3
+```
+<br/>
+
+
+### 18.4.6. **SYNCHRONIZED COLLECTIONS**
+
+<br/>
+
+📺 **Synchronized collections methods**
+
+||
+|--- |
+|synchronizedCollection(Collection\<T> c)|
+|synchronizedList(List\<T> list)|
+|synchronizedMap(Map\<K,V> m)|
+|synchronizedNavigableMap(NavigableMap\<K,V> m)|
+|synchronizedNavigableSet(NavigableSet\<T> s)|
+|synchronizedSet(Set\<T> s)|
+|synchronizedSortedMap(SortedMap\<K,V> m)|
+|synchronizedSortedSet(SortedSet\<T> s)|
+
+<br/>
+
+<br/>
+
+**Example :**
+```java
+var foodData = new HashMap<String, Object>();
+foodData.put("penguin", 1);
+foodData.put("flamingo", 2);
+var synFoodData = Collections.synchronizedMap(foodData);
+for(String key: synFoodData.keySet())
+   synFoodData.remove(key);
+```
+This loop throws a *ConcurrentModificationException*, whereas our example that used *ConcurrentHashMap* did not.
+
+<br/>
+
+```java 
+Exception in thread "main" java.util.ConcurrentModificationException
+	at java.base/java.util.HashMap$HashIterator.nextNode(HashMap.java:1493)
+	at java.base/java.util.HashMap$KeyIterator.next(HashMap.java:1516)
+	at concurrency.collections.App4.main(App4.java:12)
+```
+<br/>
+<br/>
+
+## 18.5. Threading Problems
+
+### 18.5.1. **LIVENESS**
+
+*Liveness* is the ability of an application to be able to execute in a timely manner.
+
+#### 18.5.1.1. **Deadlock**
+
+*Deadlock* occurs when two or more threads are blocked forever, each waiting on the other
+
+```java 
+class Food {
+}
+
+class Water {
+}
+
+public class Fox {
+    public void eatAndDrink(Food food, Water water) {
+        synchronized (food) {
+            System.out.println("Got Food!");
+            move();
+            synchronized (water) {
+                System.out.println("Got Water!");
+            }
+        }
+    }
+
+    public void drinkAndEat(Food food, Water water) {
+        synchronized (water) {
+            System.out.println("Got Water!");
+            move();
+            synchronized (food) {
+                System.out.println("Got Food!");
+            }
+        }
+    }
+
+    public void move() {
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            // Handle exception
+        }
+    }
+
+    public static void main(String[] args) {
+        // Create participants and resources
+        Fox foxy = new Fox();
+        Fox tails = new Fox();
+        Food food = new Food();
+        Water water = new Water();
+        // Process data
+        ExecutorService service = null;
+        try {
+            service = Executors.newScheduledThreadPool(10);
+            service.submit(() -> foxy.eatAndDrink(food, water));
+            service.submit(() -> tails.drinkAndEat(food, water));
+        } finally {
+            if (service != null) service.shutdown();
+        }
+    }
+}
+```
+<br/>
+
+The result is that our program outputs the following, and it hangs indefinitely:
+```
+Got Food!
+Got Water!
+```
+
+
+<br/>
+
+#### 18.5.1.2. **Starvation**
+
+Starvation occurs when a single thread is perpetually denied access to a shared resource or lock. The thread is still active, but it is unable to complete its work as a result of other threads constantly taking the resource that they are trying to access.
+
+
+<br/>
+
+#### 18.5.1.3. **Livelock**
+Livelock occurs when two or more threads are conceptually blocked forever, although they are each still active and trying to complete their task. Livelock is a special case of resource starvation in which two or more threads actively try to acquire a set of locks, are unable to do so, and restart part of the process. 
+
+Livelock is often a result of two threads trying to resolve a deadlock. 
+
+<br/>
+<br/>
+
+## 18.6. Parallel Streams
+
+### 18.6.1. **CREATING PARALLEL STREAMS**
+
+<br/>
+
+```java 
+Stream<Integer> s1 = List.of(1,2).stream();
+Stream<Integer> s2 = s1.parallel();
+
+``` 
+```java
+Stream<Integer> s3 = List.of(1,2).parallelStream();
+```
+
+<br/>
+
+🟡 The Stream interface includes a method *isParallel()* that can be used to test if the instance of a stream supports parallel processing.
+
+
+#### 18.6.1.1. **forEachOrdered()**
+Similier foreach() but it forces a parallel stream to process the results in order at the cost of performance.
+
+```java
+List.of(1,2,3,4,5)
+        .parallelStream()
+        .map(w -> doWork(w))
+        .forEachOrdered(s -> System.out.print(s + " "));
+```
+**Prints :**
+```java
+1 2 3 4 5 
+```
+
+<br/>
+
+
+### 18.6.2. **PARALLEL REDUCTIONS**
+
+<br/>
+
+```java
+System.out.print(List.of(1,2,3,4,5,6)
+   .stream()
+   .findAny().get());
+```
+The result is that the output could be 4, 1, or really any value in the stream. You can see that with parallel streams, the results of findAny() are not as predictable.
+
+
+This code frequently outputs the first value in the serial stream, 1, although this is not guaranteed. The findAny() method is free to select any element on either serial or parallel streams.
+
+<br/>
+
+### 18.6.3. **Combining Results with reduce()**
+
+<br/>
+
+
+```java
+<U> U reduce(U identity, 
+   BiFunction<U,? super T,U> accumulator, 
+   BinaryOperator<U> combiner)
+```
+
+<br/>
+
+**Example:**
+```java
+System.out.println(List.of('w', 'o', 'l', 'f')
+   .parallelStream()                                   
+   .reduce("", 
+      (s1,c) -> s1 + c, 
+      (s2,s3) -> s2 + s3));  // wolf
+```
+On parallel streams, the reduce() method works by applying the reduction to pairs of elements within the stream to create intermediate values and then combining those intermediate values to produce a final result. Put another way, in a serial stream, wolf is built one character at a time. In a parallel stream, the intermediate values wo and lf are created and then combined.
+
+<br/>
+
+
+**Example**:  Using a problematic accumulator. 
+
+```java
+System.out.println(List.of(1,2,3,4,5,6)
+    .parallelStream()
+    .reduce(0, (a,b) -> (a - b)));  // PROBLEMATIC ACCUMULATOR
+```
+It may output ‐21, 3, or some other value.
+
+We can omit a combiner parameter in these examples, as the accumulator can be used when the intermediate data types are the same.
+
+<br/>
+
+```java
+ System.out.println(List.of("w","o","l","f")
+   .parallelStream()
+   .reduce("X", String::concat));  // XwXoXlXf
+```
+On a serial stream, it prints Xwolf, but on a parallel stream the result is XwXoXlXf.
+
+<br/>
+<br/>
+
+### 18.6.4. **Combining Results with collect()**
+
+<br/>
+
+
+```java
+ <R> R collect(Supplier<R> supplier,
+   BiConsumer<R, ? super T> accumulator,
+   BiConsumer<R, R> combiner)
+```
+
+<br/>
+
+**Example :**
+```java
+ Stream<String> stream = Stream.of("w", "o", "l", "f").parallel();
+SortedSet<String> set = stream.collect(ConcurrentSkipListSet::new,
+   Set::add,
+   Set::addAll);
+System.out.println(set);  // [f, l, o, w]
+```
+Recall that elements in a ConcurrentSkipListSet are sorted according to their natural ordering. 
+
+<br/>
+
+### 18.6.5. ***Performing a Parallel Reduction on a Collector***
+
+*Requirements for Parallel Reduction with collect():*
+
+- The stream is parallel.
+- The parameter of the collect() operation has the Characteristics.CONCURRENT -characteristic.
+- Either the stream is unordered or the collector has the characteristic **Characteristics.UNORDERED**.
+
+For example, while Collectors.toSet() does have the UNORDERED characteristic, it does not have the CONCURRENT characteristic. Therefore, the following is not a parallel reduction even with a parallel stream:
+
+
+```java
+stream.collect(Collectors.toSet());  // Not a parallel reduction
+```
+toConcurrentMap() and groupingByConcurrent(), that are both UNORDERED and CONCURRENT. These methods produce Collector instances capable of performing parallel reductions efficiently. 
+
+<br/>
+
+### 18.6.6. **AVOIDING STATEFUL OPERATIONS**
+
+<br/>
+<br/>
+
+**Example 1:**
+```java
+ public List<Integer> addValues(IntStream source) {
+   var data = Collections.synchronizedList(new ArrayList<Integer>());
+   source.filter(s -> s % 2 == 0)
+      .forEach(i -> { data.add(i); });  // STATEFUL: DON'T DO THIS!
+   return data;
+}
+```
+
+```java
+var list = addValues(IntStream.range(1, 11));
+System.out.println(list);   // [2, 4, 6, 8, 10]
+```
+
+<br/>
+
+**Example 1: with parallel stream**
+```java
+var list = addValues(IntStream.range(1, 11).parallel());
+System.out.println(list);  // [6, 8, 10, 2, 4]
+```
+
+<br/>
+
+**Example 1: solve with collect()**
+```java
+ public static List<Integer> addValues(IntStream source) {
+   return source.filter(s -> s % 2 == 0)
+      .boxed()
+      .collect(Collectors.toList());
+}
+```
+**Print :**
+```
+[2, 4, 6, 8, 10]
+ ```
+
+<br/>
+
+
+
+
+# 19. I/O
+##  19.1. Files and Directories
+<br/>
+
+### 19.1.1. **FILE CLASS**
 
 The File class cannot read or write data within a file, although it can be passed as a reference to many stream classes to read or write data.
 
@@ -9515,11 +11318,11 @@ Parent Path: c:\
 <br/>
 <br/>
 
-## 17.2. I/O Streams
+## 19.2. I/O Streams
 
 <br/>
 
-### 17.2.1. **Byte Streams vs. Character Streams**
+### 19.2.1. **Byte Streams vs. Character Streams**
 
 <br/>
 
@@ -9544,7 +11347,7 @@ Charset utf8Charset = Charset.forName("UTF-8");
 Charset utf16Charset = Charset.forName("UTF-16");
 ```  
 
-### 17.2.2. **Input vs. Output Streams**
+### 19.2.2. **Input vs. Output Streams**
 
 <br/>
 
@@ -9563,7 +11366,7 @@ Charset utf16Charset = Charset.forName("UTF-16");
 
 <br/>
 
-### 17.2.3. **Low‐Level vs. High‐Level Streams**
+### 19.2.3. **Low‐Level vs. High‐Level Streams**
 
 A low‐level stream connects directly with the source of the data, such as a file, an array, or a String.   
 For example, a *FileInputStream* is a class that reads file data one byte at a time.
@@ -9595,7 +11398,7 @@ For example, accessing 1,600 sequential bytes is a lot faster than accessing 1,6
 
 <br/>
 
-### 17.2.4. **Stream Base Classes**
+### 19.2.4. **Stream Base Classes**
 
 The java.io library defines four abstract classes that are the parents of all stream classes defined within the API: **InputStream**, **OutputStream**, **Reader**, and **Writer**.
 
@@ -9615,10 +11418,10 @@ Finally, the last example does not compile because *InputStream* is an *abstract
 <br/>
 <br/>
 
-### 17.2.5. **Decoding I/O Class Names**
+### 19.2.5. **Decoding I/O Class Names**
 <br/>
 
-#### 17.2.5.1. **Review of java.io Class Name Properties :**
+#### 19.2.5.1. **Review of java.io Class Name Properties :**
 
 * A class with the word *InputStream* or *OutputStream* in its name is used for reading or writing binary or byte data, respectively.
 * A class with the word *Reader* or *Writer* in its name is used for reading or writing character or string data, respectively.
@@ -9663,9 +11466,9 @@ For the last rule, we'll cover some of those exceptions (like wrapping an *Outpu
 <br/>
 <br/>
 
-## 17.3. Common I/O Stream Operations
+## 19.3. Common I/O Stream Operations
 
-### 17.3.1. **READING AND WRITING DATA**
+### 19.3.1. **READING AND WRITING DATA**
 
 ```java
 // InputStream and Reader
@@ -9721,7 +11524,7 @@ public void write(char[] c, int offset, int length) throws IOException
 ```  
 <br/> 
 
-### 17.3.2. **CLOSING THE STREAM**
+### 19.3.2. **CLOSING THE STREAM**
 
 🔴 All I/O streams implement *Closeable*.
 
@@ -9747,7 +11550,7 @@ try (var ois = new ObjectOutputStream(
 ```    
 <br/> 
 
-### 17.3.3. **MANIPULATING INPUT STREAMS**
+### 19.3.3. **MANIPULATING INPUT STREAMS**
 
 ```java
 // InputStream and Reader
@@ -9757,7 +11560,7 @@ public void reset() throws IOException
 public long skip(long n) throws IOException
 ```  
 
-#### 17.3.3.1. **mark() and reset()**
+#### 19.3.3.1. **mark() and reset()**
 
 ```java
 public void readData(InputStream is) throws IOException {
@@ -9775,7 +11578,7 @@ public void readData(InputStream is) throws IOException {
 ```    
 <br/> 
 
-#### 17.3.3.2. **skip()**
+#### 19.3.3.2. **skip()**
 
 
 ```java
@@ -9786,7 +11589,7 @@ System.out.print((char)is.read());  // R
 System.out.print((char)is.read());  // S
 ```  
 
-### 17.3.4. **FLUSHING OUTPUT STREAMS**
+### 19.3.4. **FLUSHING OUTPUT STREAMS**
 
 ```java
 // OutputStream and Writer
@@ -9892,9 +11695,9 @@ public void flush() throws IOException
 <br/> 
 <br/> 
 
-## 17.4. Working with I/O Stream Classes
+## 19.4. Working with I/O Stream Classes
 
-### 17.4.1. **READING AND WRITING BINARY DATA**
+### 19.4.1. **READING AND WRITING BINARY DATA**
 
 ```java
 public FileInputStream(File file) throws FileNotFoundException
@@ -9918,7 +11721,7 @@ void copyFile(File src, File dest) throws IOException {
 }
 ```
 
-### 17.4.2. **BUFFERING BINARY DATA**
+### 19.4.2. **BUFFERING BINARY DATA**
 
 
 
@@ -9946,7 +11749,7 @@ void copyFileWithBuffer(File src, File dest) throws IOException {
 }
 ```    
 
-### 17.4.3. **READING AND WRITING CHARACTER DATA**
+### 19.4.3. **READING AND WRITING CHARACTER DATA**
 
 
 ```java
@@ -9982,7 +11785,7 @@ writer.write("Hello World");
 ```
 <br/>      
 
-### 17.4.4. **BUFFERING CHARACTER DATA**
+### 19.4.4. **BUFFERING CHARACTER DATA**
 
 ```java
 public BufferedReader(Reader in)
@@ -10017,7 +11820,7 @@ void copyTextFileWithBuffer(File src, File dest) throws IOException {
 <br/> 
 <br/> 
 
-### 17.4.5. **SERIALIZING**
+### 19.4.5. **SERIALIZING**
 
 *Serialization* is the process of converting an in‐memory object to a byte stream. Likewise, *deserialization*  is the process of converting from a byte stream into an object.
 
@@ -10064,7 +11867,7 @@ public class Fur implements Serializable {}
 
 <br/>
 
-### 17.4.6. **Storing Data with ObjectOutputStream and ObjectInputStream**
+### 19.4.6. **Storing Data with ObjectOutputStream and ObjectInputStream**
 
 The *ObjectInputStream* class is used to deserialize an object from a stream, while the *ObjectOutputStream* is used to serialize an object to a stream
 
@@ -10095,7 +11898,7 @@ void saveToFile(List<Gorilla> gorillas, File dataFile)
 }
 ```
 
-### 17.4.7. **Deserialization Creation Process**
+### 19.4.7. **Deserialization Creation Process**
 
 Any *static* or *transient* fields are ignored. Values that are not provided will be given their default Java value, such as *null* for String, or *0* for int values.
 
@@ -10153,7 +11956,7 @@ Since it's static, it will actually display whatever value was set last.
 
 
 
-### 17.4.8. **PRINTING DATA**
+### 19.4.8. **PRINTING DATA**
 
 *PrintStream* and *PrintWriter* are high‐level output print streams classes that are useful for writing text data to a stream.
 
@@ -10175,16 +11978,16 @@ public PrintWriter(String fileName) throws FileNotFoundException
 
 <center> 
 
-### 17.4.9. **Review Of Stream Classes**
+### 19.4.9. **Review Of Stream Classes**
 </center>
 
-![images.info](.././images/stream-classes.png)
+![images.info](doc/java/stream-classes.png)
 
 
 
 <br/>
 
-## 17.5. SYSTEM STREAMS
+## 19.5. SYSTEM STREAMS
 
 🔴 You shouldn't close to System.out, System.err, and System.in.  
 Because these are static objects, the System streams are shared by the entire application. The JVM creates and opens them for us. They can be used in a try‐with‐resources statement or by calling close(), although closing them is not recommended. Closing the System streams makes them permanently unavailable for all threads in the remainder of the program.
@@ -10201,7 +12004,7 @@ It prints nothing. Because System.out is closed after try.
 
 <br/>
 
-## 17.6. CONSOLE
+## 19.6. CONSOLE
 
 *The java.io.Console* class is specifically designed to handle user interactions. After all, *System.in* and *System.out* are just raw streams, whereas *Console* is a class with numerous methods centered around user input.
 
@@ -10289,9 +12092,261 @@ Passwords match
 
 <br/> 
 
-# 18. EXTRA
 
-## 18.1. Variables
+
+
+# 20. NIO
+
+## 20.1. Path Create
+
+```java
+FileSystems.getDefault().getPath("puma.txt");
+new java.io.File("tiger.txt").toPath();
+Paths.get("ocelot.txt")
+Path.of(new URI(""));
+```
+
+## 20.2. ABSOLUTE VS. RELATIVE PATHS
+- If a path starts with a forward slash ( /), it is absolute, with / as the root directory.  
+Examples: /bird/parrot.png and /bird/../data/./info
+
+- If a path starts with a drive letter ( c:), it is absolute, with the drive letter as the root directory.  
+Examples: c:/bird/parrot.png and d:/bird/../data/./info
+
+- Otherwise, it is a relative path.  
+Examples: bird/parrot.png and bird/../data/./info
+
+
+```java
+Path path = Paths.get("/land/hippo/harry.happy");
+System.out.println("The Path Name is: " + path);
+for(int i=0; i<path.getNameCount(); i++) {
+   System.out.println("   Element " + i + " is: " + path.getName(i));
+}
+```
+**Print :**
+```
+The Path Name is: /land/hippo/harry.happy
+   Element 0 is: land
+   Element 1 is: hippo
+   Element 2 is: harry.happy
+```
+
+📺**Path methods**
+<table border="1">
+<tbody>
+<tr>
+<td class="left">
+<code>Path of(String, String…)</code> </td>
+<td class="left">
+<code>Path getParent()</code> </td> </tr>
+<tr>
+<td class="left">
+<code>URI toURI()</code> </td>
+<td class="left">
+<code>Path getRoot()</code> </td> </tr>
+<tr>
+<td class="left">
+<code>File toFile()</code> </td>
+<td class="left">
+<code>boolean isAbsolute()</code> </td> </tr>
+<tr>
+<td class="left">
+<code>String toString()</code> </td>
+<td class="left">
+<code>Path toAbsolutePath()</code> </td> </tr>
+<tr>
+<td class="left">
+<code>int getNameCount()</code> </td>
+<td class="left">
+<code>Path relativize()</code> </td> </tr>
+<tr>
+<td class="left">
+<code>Path getName(int)</code> </td>
+<td class="left">
+<code>Path resolve(Path)</code> </td> </tr>
+<tr>
+<td class="left">
+<code>Path subpath(int, int)</code> </td>
+<td class="left">
+<code>Path normalize()</code> </td> </tr>
+<tr>
+<td class="left">
+<code>Path getFileName()</code> </td>
+<td class="left">
+<code>Path toRealPath(LinkOption…)</code> </td> </tr> </tbody> </table>
+
+
+<br/>
+<br/>
+
+  
+## 20.3. FILES.READALLLINES() VS. FILES.LINES()  
+For the exam, you need to know the difference between readAllLines() and lines(). Both of these examples compile and run:
+
+```java
+Files.readAllLines(Paths.get("birds.txt")).forEach(System.out::println);
+Files.lines(Paths.get("birds.txt")).forEach(System.out::println);
+```
+   
+The first line reads the entire file into memory and performs a print operation on the result, while the second line lazily processes each line and prints it as it is read. The advantage of the second code snippet is that it does not require the entire file to be stored in memory at any time.
+
+You should also be aware of when they are mixing incompatible types on the exam. Do you see why the following does not compile?
+```java
+Files.readAllLines(Paths.get("birds.txt"))
+    .filter(s -> s.length()> 2)
+    .forEach(System.out::println);
+```
+The readAllLines() method returns a List, not a Stream, so the filter() method is not available.
+
+
+
+
+<br/>
+<br/>
+
+## 20.4. **Streams**
+
+### 20.4.1. **walk()**
+
+```java
+public static Stream<Path> walk(Path start, FileVisitOption... options) throws IOException
+```
+Return a Stream that is lazily populated with Path by walking the file tree rooted at a given starting file.
+
+```java
+public static Stream<Path> walk(Path start, int maxDepth, FileVisitOption... options) throws IOException
+```
+Return a Stream that is lazily populated with Path by walking the file tree rooted at a given starting file.
+
+<br/>
+
+### 20.4.2. **find()**
+
+The find() method behaves in a similar manner as the walk() method, except that it takes a BiPredicate to filter the data. It also requires a depth limit be set. Like walk(), find() also supports the FOLLOW_LINK option.
+
+```java
+public static Stream<Path> find(Path start, int maxDepth, BiPredicate<Path,BasicFileAttributes> matcher, FileVisitOption... options) throws IOException
+```
+Return a Stream that is lazily populated with Path by searching for files in a file tree rooted at a given starting file.
+
+
+```java
+Path path = Paths.get("/bigcats");
+long minSize = 1_000;
+try (var s = Files.find(path, 10, 
+      (p, a) -> a.isRegularFile()
+         && p.toString().endsWith(".java")
+         && a.size() > minSize)) {
+   s.forEach(System.out::println);
+}
+```
+
+
+
+
+
+**OTHERS :**
+
+## 20.5. **RandomAccessFile**
+
+*RandomAccessFile* implements *DataInput* as well as *DataOutput* interfaces. Therefore, in this case, you can use raf as an instance of *DataOutput* and call its *writeUTF(String)* method.
+
+- writeUTF(String)
+- writeChars(String )
+
+<br/>
+
+## 20.6. BufferWriter
+
+- newLine()
+- write(String)
+
+BufferedWriter does not have writeUTF method but it does have newLine and write(String) methods. 
+
+You should remember that following points:
+1.BufferedWriter only adds the functionality of buffering on top of a Writer. It doesn't directly deal with encoding. Encoding is handled by the underlying Writer object.
+2.FileWriter is a concrete subclass of java.io.Writer that writes data to the underlying file in default encoding. If you want to write text in a different encoding, you will need to create an OutputStreamWriter with that encoding. For example,
+OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream("utf8.txt"), Charset.forName("UTF-8").newEncoder()  );
+You can then create a BufferedWriter over this OutputStreamWriter.
+
+
+
+## 20.7. **Exceptions**
+
+**java.io.FileNotFoundException** may be thrown by *FileInputStream*, *FileOutputStream*, and *RandomAccessFile* constructors if the file by the given name does not exist.
+
+
+## 20.8. **Files**
+<br/>
+
+### 20.8.1. **move()**
+
+**ATOMIC_MOVE:** Move the file as an atomic file system operation.
+**COPY_ATTRIBUTES:** Copy attributes to the new file.
+**REPLACE_EXISTING:** Replace an existing file if it exists.
+
+
+<br/>
+
+### 20.8.2. **copy()**
+
+```java
+public static Path copy(Path source, Path target, CopyOption... options) throws IOException
+```
+
+**The options parameter may include any of the following:**  
+
+**REPLACE_EXISTING:**  If the target file exists, then the target file is replaced if it is not a non-empty directory. If the target file exists and is a symbolic link, then the symbolic link itself, not the target of the link, is replaced.
+
+**COPY_ATTRIBUTES:**  Attempts to copy the file attributes associated with this file to the target file. The exact file attributes that are copied is platform and file system dependent and therefore unspecified. Minimally, the last-modified-time is copied to the target file if supported by both the source and target file stores. Copying of file timestamps may result in precision loss.
+
+**NOFOLLOW_LINKS:**  Symbolic links are not followed. If the file is a symbolic link, then the symbolic link itself, not the target of the link, is copied. It is implementation specific if file attributes can be copied to the new link. In other words, the COPY_ATTRIBUTES option may be ignored when copying a symbolic link.
+An implementation of this interface may support additional implementation specific options.
+
+Copying a file is not an atomic operation. If an IOException is thrown, then it is possible that the target file is incomplete or some of its file attributes have not been copied from the source file. When the REPLACE_EXISTING option is specified and the target file exists, then the target file is replaced. The check for the existence of the file and the creation of the new file may not be atomic with respect to other file system activities.
+ 
+<br/>
+
+```java
+```
+
+📺 ☝ 🟡
+🔴
+
+# 21. JDBC
+
+- **Driver:** Establishes a connection to the database
+- **Connection:** Sends commands to a database
+- **PreparedStatement:** Executes a SQL query
+- **CallableStatement:** Executes commands stored in the database
+- **ResultSet:** Reads results of a query
+
+```java
+ String url = "jdbc:derby:zoo";
+try (Connection conn = DriverManager.getConnection(url);
+    PreparedStatement ps = conn.prepareStatement(
+    "SELECT name FROM animal");
+    ResultSet rs = ps.executeQuery()) {
+    while (rs.next())
+    System.out.println(rs.getString(1));
+}
+ 
+```
+**Url Examples :**
+```java
+jdbc:postgresql://localhost/zoo
+jdbc:oracle:thin:@123.123.123.123:1521:zoo
+jdbc:mysql://localhost:3306
+jdbc:mysql://localhost:3306/zoo?profileSQL=true
+```
+
+
+<br/>
+
+# 22. EXTRA
+
+## 22.1. Variables
 
 **Q** : *A method that takes a parameter with type java.lang.Object can be passed any variable.*  
 **A** : **Correct**, as a method that accepts java.lang.Object can accept any variable since all objects inherit java.lang.Object. This also includes primitives, which can be autoboxed to their wrapper classes.
@@ -10305,20 +12360,20 @@ Passwords match
 
 ----------- 
 
-## 18.2. Search
+## 22.2. Search
 * Because of type erasure, the generic type parameter will be removed when the code is compiled.
   <br/>
   <br/>
   <br/>
 
 
-## 18.3. **Work List**
+## 22.3. **Work List**
 - covariant return types
 - methot signature
 - Overloading and overriding
 - hidden method
 
-### 18.3.1. **I/O**
+### 22.3.1. **I/O**
 skip(), read(), reset() functions !   
 soru- 19 incele.
 
@@ -10331,7 +12386,7 @@ soru- 19 incele.
 
 <br/> 
 
-## 18.4. Streams
+## 22.4. Streams
 <br/> 
 
 🟡 **Example : Stream Create With Iterate()**
