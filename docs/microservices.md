@@ -31,13 +31,6 @@
     - [4.4. LINKS](#44-links)
 - [5. MONITORING](#5-monitoring)
 - [6. DB migrator](#6-db-migrator)
-- [7. TODO](#7-todo)
-    - [7.1. Microservices](#71-microservices)
-    - [7.2. Spring](#72-spring)
-    - [7.3. Assignment](#73-assignment)
-    - [7.4. Other](#74-other)
-    - [7.5. Maven](#75-maven)
-- [8. WORDS](#8-words)
 
 # 1. Microservices vs Monolithic
 
@@ -284,66 +277,9 @@
 
 # 6. DB migrator
 
-- ❗liquiebase
-
-# 7. TODO
-
-## 7.1. Microservices
-
-- ❗patterns SAGA, 2PC
-- Kubernates & Openshift without eureka, how microservices find each other?
-- Zipkin, Hystrix, Ribbon, Circuit Breaker,
-- Rate Limiter
-- implement feign client
-- implement Hystrix & Circuit Breaker, Sleuth & Zipkin
-
-## 7.2. Spring
-
-- ❗Spring boot dependencies
-- ❗application.properties sequence priority, which one is high.
-- ❗Spring Boot Reactive
-- Spring Boot Admin Server
-- Spring Security
-- Spring JPA
-- Spring vs Spring Boot
-- Spring MVC vs Spring Boot
-- Spring Nosql - Cassandra, Mongo
-- Spring Kafka
 - liquiebase
-- Spring Flyway
-- Spring Test
-- AOP
+- Spring flyway
 
-## 7.3. Assignment
-
-- ❗Sonar integration
-- Versions of Technologies, java, spring boot vs
-- Java 11 vs Java 17
-- ❗Spring Flux (reactive), Java Reactive
-
-## 7.4. Other
-
-- Docker
-- Kubernates
-- Artifactories
-- CI/CD for microservices
-- AWS
-- CORS vs csrf
-- OWAPS
-- Encryption & Decryption / Symmetric & asymmetric
-- Public & Private Keys, Certifications
-- Streaming vs Messaging Blockers like **(Kafka vs RabbitMQ)**
-- Test Types: integration, unit, regration vs
-- NGINX
-
-## 7.5. Maven
-
-- ❗️plugin vs pluginManagement
-- ❗dependency vs dependencyManagement
-
-# 8. WORDS
-
-- Single Entry Point of Application
 
 
  
