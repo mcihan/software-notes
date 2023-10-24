@@ -1,4 +1,4 @@
-# JAVA 11 - OCP (ORACLE CERTIFIED PROFESSIONAL) Notes
+# JAVA 11 - OCP Certification Notes
 
 - [1. General](#1-general)
 - [2. Java Building Blocks](#2-java-building-blocks)
