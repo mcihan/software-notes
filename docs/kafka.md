@@ -1,33 +1,33 @@
 - [1. What is Kafka?](#1-what-is-kafka)
 - [2. Components](#2-components)
-    - [2.1. Topic](#21-topic)
-    - [2.2. Partition](#22-partition)
-        - [2.2.1. Offset](#221-offset)
-        - [2.2.2. Why kafka use Partition ?](#222-why-kafka-use-partition-)
-    - [2.3. Broker](#23-broker)
-    - [2.4. Producer](#24-producer)
-    - [2.5. Consumer](#25-consumer)
-        - [2.5.1. Consumer Group](#251-consumer-group)
+  - [2.1. Topic](#21-topic)
+  - [2.2. Partition](#22-partition)
+    - [2.2.1. Offset](#221-offset)
+    - [2.2.2. Why kafka use Partition ?](#222-why-kafka-use-partition-)
+  - [2.3. Broker](#23-broker)
+  - [2.4. Producer](#24-producer)
+  - [2.5. Consumer](#25-consumer)
+    - [2.5.1. Consumer Group](#251-consumer-group)
 - [3. Write Data](#3-write-data)
-    - [3.1. Message Key](#31-message-key)
-        - [3.1.1. Round Robin](#311-round-robin)
-        - [3.1.2. Aggregation](#312-aggregation)
-        - [3.1.3. Sorting & Event Sourcing](#313-sorting--event-sourcing)
-    - [3.2. Replication](#32-replication)
-    - [3.3. Producer Acknowledge](#33-producer-acknowledge)
-        - [3.3.1. Fire and forget **(acks=0)**](#331-fire-and-forget-acks0)
-        - [3.3.2. Asynchronous send **(acks=1)**](#332-asynchronous-send-acks1)
-        - [3.3.3. Synchronous send **(acks=all, -1)**](#333-synchronous-send-acksall--1)
+  - [3.1. Message Key](#31-message-key)
+    - [3.1.1. Round Robin](#311-round-robin)
+    - [3.1.2. Aggregation](#312-aggregation)
+    - [3.1.3. Sorting \& Event Sourcing](#313-sorting--event-sourcing)
+  - [3.2. Replication](#32-replication)
+  - [3.3. Producer Acknowledge](#33-producer-acknowledge)
+    - [3.3.1. Fire and forget **(acks=0)**](#331-fire-and-forget-acks0)
+    - [3.3.2. Asynchronous send **(acks=1)**](#332-asynchronous-send-acks1)
+    - [3.3.3. Synchronous send **(acks=all, -1)**](#333-synchronous-send-acksall--1)
 - [4. Read Data](#4-read-data)
-    - [4.1. Reading Types(Message Delivery Semantics)](#41-reading-typesmessage-delivery-semantics)
-        - [4.1.1. At Most Once](#411-at-most-once)
-        - [4.1.2. At Least One](#412-at-least-one)
-        - [4.1.3. Exactly One (Transactional)](#413-exactly-one-transactional)
+  - [4.1. Reading Types(Message Delivery Semantics)](#41-reading-typesmessage-delivery-semantics)
+    - [4.1.1. At Most Once](#411-at-most-once)
+    - [4.1.2. At Least One](#412-at-least-one)
+    - [4.1.3. Exactly One (Transactional)](#413-exactly-one-transactional)
 - [5. Zookeeper](#5-zookeeper)
     - [5.0.1. Why Kafka Requires Zookeeper](#501-why-kafka-requires-zookeeper)
-    - [5.1. Split Brain](#51-split-brain)
-        - [5.1.1. Solving Split Brain](#511-solving-split-brain)
-- [6. LINKS](#6-links)
+  - [5.1. Split Brain](#51-split-brain)
+    - [5.1.1. Solving Split Brain](#511-solving-split-brain)
+ 
 
 # 1. What is Kafka?
 
@@ -306,9 +306,4 @@ yine split brain problemi ortaya cikar.
 n = broker sayisi
 
 **exp :**  5/2 +1 = 3, servers=3, Quorum=3, 2 coken servis tolere edilebilir.
-
-# 6. LINKS
-
-[Spring Cloud vs Spring Boot](https://www.educba.com/spring-cloud-vs-spring-boot/)
-[Spring Cloud vs Spring Boot 2](https://www.javatpoint.com/spring-cloud-vs-spring-boot)
-[Spring Cloud vs Spring Boot 3](https://onlineitguru.com/blog/spring-cloud-vs-spring-boot-what's-the-difference)
+ 
