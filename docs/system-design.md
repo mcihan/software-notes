@@ -126,27 +126,9 @@
   - [4.6. Chat System](#46-chat-system)
     - [4.6.1. DB or No-SQL](#461-db-or-no-sql)
     - [4.6.2. Queue Reliability](#462-queue-reliability)
-- [5. INTERVIEW](#5-interview)
-  - [5.1. INTERVIEW NOTE](#51-interview-note)
-  - [5.2. Sentence Samples](#52-sentence-samples)
-  - [5.3. QUESTIONS](#53-questions)
-    - [5.3.1. Interviewer](#531-interviewer)
-- [6. ADVICE](#6-advice)
-  - [6.1. Latency](#61-latency)
-  - [6.2. Availability](#62-availability)
-  - [6.3. Defending Your Design](#63-defending-your-design)
-    - [6.3.1. **The interviewer will try to poke holes in your design :**](#631-the-interviewer-will-try-to-poke-holes-in-your-design-)
-    - [6.3.2. Be prepared to speak to that:](#632-be-prepared-to-speak-to-that)
-    - [6.3.3. **What happens if we get a sudden surge of traffic/data?**](#633-what-happens-if-we-get-a-sudden-surge-of-trafficdata)
-    - [6.3.4. **Did you deliver the thing that you said you would deliver?**](#634-did-you-deliver-the-thing-that-you-said-you-would-deliver)
-    - [6.3.5. **Does it meet all the use cases discussed?**](#635-does-it-meet-all-the-use-cases-discussed)
-    - [6.3.6. **How do you optimize or simplify your design?**](#636-how-do-you-optimize-or-simplify-your-design)
-    - [6.3.7. **What is its operational burden and how can I manage or monitor that?**](#637-what-is-its-operational-burden-and-how-can-i-manage-or-monitor-that)
-  - [6.4. What an interviewer looking for?](#64-what-an-interviewer-looking-for)
-  - [6.5. Ask Questions To Interviewer](#65-ask-questions-to-interviewer)
-- [7. TODO](#7-todo)
-- [8. NOTES](#8-notes)
-- [9. WORDS](#9-words)
+- [5. TODO](#5-todo)
+- [6. NOTES](#6-notes)
+- [7. WORDS](#7-words)
 
 # 1. DATABASES
 
@@ -995,136 +977,13 @@ Selecting the correct storage system that supports all of our use cases is cruci
 - **Dead letter queue** : patlayan mesajlari sonradan islenmek yada incelenmek icin baska bir queue ya atilmasidir.
 - Queue de bekleyen mesajlari monitor edin. Queue size ve bir mesaji queue ya koyuldugunda consume edilmesi ne kadar suruyor. (mean time in queue)
 
-# 5. INTERVIEW
-
-## 5.1. INTERVIEW NOTE
-
-- Monitoring kullan- hata oldugunu gormek icin, hotspotu gormek icin, retry mekanizmasi surekli hata veriyor mu gormek icin, hangi layer/servis/db ye cok yogun trafik akisi var buna gore servis ekleme yada cikarma.
-  ![](images/systemdesign/component/queue-messaging-monitoring.png)
-- Monitoring is also important in understanding customer behavior
-
-## 5.2. Sentence Samples
-
-- If server 1 **_goes offline_**, all the **traffic will be routed** to server 2.
-- Database **replication**
-- If the master database goes offline, a **slave database will be promoted** to be the new master.
-- The HTTP request is **routed** to **either** Server 1 or Server 2.
-- **Shifting** static content (JavaScript/CSS/image/video files) to the CDN.
-- **Interacting** with cache servers is simple.
-- It is **advisable** not to make the expiration date too short.
-- Website has over 10 million visitors per year.
-- Wikipedia servers will be **flooded** with requests
-- However, this will **introduce** new challenges such as data synchronization.
-- If system goes down, customers can be unhappy and they might go away,
-- You can start to dive into more details as **time permits**.
-
-## 5.3. QUESTIONS
-
-- What are the important features?
-- How many friends can a user have?
-- Is this a mobile app? Or a web app? Or both?
-- What is the scale of this app? A startup app or massive scale?
-- How long shall we store data history?
-- What features are important?
-- How many daily active users do we have?
-- What is the average daily time spent on the product?
-- Do we need to support international users?
-- Can we leverage some of the existing cloud infrastructures provided by Amazon, Google, or Microsoft?
-- What parts of YouTube do you want me to design?
-- How much video are we talking about?
-- How much traffic are we talking about?
-- latencies & availability, budget
-- Do I have infinite money and infinite servers
-
-### 5.3.1. Interviewer
-- Tell me more about the data schema.
-
-
-# 6. ADVICE
-
-- **Scale the API tier**: Because API servers are stateless, it is easy to scale API tier horizontally.
-- **Scale the database**: You can talk about database replication and sharding.
-- Use S3 for durability in trade-off
-- Start from the customer experience to define your requirements.
-- Don't focus only technical stuff, think about problems from a business perspective, cost, and costumer side.
-- Don't pretend to know stuff that you don't know.
-- A big thing that interviewers are looking for is **perseverance**. So don't give up.
-
-## 6.1. Latency
-
-How fast is fast enough?
-
-- This informs the need for caching and CDN usage
-- Try to express this in SLA language(i.e., 100ms at three-nines for a given operation)
-
-## 6.2. Availability
-
-- How much downtime can you tolerate?
-- Is being down a threat to the business? Or just an inconvenience?
-- If the system can't tolerate downtime you should think about high-availability,
-- When you talk about high-availability system, you should talk about single point of failure and how you can handle it. If your master node down what's happen? A slave node promote to master automatically?
-- For high-availability you also ask for redundancy.(multiple racks, multiple regions, multiple data centers)
-
-## 6.3. Defending Your Design
-
-### 6.3.1. **The interviewer will try to poke holes in your design :**
-
-- What happens if this particular component fails?
-- What happens if the system fails?
-- What happens if this whole region goes down?
-
-### 6.3.2. Be prepared to speak to that:
-
-- Talk about resiliency
-- Strategies for distributing your data, back-up hosts.     
-  Have those answers in your back pocket.
-
-### 6.3.3. **What happens if we get a sudden surge of traffic/data?**
-
-- What happens in Christmas Time, Black-Friday?
-- How do I quickly add capacity to the system in a way that will scale smoothly?
-
-### 6.3.4. **Did you deliver the thing that you said you would deliver?**
-
-### 6.3.5. **Does it meet all the use cases discussed?**
-
-- Make sure that your design is gonna do everything you said it would do for the customer.
-- If you could make it better, what would you do?
-
-### 6.3.6. **How do you optimize or simplify your design?**
-
-- Maybe I don't need to use this system running here that I developed from scratch and I'm maintaining myself.
-- Maybe I can use a serverless solution offered by some web service out there to do it for me, right?
-
-### 6.3.7. **What is its operational burden and how can I manage or monitor that?**
-
-- How do I monitor the system?
-- How will I be alerted if it breaks?
-- What sorts of things do I want to monitor?
-- What do I need to monitor and who needs to be woken up in the middle of the night when something goes wrong?
-- Can I offload that operational burden to someone else? **->** Maybe if I use a serverless technology from some cloud provider, maybe I can make them worry about operations instead of me.
-
-## 6.4. What an interviewer looking for?
-- Show your grit and perseverance.
-- Could you learn new technology and apply it or deploy it, works it some place  ?
-- Show that you are self-organized
-- Be as self-reliant as possible
-
-
-## 6.5. Ask Questions To Interviewer
-
-- How much time do you spend coding versus going to meetings ?
-- How career progression work.
-
-
-# 7. TODO
+# 5. TODO
 
 - Redealection strategies
 - (**Eviction Policy**) : background ?
 
 
-
-# 8. NOTES
+# 6. NOTES
 
 - google cloud load balancer global ip adresine sahip, en yakindaki region'a aktarim yapar ve orda outage varsa BGP/BCP ile baska yerlere aktarilir
 - cassandra da bir sorgunun tum node lara gitmesi engellenir.
@@ -1133,7 +992,7 @@ How fast is fast enough?
 - Maglev google'in drive icin kullandigi load balancer.
 - Amazon S3 supports same-region and cross-region replication.
 
-# 9. WORDS
+# 7. WORDS
 
 - **RDBMS =** Traditional Relational Database
 - **NoSQL =** Non-Relational Database
