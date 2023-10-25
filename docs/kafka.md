@@ -31,44 +31,43 @@
 
 # 1. What is Kafka?
 
-Kafka yüksek performanslı dağıtık mesajlaşma sistemidir. 2011 yılında Linkedin tarafından geliştirilmiştir. Açık kaynak
-bir projedir. Apache Kafka, büyük verileri düşük gecikmelerle (latency) gerçek zamanlı (real time) veri akışı sağlar.
+Kafka is a high-performance distributed messaging system. It was developed by LinkedIn in 2011 and is an open-source project. Apache Kafka enables real-time data streaming with low latency for handling large volumes of data.
 
-- Mesajlar brokerlarda tutulur.
-- Zookeeper bokerlari yonetir, lider partition'i secer, brokerlarin birbirini tanimasini,
-- Producer ve Consumer'in production ortaminda tekin katlari olmasi lazim (1,3,5,7 ..) bunun sebebi:  "Replication'i
-  daha iyi yapabilmek ve Split Brain sorununu engellemek icindir".
-- replication count must be equals or bigger than brokers
+- Messages are stored in brokers.
+- Zookeeper manages the brokers, selects the leader partition, and ensures brokers recognize each other.
+- Producers and consumers need to have an odd number of replicas (e.g., 1, 3, 5, 7, etc.) to improve replication and prevent split-brain issues.
+- Replication count must be equal to or greater than the number of brokers.
+
 
 # 2. Components
 
 ## 2.1. Topic
 
-- Mesajların tutulduğu yerdir.
-- Veritabınındaki tabloya benzer.
-- Kafka içerisinde birçok topic olabilir, isim ile tanımlanırlar.
-- Bir veya birden fazla bölümden(partitions) meydana gelirler.
-- Topicler partitionlardan olusur.
-- Veri diske yazilir yani RAM kullanmaz.
-- iki sekilde veri tutma bicimi vardir;
-    + **Zaman bazli**. Ornegin veriler 1 ay tutulur ve eskiler silinir. Default 1 haftadir.
-    + **Boyut Bazli**. Ornegin veriler 1GB'i gecerse eskilerden baslanarak silinir. (onerilmez cunku ongorulemiyor,
-      trafige bagli boyut artip azalirsa, kota belki bir gunde dolar beldi 1 ayda)
+- It's where messages are stored, similar to a table in a database.
+- Kafka can have multiple topics, each identified by a name.
+- Topics consist of one or more partitions.
+- Data is written to disk; it doesn't use RAM.
+- Data retention can be time-based or size-based.
+  + **Time-based:** Data is typically retained for a certain period, and older data is removed after a specific duration. By default, data is stored for one week.
+  + **Size-based:** Data retention can also be based on the size of the data. For example, if data exceeds a certain size threshold (e.g., 1GB), older data is deleted. However, this approach is not recommended because it's unpredictable and depends on traffic conditions. Data size can fluctuate rapidly, potentially reaching the storage limit in a short time, leading to data loss.
+
 
 ![img.png](images/kafka/topic.png)
 
 ## 2.2. Partition
 
-- veriler burda tutulur
-- Partition sayisi configuration'la belirlenir.
-- Veriler partition'a gonderilme sirasiyla yazilir(FIFO).
-- Yazilan veri bir daha degistirilmez.
+- Data is stored in partitions.
+- The number of partitions is configurable.
+- Data is written to partitions in a First-In, First-Out (FIFO) manner.
+- Written data is immutable.
+
+
 
 ![img.png](images/kafka/partition1.png)
 
 ### 2.2.1. Offset
 
-- Partition icindeki verinin index'idir.
+- The index of data within a partition.
 
 ### 2.2.2. Why kafka use Partition ?
 
