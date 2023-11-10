@@ -1,6 +1,13 @@
-# JAVA 17 Features
+- [1. JAVA 17 Features](#1-java-17-features)
+  - [1.1. Text Block](#11-text-block)
+  - [1.2. Pattern Matching for Switch](#12-pattern-matching-for-switch)
+    - [1.2.1. Arrow Operator **-\>**](#121-arrow-operator--)
+    - [1.2.2. If else improved](#122-if-else-improved)
+    - [1.2.3. Pattern matching and null](#123-pattern-matching-and-null)
 
-## Text Block
+# 1. JAVA 17 Features
+
+## 1.1. Text Block
 
 **Example 1:**  
  
@@ -36,8 +43,8 @@ entityManage.createNativeQuery(sql);
 ```
 
 
-## Pattern Matching for Switch 
-### Arrow Operator **->**
+## 1.2. Pattern Matching for Switch 
+### 1.2.1. Arrow Operator **->**
 **Before :** 
 ```java
 public String getMonth(int index) {
@@ -77,7 +84,8 @@ public String getMonth2(int index) {
 }
 ```
 
-### If else improved 
+### 1.2.2. If else improved 
+**Before :**
 
 ```java
  public String formatter(Object o) {
@@ -109,7 +117,7 @@ public String formatter(Object o) {
 }
 ```
 
-###  Pattern matching and null
+###  1.2.3. Pattern matching and null
 
 ```java
 public String getTypes(Object obj) {
