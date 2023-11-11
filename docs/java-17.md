@@ -4,6 +4,8 @@
     - [1.2.1. Arrow Operator **-\>**](#121-arrow-operator--)
     - [1.2.2. If else improved](#122-if-else-improved)
     - [1.2.3. Pattern matching and null](#123-pattern-matching-and-null)
+  - [1.3. Record](#13-record)
+  - [1.4. **sealed** Classes](#14-sealed-classes)
 
 # 1. JAVA 17 Features
 
@@ -132,3 +134,78 @@ public String getTypes(Object obj) {
 
 <br/>
 
+
+
+## 1.3. Record
+
+There are a lot of code mess because of dto and pojo classes. Record makes it simple.  
+**Before Record :**
+
+```java
+public class UserDto {
+    private int id;
+    private String name;
+
+    public UserDto(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserDto userDto = (UserDto) o;
+        return id == userDto.id && Objects.equals(name, userDto.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
+    }
+    
+    public String toString() {
+        return "(id=" + this.id + ", name=" + this.name + ")";
+    }
+}
+```
+**Tests :** 
+```java
+UserDto user1 = new UserDto(1, "cihan");
+UserDto user2 = new UserDto(1, "cihan");
+System.out.println(user1);
+System.out.println("equals= " + user1.equals(user2));
+```
+**Print:** 
+```
+(id=1, name=cihan)
+equals= true
+```
+
+<br/>
+
+**After Record :**
+
+```java
+record UserRecord(int id, String name) { }
+```
+
+```java
+UserRecord user1 = new UserRecord(1, "cihan");
+UserRecord user2 = new UserRecord(1, "cihan");
+System.out.println(user1);
+System.out.println("equals= " + user1.equals(user2));
+```
+
+**Print:**
+```
+(id=1, name=cihan)
+equals= true
+```
+
+- Records already has constructor with all fields and implements **toString()**, **hashCode()** and **equals()** methods.
+
+
+
+
+## 1.4. **sealed** Classes
