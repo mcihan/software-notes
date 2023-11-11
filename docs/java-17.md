@@ -211,3 +211,34 @@ equals= true
 
 
 ## 1.4. **sealed** Classes
+
+Sealed classes help manage inheritance in Java. Before the introduction of sealed classes, we could only use "final" to
+restrict a class from being extended. However, with "final," we were unable to permit one class to be extended while
+restricting another.
+Java17 addresses this issue using sealed classes.
+
+
+**Final** restricts class A from being extended. 
+```java
+final class A{}
+
+class B extends A{}  // DOES NOT COMPILE!!
+
+class C extends A{}  // DOES NOT COMPILE!!
+```
+
+What if I want to restrict class B from extending class A but permit class C and D to be extended?
+
+Solve it with **sealed**.
+
+```java
+sealed class A permits C, D{}
+
+non-sealed class C extends A{}  // Compile
+
+final class D extends A{}       // Compile
+
+class B extends A{}  // DOES NOT COMPILE!
+```
+
+
