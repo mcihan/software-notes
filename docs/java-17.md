@@ -203,8 +203,10 @@ System.out.println("equals= " + user1.equals(user2));
 equals= true
 ```
 
-- Records already has constructor with all fields and implements **toString()**, **hashCode()** and **equals()** methods.
-
+- Records already have constructor with all fields and implements **toString()**, **hashCode()** and **equals()** methods.
+- Records can extend or implements other classes/interfaces.
+- Records cannot be extended/implemented by other classes.
+- Records can not be private or protected.
 
 
 
