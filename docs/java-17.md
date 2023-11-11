@@ -1,15 +1,17 @@
-- [1. JAVA 17 Features](#1-java-17-features)
-  - [1.1. Text Block](#11-text-block)
-  - [1.2. Pattern Matching for Switch](#12-pattern-matching-for-switch)
-    - [1.2.1. Arrow Operator **-\>**](#121-arrow-operator--)
-    - [1.2.2. If else improved](#122-if-else-improved)
-    - [1.2.3. Pattern matching and null](#123-pattern-matching-and-null)
-  - [1.3. Record](#13-record)
-  - [1.4. **sealed** Classes](#14-sealed-classes)
 
-# 1. JAVA 17 Features
+# JAVA 17 Features  <!-- omit in toc -->
 
-## 1.1. Text Block
+- [1. Text Block](#1-text-block)
+- [2. Pattern Matching for Switch](#2-pattern-matching-for-switch)
+  - [2.1. Arrow Operator **-\>**](#21-arrow-operator--)
+  - [2.2. If else improved](#22-if-else-improved)
+  - [2.3. Pattern matching and null](#23-pattern-matching-and-null)
+- [3. Record](#3-record)
+- [4. **sealed** class](#4-sealed-class)
+
+
+
+## 1. Text Block
 
 **Example 1:**  
  
@@ -45,8 +47,8 @@ entityManage.createNativeQuery(sql);
 ```
 
 
-## 1.2. Pattern Matching for Switch 
-### 1.2.1. Arrow Operator **->**
+## 2. Pattern Matching for Switch 
+### 2.1. Arrow Operator **->**
 **Before :** 
 ```java
 public String getMonth(int index) {
@@ -86,7 +88,7 @@ public String getMonth2(int index) {
 }
 ```
 
-### 1.2.2. If else improved 
+### 2.2. If else improved 
 **Before :**
 
 ```java
@@ -119,7 +121,7 @@ public String formatter(Object o) {
 }
 ```
 
-###  1.2.3. Pattern matching and null
+###  2.3. Pattern matching and null
 
 ```java
 public String getTypes(Object obj) {
@@ -136,7 +138,7 @@ public String getTypes(Object obj) {
 
 
 
-## 1.3. Record
+## 3. Record
 
 There are a lot of code mess because of dto and pojo classes. Record makes it simple.  
 **Before Record :**
@@ -210,7 +212,7 @@ equals= true
 
 
 
-## 1.4. **sealed** Classes
+## 4. **sealed** class
 
 Sealed classes help manage inheritance in Java. Before the introduction of sealed classes, we could only use "final" to
 restrict a class from being extended. However, with "final," we were unable to permit one class to be extended while
