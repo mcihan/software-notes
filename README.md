@@ -3,6 +3,7 @@
 - **Java**
   - [Java 11 **OCP Certification Notes**](docs/java-11-OCP.md)
   - [Java-17 ](docs/java-17.md)
+  - [Java-21 ](docs/java-21.md)
 - [Microservices](docs/microservices.md)
 - [System-Design](docs/system-design.md)
 - [Kubernetes](docs/kubernetes.md)
