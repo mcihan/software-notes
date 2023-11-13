@@ -2,6 +2,9 @@
 
 - [1. String Template](#1-string-template)
 - [2. Collections with Sequenced Interface](#2-collections-with-sequenced-interface)
+- [3. Unnamed Classes and Instance Main Methods](#3-unnamed-classes-and-instance-main-methods)
+- [4. Record Pattern Matching](#4-record-pattern-matching)
+- [5. Switch Pattern Matching](#5-switch-pattern-matching)
 
 
 ## 1. String Template
@@ -62,5 +65,88 @@ and `reversed()`.
 include `newSequencedSetFromMap(SequencedMap map)`, `unmodifiableSequencedCollection(SequencedCollection c)`
 , `Collections.unmodifiableSequencedMap(SequencedMap m)`, and `Collections.unmodifiableSequencedSet(SequencedSet s)`.
 
+
+
+## 3. Unnamed Classes and Instance Main Methods
+
+**Before Java21 :**
+
+```java
+public class Test {
+    
+    public static void main(String[] args) {
+        System.out.println("Text --------> " + getText());
+    }
+![](../../../../Desktop/unnamed-class.png.png)
+    static String getText() {
+        return "No class declaration in Java21!!!";
+    }
+}
+```
+**After :**  
+```java
+void main(String[] args) {
+    System.out.println("Text --------> " + getText());
+}
+
+String getText() {
+    return "No class declaration in Java21!!!";
+}
+```
+
+Run the java class from terminal:
+
+![img.png](images/java/unnamed-class.png)
+
+
+##  4. Record Pattern Matching
+
+**Before Java 21**
+
+```java
+record Calculator(int x, int y) {}
+
+if (obj instanceof Calculator c) {
+    int x = c.x();
+    int y = c.y();
+    System.out.println(x * y); 
+}  
+```
+**After :**
+
+```java
+ if (obj instanceof Calculator(int x, int y)) {
+    System.out.println(x * y);
+}
+```
+
+
+## 5. Switch Pattern Matching 
+
+**Before Java21**
+
+```java
+public void print(Object obj) {
+    switch (obj) {
+        case Calculator c -> System.out.printf("Calculator params: %d/%d%n", c.x(), c.y());
+        case String s   -> System.out.printf("It is String: %s", s);
+        default         -> System.out.println("Other");
+    }
+}
+```
+
+
+
+**After :** Don't need c.x(), c.y(), just access like x, y
+
+```java
+public void print(Object obj) {
+    switch (obj) {
+        case Calculator(int x, int y) -> System.out.printf("Calculator params: %d/%d%n", x, y);
+        case String s   -> System.out.printf("It is String: %s", s);
+        default         -> System.out.println("Other");
+    }
+}
+```
 
 
