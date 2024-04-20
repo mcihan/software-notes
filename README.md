@@ -5,7 +5,6 @@
   - [Java-17 ](docs/java-17.md)
   - [Java-21 ](docs/java-21.md)
 - [Microservices](docs/microservices.md)
-- [System-Design](docs/system-design.md)
 - [Kubernetes](docs/kubernetes.md)
 - [Docker](./docs/docker.md)
 - [Kafka](docs/kafka.md)
