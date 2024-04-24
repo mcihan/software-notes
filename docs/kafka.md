@@ -52,6 +52,7 @@ Kafka is a high-performance distributed messaging system. It was developed by Li
   + **Size-based:** Data retention can also be based on the size of the data. For example, if data exceeds a certain size threshold (e.g., 1GB), older data is deleted. However, this approach is not recommended because it's unpredictable and depends on traffic conditions. Data size can fluctuate rapidly, potentially reaching the storage limit in a short time, leading to data loss.
 
 
+
 ![img.png](images/kafka/topic.png)
 
 ## 2.2. Partition
